@@ -1,6 +1,6 @@
 # Reopened quality-loop handoff
 
-The public base is `da54eec`. Round three scored its reviewed research commit `6f4b801` **8/10**. Astra reproduced the revised totals and matched both Nest pool-state reads and the Flux market registry to the historical RPC responses. A fresh round-four score is pending. [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage) · [Recorded review](docs/QUALITY.md)
+The public base is `da54eec`. Round three scored its reviewed research commit `6f4b801` **8/10**. Astra reproduced the revised totals and matched both Nest pool-state reads and the Flux market registry to the historical RPC responses. The repair is public at `393df3d`. Three attempts to obtain a fresh round-four score encountered the Claude API rate limit. Resume with a fresh Opus review of that same research commit when capacity returns. [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage) · [Recorded review](docs/QUALITY.md)
 
 ## DONE
 

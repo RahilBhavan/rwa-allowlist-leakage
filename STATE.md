@@ -1,4 +1,4 @@
-Next action: obtain round four’s independent Opus score for the repaired research snapshot.
+Next action: retry the independent round-four Opus review of published research commit `393df3d` when provider capacity returns. Three attempts returned the Claude API rate-limit error, including a retry after cooldown. No reset time or round-four score was returned.
 
 The prior independent round-three record scored research commit `6f4b801` 8/10. Round four will score the Nest, Flux, Stellar and verification changes. The public repository and MIT license are already in place. [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage) · [Review history](docs/QUALITY.md)
 

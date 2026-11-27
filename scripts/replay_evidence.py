@@ -24,9 +24,11 @@ else:
 ROOT = Path(__file__).resolve().parents[1]
 PINNED = ("evm-2026-09-30", "holders-2026-09-30", "review-ethereum-2026-09-30",
           "buidl-avalanche-signer", "usyc-bnb-receipt-2026-09-25", "ousg-xrpl-2026-09-30",
-          "round1-supplement", "round2-readbacks")
+          "round1-supplement", "round2-readbacks", "pinned-market-controls-2026-09-30")
 DISCOVERY = ("review-contract-discovery", "usual-source-2026-09-30")
 RPC_ALTERNATIVES = {
+    "https://arbitrum.drpc.org": "https://arbitrum-one-rpc.publicnode.com",
+    "https://arbitrum-one.public.blastapi.io": "https://arbitrum.drpc.org",
     "https://eth.drpc.org": "https://rpc.mevblocker.io",
     "https://optimism.drpc.org": "https://mainnet.optimism.io",
 }
@@ -52,17 +54,21 @@ def historical_read(url, method, params):
 
 def compare_rpc(row):
     actual = historical_read(row["url"], row["method"], row["params"])
-    if "candidates" in row:
-        candidates = sorted({"0x" + topic[-40:].lower() for log in actual for topic in log["topics"][1:3]})
-        return candidates == row["candidates"]
     if "sha256" in row:
-        return (holder_type(actual) == row["code_type"]
-                and sha256(bytes.fromhex(actual[2:])).hexdigest() == row["sha256"])
+        code = bytes.fromhex(actual[2:])
+        if holder_type(actual) != row["code_type"] or sha256(code).hexdigest() != row["sha256"]:
+            return False
+        if "normalized_sha256" in row:
+            literal = bytes.fromhex(row["pool_literal"][2:])
+            return (code.count(literal) == row["literal_count"]
+                    and sha256(code.replace(literal, bytes(len(literal)))).hexdigest() == row["normalized_sha256"])
+        return True
     for key in ("owner_count", "module_count"):
         if key in row:
             words = abi_words(actual)
-            offset = words[0] // 32
-            return (words[offset] == row[key]
+            offset = 1 if key == "owner_count" else 2
+            return (len(words) > offset and words[0] == 32 * offset
+                    and len(words) == offset + 1 + words[offset] and words[offset] == row[key]
                     and ("additional_module_pages" not in row
                          or (words[1] != 1) == row["additional_module_pages"]))
     expected = row["result"]
@@ -157,6 +163,13 @@ def compare_bridge_source(row):
     return sha256(content.encode()).hexdigest() == row["utf8_source_sha256"]
 
 
+def compare_explorer_source(row):
+    live, _ = fetch_json(row["url"])
+    return (live["name"] == row["name"]
+            and sha256(live["source_code"].encode()).hexdigest() == row["source_utf8_sha256"]
+            and sha256(bytes.fromhex(live["deployed_bytecode"][2:])).hexdigest() == row["deployed_bytecode_sha256"])
+
+
 def jobs(name, fixture):
     if name == "review-contract-discovery":
         for address, row in fixture["contracts"].items():
@@ -197,8 +210,14 @@ def jobs(name, fixture):
         for label, probe in fixture["holder_probes"].items():
             for read_label, check, args in evm_jobs(probe):
                 yield f"{label}/{read_label}", check, args
-            if "candidates" in probe["logs"]:
+            if "result" in probe["logs"]:
                 yield f"{label}/logs", compare_rpc, (probe["logs"],)
+    elif name == "pinned-market-controls-2026-09-30":
+        yield from evm_jobs(fixture)
+        for vault, sources in fixture["nest_sources"].items():
+            for label in ("share", "hook", "authority"):
+                yield f"{vault}/source/{label}", compare_explorer_source, (sources[label],)
+        yield "rooster-v2/source/swap_plugin", compare_explorer_source, (fixture["rooster_swap_plugin"]["verified_twin"],)
     else:
         yield from evm_jobs(fixture)
 

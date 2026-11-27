@@ -40,7 +40,7 @@ def check():
         if sha256(files[name]).hexdigest() != receipt[name]["sha256"]:
             raise ValueError(f"{name} differs from the inspected card")
     png = files["png"]
-    if png[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR":
+    if len(png) < 24 or png[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR":
         raise ValueError("card lacks a valid PNG header")
     if list(struct.unpack(">II", png[16:24])) != receipt["size_px"]:
         raise ValueError("card size differs from the inspected export")
@@ -63,8 +63,10 @@ def check():
         raise ValueError("missing USDtb draft")
     draft = section.split("\n## ", 1)[0]
     claims = [line[2:] for line in draft.splitlines() if line.startswith("> ")]
+    if len(claims) != 1:
+        raise ValueError("the USDtb draft must contain a single claim")
     for value in (number, written_date):
-        if value not in copy or len(claims) != 1 or value not in claims[0]:
+        if value not in copy or value not in claims[0]:
             raise ValueError("the card and draft must carry the transcribed amount and date")
     if receipt["evidence_url"] not in draft or receipt["publisher_url"] not in draft:
         raise ValueError("the draft must link to the study evidence and the primary report")

@@ -45,9 +45,14 @@ def verify(facts, texts):
     match(r"across both funds and equities", securitize)
 
     # The slide is multicolumn. Find the amount directly above the USYC label.
-    rows = texts["circle"].splitlines()
+    pages = [page for page in texts["circle"].split("\f") if "USYC assets" in page]
+    if len(pages) != 1:
+        raise ValueError("Circle slide 12 missing USYC assets column or ambiguous page")
+    circle, = pages
+    match(r"Company data as of September 30, 2026", circle)
+    rows = circle.splitlines()
     for index, line in enumerate(rows):
-        if "USYC assets" in line:
+        if index and "USYC assets" in line:
             start = line.index("USYC assets")
             value = match(r"\$" + MONEY + "B", rows[index - 1][start - 4:start + 15])[1]
             break
@@ -66,7 +71,8 @@ def verify(facts, texts):
     for key, value in (("ethereum", ethereum), ("total", published_total)):
         check(f"USDtb redeemable ({key})", number(value), Decimal(facts[f"anchorage_{key}_usdtb_redeemable"]))
     chains = {"solana": "Solana", "bsc": "BSC", "avalanche": "Avalanche", "aptos": "Aptos"}
-    check("Schedule II chain set", {row["chain"] for row in facts["anchorage_reserve_legs"]}, set(chains))
+    check("Schedule II chain set", sorted(row["chain"] for row in facts["anchorage_reserve_legs"]),
+          sorted(chains))
     for row in facts["anchorage_reserve_legs"]:
         chain = chains[row["chain"]]
         value = match(rf"{chain} BUIDL\S*[^\S\n]+\$" + MONEY, anchorage)[1]

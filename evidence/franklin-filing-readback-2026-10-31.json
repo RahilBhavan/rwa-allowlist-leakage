@@ -1,0 +1,15 @@
+{
+  "accessed": "2026-11-27",
+  "index": "https://www.sec.gov/Archives/edgar/data/1786958/000207169126025490/0002071691-26-025490-index.htm",
+  "formatted_filing": "https://www.sec.gov/Archives/edgar/data/1786958/000207169126025490/xslN-MFP3_X01/primary_doc.xml",
+  "accession": "0002071691-26-025490",
+  "filed": "2026-11-06",
+  "report_period": "2026-10-31",
+  "series": "S000067043",
+  "class": "C000215714",
+  "ticker": "FOBXX",
+  "item_8_share_classes": 1,
+  "item_b4_net_assets_usd": "833554415.30",
+  "item_b5_shares": "833590155.07",
+  "scope": "Class-level values from the October SEC filing. The September model uses the September filing."
+}

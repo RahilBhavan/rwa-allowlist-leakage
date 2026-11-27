@@ -771,7 +771,7 @@
             "toBlock": "0x2813429"
           }
         ],
-        "candidates": []
+        "result": []
       },
       "reads": {}
     },
@@ -864,7 +864,7 @@
             "toBlock": "0x5c169a2"
           }
         ],
-        "candidates": []
+        "result": []
       },
       "reads": {
         "balance/0x11113ff3a60c2450f4b22515cb760417259ee94b": {

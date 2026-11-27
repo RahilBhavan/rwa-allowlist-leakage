@@ -73,6 +73,59 @@ class HolderAuditTest(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "Usual custody"):
                     verify_usual(target, reports["usyc/ethereum"])
 
+    def test_usual_requires_requests_for_the_underlying_and_observed_treasury(self):
+        captures, reports = load_holders(EVIDENCE)
+        for label, message in (("usual_treasury_usyc_allowance", "allowance request"),
+                               ("usual_usyc_eligible", "eligibility request")):
+            target = deepcopy(captures["usyc/ethereum"])
+            query = target["target"]["probes"][label][1]
+            query["data"] = query["data"][:-2] + "ab"
+            target["reads"][label]["params"][0] = query
+            with self.subTest(label=label), self.assertRaisesRegex(ValueError, message):
+                verify_usual(target, reports["usyc/ethereum"])
+
+    def test_holder_capture_rejects_conflicting_config_and_duplicate_candidates(self):
+        source = json.loads((EVIDENCE / "holders-2026-09-30.json").read_text())
+        for key, message in (("period", "unexpected snapshot"), ("token", "differs from inventory"),
+                             ("candidate", "duplicate candidate")):
+            modified = deepcopy(source)
+            if key == "period":
+                modified["cutoff"] += 1
+            elif key == "token":
+                modified["targets"]["ustb/plume"]["target"]["token"] = "0x" + "12" * 20
+            else:
+                candidates = modified["targets"]["buidl/optimism"]["candidates"]
+                candidate = "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29"
+                candidates.extend([candidate, candidate])
+            original = Path.read_text
+            def read_text(path):
+                return json.dumps(modified) if path.name == "holders-2026-09-30.json" else original(path)
+            with self.subTest(key=key), patch.object(Path, "read_text", read_text):
+                with self.assertRaisesRegex(ValueError, message):
+                    load_holders(EVIDENCE)
+
+    def test_xrpl_rejects_mixed_ledger_and_duplicate_rows(self):
+        evidence = json.loads((EVIDENCE / "ousg-xrpl-2026-09-30.json").read_text())
+        for field, message in (
+            ("successor", "month-end ledger bracket"), ("pages", "missing XRPL"),
+            ("request", "wrong XRPL issuer"), ("line", "duplicate OUSG"),
+            ("corroboration", "corroboration uses another ledger"),
+        ):
+            copy = deepcopy(evidence)
+            if field == "successor":
+                copy["successor"]["parent"] = "wrong-hash"
+            elif field == "pages":
+                copy["pages"] = []
+            elif field == "request":
+                copy["pages"][0]["params"]["ledger_hash"] = "wrong-hash"
+            elif field == "line":
+                lines = copy["pages"][0]["result"]["lines"]
+                lines.append(lines[0])
+            else:
+                copy["gateway_balances"]["result"]["ledger_hash"] = "wrong-hash"
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, message):
+                audit_xrpl(copy)
+
     def test_bnb_burn_must_match_supply_delta(self):
         _, reports = load_holders(EVIDENCE)
         evidence = json.loads((EVIDENCE / "usyc-bnb-receipt-2026-09-25.json").read_text())

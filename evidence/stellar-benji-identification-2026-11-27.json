@@ -1,0 +1,64 @@
+{
+  "accessed": "2026-11-27",
+  "issuer_toml": {
+    "url": "https://www.franklintempleton.com/.well-known/stellar.toml",
+    "asset_code": "BENJI",
+    "asset_issuer": "GBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5",
+    "issuer_list": [
+      "GBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5",
+      "GD5J73EKK5IYL5XS3FBTHHX7CZIYRP7QXDL57XFWGC2WVYWT326OBXRP",
+      "GA3ZBL3LBRKOF7CZ6MCA7JLPHWQCGYCCGKH4GVWNEDZOXW4IPXFGN2FQ",
+      "GAGICV3VBJSKKH5H5MQQIUTUP462YVHC23KUHZY6FJERRJFBDIVZBM5C"
+    ]
+  },
+  "accounts": [
+    {
+      "rank_in_saved_traversal": 1,
+      "url": "https://horizon.stellar.org/accounts/GAHPQ5V26V5FAFMX3HLCBXTJOSO6FAKZQ4YIRTESWIWZNLAMOR563KZ3",
+      "account": "GAHPQ5V26V5FAFMX3HLCBXTJOSO6FAKZQ4YIRTESWIWZNLAMOR563KZ3",
+      "home_domain": null,
+      "sponsor": "GBGJB2WEIQCCUZYISUKAFRPR46LQ62O7W6CDKN52NVROG44LLL3L73X2",
+      "last_modified_ledger": 65690794,
+      "issuer_toml_accounts_match": false
+    },
+    {
+      "rank_in_saved_traversal": 2,
+      "url": "https://horizon.stellar.org/accounts/GBEQV6SQSQT2SWPVI4TKWV2WF47VWYLMYD53ANKTYODKX6Q6PR5ZPLMU",
+      "account": "GBEQV6SQSQT2SWPVI4TKWV2WF47VWYLMYD53ANKTYODKX6Q6PR5ZPLMU",
+      "home_domain": null,
+      "sponsor": "GBGJB2WEIQCCUZYISUKAFRPR46LQ62O7W6CDKN52NVROG44LLL3L73X2",
+      "last_modified_ledger": 65690788,
+      "issuer_toml_accounts_match": false
+    },
+    {
+      "rank_in_saved_traversal": 3,
+      "url": "https://horizon.stellar.org/accounts/GDXP7KSDSHVMPXBBXMRG7MMFLEYD3QTKQ7YC4YG6P3KLXZ3UCABPSYAA",
+      "account": "GDXP7KSDSHVMPXBBXMRG7MMFLEYD3QTKQ7YC4YG6P3KLXZ3UCABPSYAA",
+      "home_domain": null,
+      "sponsor": "GBGJB2WEIQCCUZYISUKAFRPR46LQ62O7W6CDKN52NVROG44LLL3L73X2",
+      "last_modified_ledger": 65690791,
+      "issuer_toml_accounts_match": false
+    }
+  ],
+  "sponsor": {
+    "url": "https://horizon.stellar.org/accounts/GBGJB2WEIQCCUZYISUKAFRPR46LQ62O7W6CDKN52NVROG44LLL3L73X2",
+    "account": "GBGJB2WEIQCCUZYISUKAFRPR46LQ62O7W6CDKN52NVROG44LLL3L73X2",
+    "home_domain": null,
+    "issuer_toml_accounts_match": false
+  },
+  "asset_summary": {
+    "url": "https://horizon.stellar.org/assets?asset_code=BENJI&asset_issuer=GBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5",
+    "accounts": {
+      "authorized": 1406,
+      "authorized_to_maintain_liabilities": 0,
+      "unauthorized": 1170
+    },
+    "balances": {
+      "authorized": "1325210136.8495765",
+      "authorized_to_maintain_liabilities": "0.0000000",
+      "unauthorized": "25.1299741"
+    },
+    "num_claimable_balances": 0,
+    "num_liquidity_pools": 0
+  }
+}

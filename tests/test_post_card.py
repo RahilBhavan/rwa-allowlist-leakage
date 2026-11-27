@@ -64,6 +64,28 @@ class PostCardTest(unittest.TestCase):
                 finally:
                     path.write_bytes(original)
 
+    def test_card_rejects_malformed_png_and_wrong_dimensions_with_updated_hash(self):
+        path = self.root / self.receipt["png"]["path"]
+        png = path.read_bytes()
+        for altered, message in (
+            (b"\x00" + png[1:], "PNG header"),
+            (png[:16], "PNG header"),
+            (png[:16] + (640).to_bytes(4, "big") + png[20:], "card size"),
+        ):
+            with self.subTest(message=message):
+                path.write_bytes(altered)
+                self.receipt["png"]["sha256"] = sha256(altered).hexdigest()
+                self.receipt_path.write_text(json.dumps(self.receipt))
+                with self.assertRaisesRegex(ValueError, message):
+                    check_post_card.check()
+
+    def test_card_requires_one_claim_in_the_usdtb_draft(self):
+        draft = self.draft.read_text()
+        claim = next(line for line in draft.splitlines() if line.startswith("> "))
+        self.draft.write_text(draft.replace(claim, claim + "\n> Another claim.", 1))
+        with self.assertRaisesRegex(ValueError, "single claim"):
+            check_post_card.check()
+
     def test_card_rejects_missing_draft_links(self):
         original = self.draft.read_text()
         for key in ("publisher_url", "evidence_url", "png"):

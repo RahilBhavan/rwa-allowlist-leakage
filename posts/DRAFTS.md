@@ -26,7 +26,7 @@ Drafts for Rahil’s tokenization audience. The card is an original draft pendin
 
 ## Flux lending
 
-> Flux’s open USDC market had $8.68M borrowed on September 30, 2026. Only eligible liquidators can seize pledged OUSG, so the gate matters to USDC lenders when a loan backed by OUSG defaults.
+> Flux had $8.68M in outstanding USDC loans on September 30, 2026. OUSG was the only asset that added borrowing power at the snapshot. Only eligible liquidators can seize pledged OUSG. How much of the existing debt was secured by OUSG remains unverified.
 
 [Pinned Flux controls and credit path](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#gated-collateral-and-open-lending)
 

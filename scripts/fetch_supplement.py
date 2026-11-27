@@ -94,9 +94,9 @@ def scan(capture):
              "fromBlock": hex(int(pin, 16) - 999), "toBlock": pin}
     logs = observation(url, "eth_getLogs", [query])
     if "result" in logs:
-        logs["candidates"] = sorted({"0x" + topic[-40:].lower() for row in logs.pop("result")
-                                     for topic in row["topics"][1:3]})
-        candidates.update(logs["candidates"][:12])
+        log_candidates = sorted({"0x" + topic[-40:].lower() for row in logs["result"]
+                                 for topic in row["topics"][1:3]})
+        candidates.update(log_candidates[:12])
     reads = {}
     for address in sorted(candidates - {ZERO}):
         to, data = balance(token, address)

@@ -20,6 +20,22 @@ MTBILL_POOL_ID = "0x3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2
 TEST_RECIPIENT = "0x000000000000000000000000000000000000dead"
 IMPLEMENTATION_SLOT = "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
 ADMIN_SLOT = "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103"
+FLUX = "0x95af143a021df745bc78e845b54591c53a8b3a51"
+FLUX_CONTROL_MARKETS = {
+    "0x1dd7950c266fb1be96180a8fdb0591f70200e018": "fousg",
+    "0x465a5a630482f3abd6d3b84b39b29b07214d19e5": "fusdc",
+}
+MARKET_CONTROLS = "pinned-market-controls-2026-09-30.json"
+ROOSTER_FACTORY = "0x1eb9822d5176c88b1d4eec353fa956c896d77df9"
+ROOSTER_QUOTER = "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46"
+NEST_ROUTES = {
+    "nTBILL": ("0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+               "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+               "0x78add880a697070c1e765ac44d65323a0dcce913", 1000),
+    "nBASIS": ("0x11113ff3a60c2450f4b22515cb760417259ee94b",
+               "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+               "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f", 200),
+}
 
 
 def abi_words(value):
@@ -32,11 +48,106 @@ def addr(value):
     return "0x" + value[-40:]
 
 
+def matching_pin(capture, reference):
+    validate_pin(capture)
+    if any(capture[key] != reference[key] for key in ("block", "successor")):
+        raise ValueError("review evidence uses a different month-end pin")
+
+
+def flux_collateral_settings(capture, reference):
+    matching_pin(capture, reference)
+
+    def call(data, label):
+        value = pinned_read(capture, "flux/" + label, "eth_call", {"to": FLUX, "data": data})
+        if value is None:
+            raise ValueError(f"missing Flux market read: {label}")
+        return abi_words(value)
+
+    offset, count, *markets = call("0xb0772d0b", "getAllMarkets()")
+    if offset != 32 or count != len(markets) or count == 0 or len(set(markets)) != count:
+        raise ValueError("invalid Flux market list")
+    result = {}
+    for market in markets:
+        address = f"0x{market:040x}"
+        data = "0x8e8f294b" + word(market)
+        response = call(data, f"markets/{address}")
+        listed, factor, _ = response
+        if listed != 1 or not 0 <= factor <= 10**18:
+            raise ValueError(f"invalid listed Flux market: {address}")
+        if address in FLUX_CONTROL_MARKETS:
+            name = FLUX_CONTROL_MARKETS[address]
+            saved = pinned_read(reference, f"flux/{name}/markets(address)", "eth_call", {"to": FLUX, "data": data})
+            if saved is None or abi_words(saved) != response:
+                raise ValueError(f"Flux market reads disagree for {address}")
+        result[address] = D(factor).scaleb(-18)
+    if not FLUX_CONTROL_MARKETS.keys() <= result.keys():
+        raise ValueError("Flux market list omits a previously observed market")
+    return result
+
+
+def nest_routes(capture, reference):
+    matching_pin(capture, reference)
+
+    def call(label, target, data, **extra):
+        value = pinned_read(capture, label, "eth_call", {"to": target, "data": data, **extra})
+        if value is None:
+            raise ValueError(f"missing Nest route read: {label}")
+        return abi_words(value)
+
+    if call("rooster-v2/quoter_factory", ROOSTER_QUOTER, "0xc45a0155") != [int(ROOSTER_FACTORY, 16)]:
+        raise ValueError("Nest quoter uses a different factory")
+    routes = {}
+    for name, (share, pool, stable, size) in NEST_ROUTES.items():
+        label = f"{name}/pool/{pool}"
+        (hook_word,) = call(f"{name}/hook()", share, "0x7f5a7c7b")
+        (authority_word,) = call(f"{name}/authority()", share, "0xbf7e214f")
+        hook, authority = f"0x{hook_word:040x}", f"0x{authority_word:040x}"
+        if (call(f"{name}/hook/isPaused()", hook, "0xb187bd26") != [0]
+                or call(f"{label}/hook_blacklisted_sender", hook,
+                        "0xfe575a87" + word(int(pool, 16))) != [0]):
+            raise ValueError(f"Nest hook denies the examined pool transfer: {name}")
+        primary_permissions = {}
+        for action, method in (("enter", "39d6ba32"), ("exit", "18457e61")):
+            route = word(int(share, 16)) + method.ljust(64, "0")
+            (allowed,) = call(f"{name}/recipient/canCall_{action}", authority,
+                              "0xb7009613" + word(int(TEST_RECIPIENT, 16)) + route)
+            primary_permissions[action] = bool(allowed)
+        if (call(f"{label}/factory_pair", ROOSTER_FACTORY,
+                 "0xd9a641e1" + word(int(stable, 16)) + word(int(share, 16))) != [int(pool, 16)]
+                or {call(f"{label}/token{i}", pool, selector)[0]
+                    for i, selector in enumerate(("0x0dfe1681", "0xd21220a7"))} != {int(stable, 16), int(share, 16)}):
+            raise ValueError(f"Nest pool identity mismatch: {name}")
+        (inventory,) = call(f"{label}/inventory", *balance(share, pool))
+        (liquidity,) = call(f"{label}/active_liquidity", pool, "0x1a686502")
+        (stable_decimals,) = call(f"dex-input/{stable}/decimals", stable, "0x313ce567")
+        (share_decimals,) = call(f"{name}/decimals()", share, "0x313ce567")
+        (supply,) = call(f"{name}/totalSupply()", share, "0x18160ddd")
+        quotes = {}
+        for amount in (1, size):
+            data = "0x57028211" + "".join(map(word, (int(stable, 16), int(share, 16),
+                                                    0, amount * 10**stable_decimals, 0)))
+            output, fee = call(f"{label}/quote_{amount}", ROOSTER_QUOTER, data)
+            if not 0 < output <= inventory <= supply or not liquidity or not 0 <= fee < 1_000_000:
+                raise ValueError(f"Nest route lacks supported inventory or quote: {name}")
+            quotes[amount] = {"output": D(output).scaleb(-share_decimals), "fee_pips": fee}
+        transfer = "0xa9059cbb" + word(int(TEST_RECIPIENT, 16)) + word(output)
+        if call(f"{label}/transfer_quoted_output", share, transfer, **{"from": pool}) != [1]:
+            raise ValueError(f"Nest pool could not transfer quoted output: {name}")
+        # Value the larger quote at the 1-unit stablecoin quote. This is a
+        # route-size diagnostic with the input stablecoin assumed at par.
+        routes[name] = {
+            "share": share, "pool": pool, "input_stable": stable, "quotes": quotes,
+            "inventory_shares": D(inventory).scaleb(-share_decimals),
+            "share_supply": D(supply).scaleb(-share_decimals),
+            "quoted_output_at_small_quote_usd": quotes[size]["output"] / quotes[1]["output"],
+            "transfer_hook": hook, "vault_authority": authority, "test_recipient_authority": primary_permissions,
+        }
+    return routes
+
+
 def observations(directory, ethereum):
     capture = json.loads((directory / "review-ethereum-2026-09-30.json").read_text())
-    validate_pin(capture)
-    if any(capture[key] != ethereum[key] for key in ("block", "successor")):
-        raise ValueError("review evidence uses a different Ethereum pin")
+    matching_pin(capture, ethereum)
 
     def get(label, method, *args):
         value = pinned_read(capture, label, method, *args)
@@ -153,18 +264,19 @@ def observations(directory, ethereum):
         "ethereum_usst": D(usst_supply).scaleb(-18),
     }
 
-    flux_address = "0x95af143a021df745bc78e845b54591c53a8b3a51"
+    flux_address = FLUX
     flux = {
         "admin": addr(call("flux/admin()", flux_address, "0xf851a440")),
         "pause_guardian": addr(call("flux/pauseGuardian()", flux_address, "0x24a3d622")),
         "implementation": addr(call("flux/comptrollerImplementation()", flux_address, "0xbb82aa5e")),
     }
-    for name, market in (("fousg", "0x1dd7950c266fb1be96180a8fdb0591f70200e018"),
-                         ("fusdc", "0x465a5a630482f3abd6d3b84b39b29b07214d19e5")):
+    for market, name in FLUX_CONTROL_MARKETS.items():
         flux[name] = {
             "mint_paused": bool(int(call(f"flux/{name}/mintGuardianPaused(address)",
                                         flux_address, "0x731f0c2b" + market[2:].zfill(64)), 16)),
             "borrow_paused": bool(int(call(f"flux/{name}/borrowGuardianPaused(address)",
                                           flux_address, "0x6d154ea5" + market[2:].zfill(64)), 16)),
         }
+    market_capture = json.loads((directory / MARKET_CONTROLS).read_text())["chains"]["ethereum"]
+    flux["collateral_factors"] = flux_collateral_settings(market_capture, capture)
     return {"frax_pinned": frax, "midas_mtbill": midas, "stbl_usst": stbl, "flux_pinned": flux}

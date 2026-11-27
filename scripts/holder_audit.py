@@ -193,11 +193,11 @@ def load_holders(directory):
     supplement = json.loads((directory / "round1-supplement.json").read_text())
     for name, probe in supplement["holder_probes"].items():
         capture = captures[name]
-        candidates = set(capture["candidates"])
+        candidates = capture["candidates"]
         for label, row in probe["reads"].items():
             kind, address = label.split("/")
-            if kind == "balance":
-                candidates.add(address)
+            if kind == "balance" and address not in candidates:
+                candidates.append(address)
             if "error" not in row:
                 previous = capture["reads"].setdefault(label, row)
                 if previous != row:

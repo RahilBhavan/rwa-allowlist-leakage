@@ -1,0 +1,3106 @@
+{
+  "accessed_utc": "2026-11-27T16:41:32.499511+00:00",
+  "chains": {
+    "ethereum": {
+      "block": {
+        "hash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+        "number": "0x18e28a9",
+        "parentHash": "0xe462ded73f3e06f54ba5b557c20ff53b43d5d9b1279e45e68dfdb7496177aeba",
+        "timestamp": "0x6abda27f"
+      },
+      "successor": {
+        "hash": "0x41ebfe304393a8d19fb0b8273a5fa88573cc9a1962a6b8645d139a1d4f860edb",
+        "number": "0x18e28aa",
+        "parentHash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+        "timestamp": "0x6abda28b"
+      },
+      "reads": {
+        "flux/getAllMarkets()": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0xb0772d0b"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000050000000000000000000000001dd7950c266fb1be96180a8fdb0591f70200e018000000000000000000000000465a5a630482f3abd6d3b84b39b29b07214d19e5000000000000000000000000e2ba8693ce7474900a045757fe0efca900f6530b00000000000000000000000081994b9607e06ab3d5cf3afff9a67374f05f27d70000000000000000000000001c9a2d6b33b4826757273d47ebee0e2dddcd978b"
+        },
+        "flux/markets/0x1dd7950c266fb1be96180a8fdb0591f70200e018": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0x8e8f294b0000000000000000000000001dd7950c266fb1be96180a8fdb0591f70200e018"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000cc47f20295c00000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "flux/markets/0x465a5a630482f3abd6d3b84b39b29b07214d19e5": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0x8e8f294b000000000000000000000000465a5a630482f3abd6d3b84b39b29b07214d19e5"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "flux/markets/0xe2ba8693ce7474900a045757fe0efca900f6530b": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0x8e8f294b000000000000000000000000e2ba8693ce7474900a045757fe0efca900f6530b"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "flux/markets/0x81994b9607e06ab3d5cf3afff9a67374f05f27d7": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0x8e8f294b00000000000000000000000081994b9607e06ab3d5cf3afff9a67374f05f27d7"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "flux/markets/0x1c9a2d6b33b4826757273d47ebee0e2dddcd978b": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+              "data": "0x8e8f294b0000000000000000000000001c9a2d6b33b4826757273d47ebee0e2dddcd978b"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        }
+      }
+    },
+    "plume": {
+      "block": {
+        "hash": "0x921c5500e1f07bac02a60aab02c77eea0d83656b4a3a883251183e6a1fd7c497",
+        "number": "0x5c169a2",
+        "parentHash": "0x4346eb809dc72a175117402fd731a93c4dfd3aa5a7e105a01d091e55d73a9958",
+        "timestamp": "0x6abda27f"
+      },
+      "successor": {
+        "hash": "0x1427e3ccf968f0cdc44182dcfa6b51b768a450a9067b5616eba3d83a059aabea",
+        "number": "0x5c169a3",
+        "parentHash": "0x921c5500e1f07bac02a60aab02c77eea0d83656b4a3a883251183e6a1fd7c497",
+        "timestamp": "0x6abda280"
+      },
+      "reads": {
+        "nTBILL/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "7427eb6049a7e8d47aba3f544d3828daa06e12e7f25bc6fdd9940c99b796d502"
+        },
+        "nTBILL/hook()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x7f5a7c7b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000b9b833b35640428e09c2d450f36ac4f91f58cb47"
+        },
+        "nTBILL/authority()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xbf7e214f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000a4f939b5d51157c58ba053275eaf77a782b4996"
+        },
+        "nTBILL/owner()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x8da5cb5b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000008faacdc65de5d78975df4f9dc4b6548979ceb23a"
+        },
+        "nTBILL/hook/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "5db8faa285e079a7fb47879643f6e4ff669d710a3799598e2b9eeeef61110e79"
+        },
+        "nTBILL/authority/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "9d354b61247ff0f3b22b29f27845a6350d4054a088a470e0a4e61a857636676d"
+        },
+        "nTBILL/hook/isPaused()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+              "data": "0xb187bd26"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/hook/authority()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+              "data": "0xbf7e214f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000093786916e1ee5913a45662a5986559f5785a5ba4"
+        },
+        "nTBILL/public_entry": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+              "data": "0x2f47571f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb939d6ba3200000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/public_exit": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+              "data": "0x2f47571f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb918457e6100000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/balanceOf/0x119dd7daff816f29d7ee47596ae5e4bdc4299165": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a08231000000000000000000000000119dd7daff816f29d7ee47596ae5e4bdc4299165"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000033674c2deda"
+        },
+        "nTBILL/recipient/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x000000000000000000000000000000000000dead",
+            "0x5c169a2"
+          ],
+          "code_type": "no runtime code",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "nTBILL/hook/blacklisted/sender": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+              "data": "0xfe575a87000000000000000000000000119dd7daff816f29d7ee47596ae5e4bdc4299165"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/hook/blacklisted/recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+              "data": "0xfe575a87000000000000000000000000000000000000000000000000000000000000dead"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/recipient/canCall_enter": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+              "data": "0xb7009613000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb939d6ba3200000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/recipient/canCall_exit": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+              "data": "0xb7009613000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb918457e6100000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x119dd7daff816f29d7ee47596ae5e4bdc4299165"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/transfer_logs_last_1000_blocks": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getLogs",
+          "params": [
+            {
+              "address": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+              ],
+              "fromBlock": "0x5c165bb",
+              "toBlock": "0x5c169a2"
+            }
+          ],
+          "result": []
+        },
+        "nBASIS/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "12ebc517a942aad28f60f92341c903d536e0e0444d2c7647987e45ad3dbd9334"
+        },
+        "nBASIS/hook()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x7f5a7c7b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000055ae76a7af214dc666ac64bac6c66d72d43aedda"
+        },
+        "nBASIS/authority()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xbf7e214f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000005886a35be0bd4533c2295c0e8083364ab0b27205"
+        },
+        "nBASIS/owner()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x8da5cb5b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000034e8bb9e0fa50d63bfca1d8e83ddba0d9fd5c062"
+        },
+        "nBASIS/hook/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "5db8faa285e079a7fb47879643f6e4ff669d710a3799598e2b9eeeef61110e79"
+        },
+        "nBASIS/authority/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "9d354b61247ff0f3b22b29f27845a6350d4054a088a470e0a4e61a857636676d"
+        },
+        "nBASIS/hook/isPaused()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+              "data": "0xb187bd26"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/hook/authority()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+              "data": "0xbf7e214f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000005886a35be0bd4533c2295c0e8083364ab0b27205"
+        },
+        "nBASIS/public_entry": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+              "data": "0x2f47571f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b39d6ba3200000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/public_exit": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+              "data": "0x2f47571f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b18457e6100000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/balanceOf/0x42b18785ce0aed7bf7ca43a39471ed4c0a3e0bb5": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a0823100000000000000000000000042b18785ce0aed7bf7ca43a39471ed4c0a3e0bb5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000001ef35e79d"
+        },
+        "nBASIS/recipient/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x000000000000000000000000000000000000dead",
+            "0x5c169a2"
+          ],
+          "code_type": "no runtime code",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "nBASIS/hook/blacklisted/sender": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+              "data": "0xfe575a8700000000000000000000000042b18785ce0aed7bf7ca43a39471ed4c0a3e0bb5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/hook/blacklisted/recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+              "data": "0xfe575a87000000000000000000000000000000000000000000000000000000000000dead"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/recipient/canCall_enter": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+              "data": "0xb7009613000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b39d6ba3200000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/recipient/canCall_exit": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+              "data": "0xb7009613000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b18457e6100000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x42b18785ce0aed7bf7ca43a39471ed4c0a3e0bb5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/transfer_logs_last_1000_blocks": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getLogs",
+          "params": [
+            {
+              "address": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+              ],
+              "fromBlock": "0x5c165bb",
+              "toBlock": "0x5c169a2"
+            }
+          ],
+          "result": []
+        },
+        "rooster-v2/quoter_factory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0xc45a0155"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000001eb9822d5176c88b1d4eec353fa956c896d77df9"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x400da030b1d6722c6430e12b78ca7d34b77a997b",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "8530a86a7a690c2f87ce528cd7ac0d432af6da67779cb17471c0a14e2c8880fa"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a08231000000000000000000000000400da030b1d6722c6430e12b78ca7d34b77a997b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000f2e8a1"
+        },
+        "dex-input/0xdddd73f5df1f0dc31373357beac77545dc5a6f3f/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a08231000000000000000000000000400da030b1d6722c6430e12b78ca7d34b77a997b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000133aecf"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x400da030b1d6722c6430e12b78ca7d34b77a997b",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x400da030b1d6722c6430e12b78ca7d34b77a997b",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000400da030b1d6722c6430e12b78ca7d34b77a997b"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x400da030b1d6722c6430e12b78ca7d34b77a997b",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000005acad91"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000e78d300000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005f5e1000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000a8dcd600000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000a9cba300000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x400da030b1d6722c6430e12b78ca7d34b77a997b/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x400da030b1d6722c6430e12b78ca7d34b77a997b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "5725b04cf55de157c5822e7cea90626409ead19e5ceb114222db302f23808759"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a0823100000000000000000000000026bece28f4cc08730d7b1c103a0a3ce13daa5968"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000001f9a53a"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a0823100000000000000000000000026bece28f4cc08730d7b1c103a0a3ce13daa5968"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000007aa634"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/coin_0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/coin_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+              "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000ea070"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+              "data": "0x5e0d443f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000005f5e100"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000001f96509"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+              "data": "0x5e0d443f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000003b9aca00"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000001f94b37"
+        },
+        "nTBILL/pool/0x26bece28f4cc08730d7b1c103a0a3ce13daa5968/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "cde6ca641641bb97d684988c4ea61441bb592cb5464bbbf6c0a136c6a6a499ff"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a0823100000000000000000000000047bd9cf576c6a0cc6667b1a112b01625909cbfe3"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000038c02"
+        },
+        "dex-input/0x593ccca4c4bf58b7526a4c164ceef4003c6388db/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x593ccca4c4bf58b7526a4c164ceef4003c6388db",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x593ccca4c4bf58b7526a4c164ceef4003c6388db",
+              "data": "0x70a0823100000000000000000000000047bd9cf576c6a0cc6667b1a112b01625909cbfe3"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000086d87"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000047bd9cf576c6a0cc6667b1a112b01625909cbfe3"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000001ff8561"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000003744f00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005f5e1000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000003744f00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000003744f00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x4b127c92456c76db6089274312988ecb00104641",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "2be69b1206b12504e7018bb490eff145394494d79fa8cc5b552316bc76a2adce"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a082310000000000000000000000004b127c92456c76db6089274312988ecb00104641"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000018c0dea"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a082310000000000000000000000004b127c92456c76db6089274312988ecb00104641"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000c2d13da"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/tokenA": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x4b127c92456c76db6089274312988ecb00104641",
+              "data": "0x0fc63d10"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/tokenB": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x4b127c92456c76db6089274312988ecb00104641",
+              "data": "0x5f64b55b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x4b127c92456c76db6089274312988ecb00104641",
+              "data": "0x1865c57d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000c2d13da00000000000000000000000000000000000000000000000000000000018c0de80000000000000000000000000000000000000000000000000000000019a1c9290000000000000000000000000000000000000000000000000000000019502a44000000000000000000000000000000000000000000000000000000006abbfbbd0000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000450000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/pool/0x4b127c92456c76db6089274312988ecb00104641/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x4b127c92456c76db6089274312988ecb00104641"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x098dbf700286109e3bcd1465f00a6554488ec148",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "c2691ce1cf18ac6f1a0acd6183ce725767a25ebbb0ceee762fd4e653ae499d96"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a08231000000000000000000000000098dbf700286109e3bcd1465f00a6554488ec148"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000491e75e"
+        },
+        "dex-input/0xea237441c92cae6fc17caaf9a7acb3f953be4bd1/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1",
+              "data": "0x70a08231000000000000000000000000098dbf700286109e3bcd1465f00a6554488ec148"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000006f530fab832ab546e5"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/tokenA": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x098dbf700286109e3bcd1465f00a6554488ec148",
+              "data": "0x0fc63d10"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/tokenB": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x098dbf700286109e3bcd1465f00a6554488ec148",
+              "data": "0x5f64b55b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x098dbf700286109e3bcd1465f00a6554488ec148",
+              "data": "0x1865c57d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000491e75e00000000000000000000000000000000000000000000006f530fab832ab546e5fffffffffffffffffffffffffffffffffffffffffffffffffffffffdd5ad4758fffffffffffffffffffffffffffffffffffffffffffffffffffffffdd5ad64f60000000000000000000000000000000000000000000000000000000069c9d900ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa3000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000340000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/pool/0x098dbf700286109e3bcd1465f00a6554488ec148/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x098dbf700286109e3bcd1465f00a6554488ec148"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xff15d482b44c9740048b5b79b05339cf40a5a7a5",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "46e99c4152605b6c4a9c5e533b8959041090b31fc16ed5a24c5718ed6257eee4"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a08231000000000000000000000000ff15d482b44c9740048b5b79b05339cf40a5a7a5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000011a903a"
+        },
+        "dex-input/0x39d1f90ef89c52dda276194e9a832b484ee45574/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x39d1f90ef89c52dda276194e9a832b484ee45574",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x39d1f90ef89c52dda276194e9a832b484ee45574",
+              "data": "0x70a08231000000000000000000000000ff15d482b44c9740048b5b79b05339cf40a5a7a5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000459c77984e9c"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/tokenA": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xff15d482b44c9740048b5b79b05339cf40a5a7a5",
+              "data": "0x0fc63d10"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000039d1f90ef89c52dda276194e9a832b484ee45574"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/tokenB": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xff15d482b44c9740048b5b79b05339cf40a5a7a5",
+              "data": "0x5f64b55b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xff15d482b44c9740048b5b79b05339cf40a5a7a5",
+              "data": "0x1865c57d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000459c77984e9a00000000000000000000000000000000000000000000000000000000011a902afffffffffffffffffffffffffffffffffffffffffffffffffffffffa1054c268fffffffffffffffffffffffffffffffffffffffffffffffffffffffa101745e3000000000000000000000000000000000000000000000000000000006a892e01ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nTBILL/pool/0xff15d482b44c9740048b5b79b05339cf40a5a7a5/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0xff15d482b44c9740048b5b79b05339cf40a5a7a5"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "f443c0a700f2e509509b13a04231ed932e2b3a4d56afe9fad0f3eeb8c8c1484c"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a082310000000000000000000000000aa5e0458d48cc7911381a66b9f227c64983b2c4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000037c1f94"
+        },
+        "dex-input/0x78add880a697070c1e765ac44d65323a0dcce913/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x78add880a697070c1e765ac44d65323a0dcce913",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x78add880a697070c1e765ac44d65323a0dcce913",
+              "data": "0x70a082310000000000000000000000000aa5e0458d48cc7911381a66b9f227c64983b2c4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000003a3a05a"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000078add880a697070c1e765ac44d65323a0dcce913"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000aa5e0458d48cc7911381a66b9f227c64983b2c4"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000050db37f"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x5702821100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000e9b1600000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x5702821100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005f5e1000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000235ddd900000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x5702821100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000340382700000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x90b719e4663afea960195d7796605e1a9997c1e1",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "712ce4240ef4d276cdbe94dd6a725526e68de9ddbaad11ae524cd7bccb5adb98"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x70a0823100000000000000000000000090b719e4663afea960195d7796605e1a9997c1e1"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000008e10e"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1",
+              "data": "0x70a0823100000000000000000000000090b719e4663afea960195d7796605e1a9997c1e1"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000dc390e9203a3891d"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x90b719e4663afea960195d7796605e1a9997c1e1",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x90b719e4663afea960195d7796605e1a9997c1e1",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000090b719e4663afea960195d7796605e1a9997c1e1"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x90b719e4663afea960195d7796605e1a9997c1e1",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000163b65ab7e9"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a76400000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000038dc00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000056bc75e2d631000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000086c5d00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003635c9adc5dea000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000008814800000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nTBILL/pool/0x90b719e4663afea960195d7796605e1a9997c1e1/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x90b719e4663afea960195d7796605e1a9997c1e1"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "49abb641587f9781515e03e8374a62fb036632f7e6e9c0c8af2082d91b9ecba5"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a082310000000000000000000000000a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000003230c6a2"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a082310000000000000000000000000a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000032920fe7"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000001bf65839e"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000e4d2600000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005f5e1000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000005841c7e00000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000002f93d8e600000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xe1c93c26393330116163539402c9434f878af86d",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "c310b774d3a544300e2022c39a4fd7463289ebb155132782248bcabb8edc2973"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a08231000000000000000000000000e1c93c26393330116163539402c9434f878af86d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000009fa542b"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a08231000000000000000000000000e1c93c26393330116163539402c9434f878af86d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000042c388b"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/coin_0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe1c93c26393330116163539402c9434f878af86d",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/coin_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe1c93c26393330116163539402c9434f878af86d",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe1c93c26393330116163539402c9434f878af86d",
+              "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000e4332"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe1c93c26393330116163539402c9434f878af86d",
+              "data": "0x5e0d443f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000005f5e100"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000589bbc6"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe1c93c26393330116163539402c9434f878af86d",
+              "data": "0x5e0d443f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000003b9aca00"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000009f9450d"
+        },
+        "nBASIS/pool/0xe1c93c26393330116163539402c9434f878af86d/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0xe1c93c26393330116163539402c9434f878af86d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "1d7bf9a9f14ca3a2a9d8d08ba12dc04780033d7cef939848140ce62b21e882aa"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a08231000000000000000000000000adb1ba2465cb379c17e88384c221bfb9ef17eb2b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000670c234"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a08231000000000000000000000000adb1ba2465cb379c17e88384c221bfb9ef17eb2b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000017a5b8d2"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/tokenA": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b",
+              "data": "0x0fc63d10"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/tokenB": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b",
+              "data": "0x5f64b55b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b",
+              "data": "0x1865c57d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000670c2340000000000000000000000000000000000000000000000000000000017a5b8d2ffffffffffffffffffffffffffffffffffffffffffffffffffffffffd782f529ffffffffffffffffffffffffffffffffffffffffffffffffffffffffd8f274f7000000000000000000000000000000000000000000000000000000006abbcd7bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000170000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/pool/0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x66c150cf17fab06dd36018e9364436d6da6a5462",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "23b07cfc4b13f4b0f49826ec0eb08c0bbad8e8421572f016f630dafbb366738a"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a0823100000000000000000000000066c150cf17fab06dd36018e9364436d6da6a5462"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000a0cad"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x593ccca4c4bf58b7526a4c164ceef4003c6388db",
+              "data": "0x70a0823100000000000000000000000066c150cf17fab06dd36018e9364436d6da6a5462"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000006ce5f"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x66c150cf17fab06dd36018e9364436d6da6a5462",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x66c150cf17fab06dd36018e9364436d6da6a5462",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000066c150cf17fab06dd36018e9364436d6da6a5462"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x66c150cf17fab06dd36018e9364436d6da6a5462",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000184426"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000078e980000000000000000000000000000000000000000000000000000000000000bb8"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005f5e1000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000a00510000000000000000000000000000000000000000000000000000000000000bb8"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000593ccca4c4bf58b7526a4c164ceef4003c6388db00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000a07590000000000000000000000000000000000000000000000000000000000000bb8"
+        },
+        "nBASIS/pool/0x66c150cf17fab06dd36018e9364436d6da6a5462/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x66c150cf17fab06dd36018e9364436d6da6a5462"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x0355da9193db81d47427ed234c55f82d91b7168d",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "fe75b97a49921d4ff31a1b1f562d5961f68e522a33ca2bc388f62c69ab2974e1"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a082310000000000000000000000000355da9193db81d47427ed234c55f82d91b7168d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000020ae4f"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x39d1f90ef89c52dda276194e9a832b484ee45574",
+              "data": "0x70a082310000000000000000000000000355da9193db81d47427ed234c55f82d91b7168d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000027470761c227"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/tokenA": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0355da9193db81d47427ed234c55f82d91b7168d",
+              "data": "0x0fc63d10"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/tokenB": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0355da9193db81d47427ed234c55f82d91b7168d",
+              "data": "0x5f64b55b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000039d1f90ef89c52dda276194e9a832b484ee45574"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0355da9193db81d47427ed234c55f82d91b7168d",
+              "data": "0x1865c57d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000020ae4f000000000000000000000000000000000000000000000000000027470761c22700000000000000000000000000000000000000000000000000000005db797d8200000000000000000000000000000000000000000000000000000005f2a6c1e0000000000000000000000000000000000000000000000000000000006a8ea3d100000000000000000000000000000000000000000000000000000000000000ff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/pool/0x0355da9193db81d47427ed234c55f82d91b7168d/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0x0355da9193db81d47427ed234c55f82d91b7168d"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/code": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "baeb2943b19532561f6a4bf84fa634f9a54d5a8d458c620a82c1d4a06310aab5"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x70a08231000000000000000000000000fd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000028ddc"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/other_inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1",
+              "data": "0x70a08231000000000000000000000000fd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000003637558a186afd06"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd100000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000fd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000008ee9ef6d57"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd100000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a76400000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000502c00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/quote_100": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd100000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000056bc75e2d631000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000026fbb00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/quote_1000": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000ea237441c92cae6fc17caaf9a7acb3f953be4bd100000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003635c9adc5dea000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000027d1a00000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "nBASIS/pool/0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da/transfer_to_test_recipient": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000000000001",
+              "from": "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nTBILL/totalSupply()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x18160ddd"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000037a5dcfa0ff"
+        },
+        "nTBILL/decimals()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/hook_blacklisted_sender": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+              "data": "0xfe575a870000000000000000000000000aa5e0458d48cc7911381a66b9f227c64983b2c4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/totalSupply()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x18160ddd"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000abd71b091"
+        },
+        "nBASIS/decimals()": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/hook_blacklisted_sender": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+              "data": "0xfe575a870000000000000000000000000a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/quote_200": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f00000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bebc2000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000ae4b8a400000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "nTBILL/pool/0x0aa5e0458d48cc7911381a66b9f227c64983b2c4/transfer_quoted_output": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000003403827",
+              "from": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "nBASIS/pool/0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac/transfer_quoted_output": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000000000000000000000000000000000000ae4b8a4",
+              "from": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/coin_0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x217cb7f898f3377c83583e8d742a8183778dff45",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/coin_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x217cb7f898f3377c83583e8d742a8183778dff45",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000222365ef19f7947e5484218551b56bb3965aa7af"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a08231000000000000000000000000217cb7f898f3377c83583e8d742a8183778dff45"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000004f97c1e"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x217cb7f898f3377c83583e8d742a8183778dff45",
+              "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f4240"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000f3cd7"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/transfer_1_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000000000000000000000000000000000000000f3cd7",
+              "from": "0x217cb7f898f3377c83583e8d742a8183778dff45"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/quote_205": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x217cb7f898f3377c83583e8d742a8183778dff45",
+              "data": "0x5e0d443f00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c380d40"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000004f6f27a"
+        },
+        "pUSD/0x217cb7f898f3377c83583e8d742a8183778dff45/transfer_205_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000004f6f27a",
+              "from": "0x217cb7f898f3377c83583e8d742a8183778dff45"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/coin_0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2124959eed1331a0a0e527e16cda06e7068a7854",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/coin_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2124959eed1331a0a0e527e16cda06e7068a7854",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000078add880a697070c1e765ac44d65323a0dcce913"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a082310000000000000000000000002124959eed1331a0a0e527e16cda06e7068a7854"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000006f4bcfe"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2124959eed1331a0a0e527e16cda06e7068a7854",
+              "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f4240"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000f4bc3"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/transfer_1_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000000000000000000000000000000000000000f4bc3",
+              "from": "0x2124959eed1331a0a0e527e16cda06e7068a7854"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/quote_205": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2124959eed1331a0a0e527e16cda06e7068a7854",
+              "data": "0x5e0d443f00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c380d40"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000006f43b04"
+        },
+        "pUSD/0x2124959eed1331a0a0e527e16cda06e7068a7854/transfer_205_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000000000006f43b04",
+              "from": "0x2124959eed1331a0a0e527e16cda06e7068a7854"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x78add880a697070c1e765ac44d65323a0dcce913/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000008da510f7c1923e8f6b632900c27fb8352b296ca8"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x8da510f7c1923e8f6b632900c27fb8352b296ca8",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000078add880a697070c1e765ac44d65323a0dcce913"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x8da510f7c1923e8f6b632900c27fb8352b296ca8",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "pUSD/0x78add880a697070c1e765ac44d65323a0dcce913/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x78add880a697070c1e765ac44d65323a0dcce913",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a082310000000000000000000000008da510f7c1923e8f6b632900c27fb8352b296ca8"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000003c985bed"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x8da510f7c1923e8f6b632900c27fb8352b296ca8",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000231a281644"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x5702821100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000f4df500000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/transfer_1_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000000000000000000000000000000000000000f4df5",
+              "from": "0x8da510f7c1923e8f6b632900c27fb8352b296ca8"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/quote_205": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x5702821100000000000000000000000078add880a697070c1e765ac44d65323a0dcce913000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c380d400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000c3d304b00000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "pUSD/0x8da510f7c1923e8f6b632900c27fb8352b296ca8/transfer_205_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000000000000000000000000000000000000c3d304b",
+              "from": "0x8da510f7c1923e8f6b632900c27fb8352b296ca8"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x222365ef19f7947e5484218551b56bb3965aa7af/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000222365ef19f7947e5484218551b56bb3965aa7af000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000b8de5d1054fbe4a9ba00116bb94946806d33afcc"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000222365ef19f7947e5484218551b56bb3965aa7af"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "pUSD/0x222365ef19f7947e5484218551b56bb3965aa7af/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x222365ef19f7947e5484218551b56bb3965aa7af",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a08231000000000000000000000000b8de5d1054fbe4a9ba00116bb94946806d33afcc"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000022fa3907"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000013ff6228cf"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000222365ef19f7947e5484218551b56bb3965aa7af000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000f415100000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/transfer_1_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000000000000000000000000000000000000000f4151",
+              "from": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/quote_205": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000222365ef19f7947e5484218551b56bb3965aa7af000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c380d400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000c2fe5d700000000000000000000000000000000000000000000000000000000000003e8"
+        },
+        "pUSD/0xb8de5d1054fbe4a9ba00116bb94946806d33afcc/transfer_205_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000000000000000000000000000000000000c2fe5d7",
+              "from": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0xda6087e69c51e7d31b6dbad276a3c44703dfdcad/factory_pair": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x1eb9822d5176c88b1d4eec353fa956c896d77df9",
+              "data": "0xd9a641e1000000000000000000000000da6087e69c51e7d31b6dbad276a3c44703dfdcad000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000062b654db9d051d8f60bcca1eabbd6ec99fa9fecd"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/token0": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd",
+              "data": "0x0dfe1681"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000da6087e69c51e7d31b6dbad276a3c44703dfdcad"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/token1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd",
+              "data": "0xd21220a7"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f"
+        },
+        "pUSD/0xda6087e69c51e7d31b6dbad276a3c44703dfdcad/decimals": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xda6087e69c51e7d31b6dbad276a3c44703dfdcad",
+              "data": "0x313ce567"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/inventory": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0x70a0823100000000000000000000000062b654db9d051d8f60bcca1eabbd6ec99fa9fecd"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000002e492636"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/active_liquidity": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd",
+              "data": "0x1a686502"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000001c64fe4870"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/quote_1": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000da6087e69c51e7d31b6dbad276a3c44703dfdcad000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000000f47f500000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/transfer_1_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead00000000000000000000000000000000000000000000000000000000000f47f5",
+              "from": "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/quote_205": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x00ca9d7420f7a3b72dcdc131f98f9d75b4fa3c46",
+              "data": "0x57028211000000000000000000000000da6087e69c51e7d31b6dbad276a3c44703dfdcad000000000000000000000000dddd73f5df1f0dc31373357beac77545dc5a6f3f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c380d400000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000c37639300000000000000000000000000000000000000000000000000000000000001f4"
+        },
+        "pUSD/0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd/transfer_205_quote": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f",
+              "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead000000000000000000000000000000000000000000000000000000000c376393",
+              "from": "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "rooster-v2/nTBILL/swap_plugin/address": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+              "data": "0xef01df4f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000a960534c1ba8ac037ed02ea66d83eb0d62b293e9"
+        },
+        "rooster-v2/nTBILL/swap_plugin/pool_state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+              "data": "0xe76c01e4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000fbf9762c1e4beb391681cca6fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffec200000000000000000000000000000000000000000000000000000000000001f400000000000000000000000000000000000000000000000000000000000000c300000000000000000000000000000000000000000000000000000000000000c80000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "rooster-v2/nTBILL/swap_plugin/runtime": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xa960534c1ba8ac037ed02ea66d83eb0d62b293e9",
+            "0x5c169a2"
+          ],
+          "sha256": "d1be84e5c5fe92bff7e5bba0b5de0cb0caaaabdc492c039e081d48060f9bffff",
+          "code_type": "contract code",
+          "normalized_sha256": "fdc8ab1f4857db89f4189c8b12dfedfb86acd0e9934c5d8c2a912d3aabb9c0a2",
+          "pool_literal": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+          "literal_count": 8
+        },
+        "rooster-v2/nBASIS/swap_plugin/address": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+              "data": "0xef01df4f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000008ac9821c678af2ae9a5ac19b9c8df4774e5230f5"
+        },
+        "rooster-v2/nBASIS/swap_plugin/pool_state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+              "data": "0xe76c01e4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x00000000000000000000000000000000000000010858debaab7fc6f8459b3eb7000000000000000000000000000000000000000000000000000000000000028100000000000000000000000000000000000000000000000000000000000001f400000000000000000000000000000000000000000000000000000000000000c300000000000000000000000000000000000000000000000000000000000000c80000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "rooster-v2/nBASIS/swap_plugin/runtime": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x8ac9821c678af2ae9a5ac19b9c8df4774e5230f5",
+            "0x5c169a2"
+          ],
+          "sha256": "f0e50004e2d3c7cf7b2091b6b43a5b6689f359042b137bd1b358021d9f17b068",
+          "code_type": "contract code",
+          "normalized_sha256": "fdc8ab1f4857db89f4189c8b12dfedfb86acd0e9934c5d8c2a912d3aabb9c0a2",
+          "pool_literal": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+          "literal_count": 8
+        },
+        "rooster-v2/pUSD/swap_plugin/address": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+              "data": "0xef01df4f"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000005fd114d672817bc2017494c1836ec1618ba8ae93"
+        },
+        "rooster-v2/pUSD/swap_plugin/pool_state": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+              "data": "0xe76c01e4"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000fffb86d7d43097699ec96f01fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe00000000000000000000000000000000000000000000000000000000000003e800000000000000000000000000000000000000000000000000000000000000c300000000000000000000000000000000000000000000000000000000000000c80000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "rooster-v2/pUSD/swap_plugin/runtime": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x5fd114d672817bc2017494c1836ec1618ba8ae93",
+            "0x5c169a2"
+          ],
+          "sha256": "6c3f534fca266ab803ed83b71f23f40c789977d216b13f5ad765f6af7d3dcff6",
+          "code_type": "contract code",
+          "normalized_sha256": "fdc8ab1f4857db89f4189c8b12dfedfb86acd0e9934c5d8c2a912d3aabb9c0a2",
+          "pool_literal": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+          "literal_count": 8
+        }
+      }
+    }
+  },
+  "nest_sources": {
+    "nTBILL": {
+      "share": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+        "name": "BoringVault",
+        "fully_verified": false,
+        "source_utf8_sha256": "b2b15c00a2bfa88b916a510ccaa46c004496a1529967419c231c43b54bf47563",
+        "deployed_bytecode_sha256": "7427eb6049a7e8d47aba3f544d3828daa06e12e7f25bc6fdd9940c99b796d502"
+      },
+      "hook": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0xb9b833b35640428e09c2d450f36ac4f91f58cb47",
+        "name": "BlacklistHook",
+        "fully_verified": true,
+        "source_utf8_sha256": "940aa8369a7795149e7116d82af2fb59abcc2efbcb8899ac071ded4a8f86c472",
+        "deployed_bytecode_sha256": "5db8faa285e079a7fb47879643f6e4ff669d710a3799598e2b9eeeef61110e79"
+      },
+      "authority": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0x0a4f939b5d51157c58ba053275eaf77a782b4996",
+        "name": "RolesAuthority",
+        "fully_verified": true,
+        "source_utf8_sha256": "51040c1f37851e8fdf1bc900f50231783bd485b00a9658420c55e75b0f0cfd9b",
+        "deployed_bytecode_sha256": "9d354b61247ff0f3b22b29f27845a6350d4054a088a470e0a4e61a857636676d"
+      },
+      "dexscreener": {
+        "url": "https://api.dexscreener.com/token-pairs/v1/plume/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+        "pair_count": 0
+      },
+      "geckoterminal": {
+        "url": "https://api.geckoterminal.com/api/v2/networks/plume-mainnet/tokens/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9/pools",
+        "http_status": 404,
+        "status": "incorrect network slug (404)"
+      },
+      "pool_search": {
+        "url": "https://api.geckoterminal.com/api/v2/networks/plume-network/tokens/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9/pools",
+        "candidates": [
+          {
+            "pool": "0x400da030b1d6722c6430e12b78ca7d34b77a997b",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0x26bece28f4cc08730d7b1c103a0a3ce13daa5968",
+            "dex_index_label": "curve-plume",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0x47bd9cf576c6a0cc6667b1a112b01625909cbfe3",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0x593ccca4c4bf58b7526a4c164ceef4003c6388db"
+          },
+          {
+            "pool": "0x4b127c92456c76db6089274312988ecb00104641",
+            "dex_index_label": "rooster-protocol",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0x098dbf700286109e3bcd1465f00a6554488ec148",
+            "dex_index_label": "rooster-protocol",
+            "other_token": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+          },
+          {
+            "pool": "0xff15d482b44c9740048b5b79b05339cf40a5a7a5",
+            "dex_index_label": "rooster-protocol",
+            "other_token": "0x39d1f90ef89c52dda276194e9a832b484ee45574"
+          },
+          {
+            "pool": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0x78add880a697070c1e765ac44d65323a0dcce913"
+          },
+          {
+            "pool": "0x90b719e4663afea960195d7796605e1a9997c1e1",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+          }
+        ]
+      }
+    },
+    "nBASIS": {
+      "share": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0x11113ff3a60c2450f4b22515cb760417259ee94b",
+        "name": "BoringVault",
+        "fully_verified": false,
+        "source_utf8_sha256": "b2b15c00a2bfa88b916a510ccaa46c004496a1529967419c231c43b54bf47563",
+        "deployed_bytecode_sha256": "12ebc517a942aad28f60f92341c903d536e0e0444d2c7647987e45ad3dbd9334"
+      },
+      "hook": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0x55ae76a7af214dc666ac64bac6c66d72d43aedda",
+        "name": "BlacklistHook",
+        "fully_verified": true,
+        "source_utf8_sha256": "940aa8369a7795149e7116d82af2fb59abcc2efbcb8899ac071ded4a8f86c472",
+        "deployed_bytecode_sha256": "5db8faa285e079a7fb47879643f6e4ff669d710a3799598e2b9eeeef61110e79"
+      },
+      "authority": {
+        "url": "https://explorer.plume.org/api/v2/smart-contracts/0x5886a35be0bd4533c2295c0e8083364ab0b27205",
+        "name": "RolesAuthority",
+        "fully_verified": true,
+        "source_utf8_sha256": "51040c1f37851e8fdf1bc900f50231783bd485b00a9658420c55e75b0f0cfd9b",
+        "deployed_bytecode_sha256": "9d354b61247ff0f3b22b29f27845a6350d4054a088a470e0a4e61a857636676d"
+      },
+      "dexscreener": {
+        "url": "https://api.dexscreener.com/token-pairs/v1/plume/0x11113ff3a60c2450f4b22515cb760417259ee94b",
+        "pair_count": 0
+      },
+      "geckoterminal": {
+        "url": "https://api.geckoterminal.com/api/v2/networks/plume-mainnet/tokens/0x11113ff3a60c2450f4b22515cb760417259ee94b/pools",
+        "http_status": 404,
+        "status": "incorrect network slug (404)"
+      },
+      "pool_search": {
+        "url": "https://api.geckoterminal.com/api/v2/networks/plume-network/tokens/0x11113ff3a60c2450f4b22515cb760417259ee94b/pools",
+        "candidates": [
+          {
+            "pool": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0xe1c93c26393330116163539402c9434f878af86d",
+            "dex_index_label": "curve-plume",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0xadb1ba2465cb379c17e88384c221bfb9ef17eb2b",
+            "dex_index_label": "rooster-protocol",
+            "other_token": "0xdddd73f5df1f0dc31373357beac77545dc5a6f3f"
+          },
+          {
+            "pool": "0x66c150cf17fab06dd36018e9364436d6da6a5462",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0x593ccca4c4bf58b7526a4c164ceef4003c6388db"
+          },
+          {
+            "pool": "0x0355da9193db81d47427ed234c55f82d91b7168d",
+            "dex_index_label": "rooster-protocol",
+            "other_token": "0x39d1f90ef89c52dda276194e9a832b484ee45574"
+          },
+          {
+            "pool": "0xfd058d33ddaa66ee4d3b1f84cf1a1ad0b628d1da",
+            "dex_index_label": "rooster-protocol-v2",
+            "other_token": "0xea237441c92cae6fc17caaf9a7acb3f953be4bd1"
+          }
+        ]
+      },
+      "settlement_token_pool_discovery": {
+        "url": "https://api.geckoterminal.com/api/v2/networks/plume-network/tokens/0xdddd73f5df1f0dc31373357beac77545dc5a6f3f/pools",
+        "pools": [
+          "0x217cb7f898f3377c83583e8d742a8183778dff45",
+          "0x2124959eed1331a0a0e527e16cda06e7068a7854",
+          "0x8da510f7c1923e8f6b632900c27fb8352b296ca8",
+          "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+          "0x62b654db9d051d8f60bcca1eabbd6ec99fa9fecd"
+        ]
+      }
+    }
+  },
+  "nest_discovery": {
+    "nTBILL": {
+      "holder_index_url": "https://explorer.plume.org/api/v2/tokens/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9/holders",
+      "selected_sender": "0x119dd7daff816f29d7ee47596ae5e4bdc4299165",
+      "test_recipient": "0x000000000000000000000000000000000000dead"
+    },
+    "nBASIS": {
+      "holder_index_url": "https://explorer.plume.org/api/v2/tokens/0x11113ff3a60c2450f4b22515cb760417259ee94b/holders",
+      "selected_sender": "0x42b18785ce0aed7bf7ca43a39471ed4c0a3e0bb5",
+      "test_recipient": "0x000000000000000000000000000000000000dead"
+    }
+  },
+  "rooster_swap_plugin": {
+    "pools": {
+      "nTBILL": {
+        "pool": "0x0aa5e0458d48cc7911381a66b9f227c64983b2c4",
+        "plugin": "0xa960534c1ba8ac037ed02ea66d83eb0d62b293e9",
+        "substitutions": 8
+      },
+      "nBASIS": {
+        "pool": "0x0a3951519c8c3b15a65e42562ac8ab5071b7a5ac",
+        "plugin": "0x8ac9821c678af2ae9a5ac19b9c8df4774e5230f5",
+        "substitutions": 8
+      },
+      "pUSD": {
+        "pool": "0xb8de5d1054fbe4a9ba00116bb94946806d33afcc",
+        "plugin": "0x5fd114d672817bc2017494c1836ec1618ba8ae93",
+        "substitutions": 8
+      }
+    },
+    "normalized_code_rule": "Replace each exact 20-byte pool address with zero bytes of the same length in pinned runtime code.",
+    "verified_twin": {
+      "url": "https://explorer.plume.org/api/v2/smart-contracts/0xa960534c1ba8ac037ed02ea66d83eb0d62b293e9",
+      "name": "AlgebraLimitOrderPlugin",
+      "deployed_bytecode_sha256": "d1be84e5c5fe92bff7e5bba0b5de0cb0caaaabdc492c039e081d48060f9bffff",
+      "source_utf8_sha256": "da1578a30cc51fda142cb10a1f25210edbd7c927fc317e69594080959e84e9d1",
+      "fully_verified": false
+    },
+    "normalized_sha256": "fdc8ab1f4857db89f4189c8b12dfedfb86acd0e9934c5d8c2a912d3aabb9c0a2"
+  }
+}

@@ -6,13 +6,15 @@ import json
 from pathlib import Path
 
 if __package__:
-    from .holder_audit import balance, pinned_read
+    from .fetch_evm import ANCHORAGE, CHAINS, CUTOFF, FRAX_BUIDL, FRAX_USTB, FRXUSD, USDTB, balance
+    from .holder_audit import DATE, USDC, pinned_read, validate_pin
+    from .review_evidence import abi_words
 else:
-    from holder_audit import balance, pinned_read
+    from fetch_evm import ANCHORAGE, CHAINS, CUTOFF, FRAX_BUIDL, FRAX_USTB, FRXUSD, USDTB, balance
+    from holder_audit import DATE, USDC, pinned_read, validate_pin
+    from review_evidence import abi_words
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE = "2026-09-30"
-CUTOFF = 1790812799
 THRESHOLD = D("0.05")
 ZERO = D(0)
 DUST_FEE_PIPS = 100_000  # 10% in parts per million
@@ -111,11 +113,6 @@ def load_evidence(directory):
     def load(name):
         return json.loads((directory / name).read_text(), parse_float=D)
 
-    if __package__:
-        from .holder_audit import code_read_type
-    else:
-        from holder_audit import code_read_type
-
     facts = load(f"primary-transcriptions-{DATE}.json")
     ustb_history = load(f"superstate-ustb-{DATE}.json")["historical_data"]
     ondo_history = load(f"ondo-ousg-{DATE}.json")
@@ -124,42 +121,39 @@ def load_evidence(directory):
     chains = rpc["chains"]
     if facts["date"] != DATE or rpc["cutoff"] != CUTOFF:
         raise ValueError("mixed snapshot dates")
+    for capture in chains.values():
+        validate_pin(capture)
 
     def result(chain, label):
-        capture = chains[chain]
-        row = capture["reads"][label]
-        block, successor = capture["block"], capture["successor"]
-        if (
-            row["params"][-1] != block["number"]
-            or not int(block["timestamp"], 16) <= CUTOFF < int(successor["timestamp"], 16)
-            or successor["parentHash"] != block["hash"]
-            or int(successor["number"], 16) != int(block["number"], 16) + 1
-        ):
-            raise ValueError(f"read {chain}/{label} is outside the pin")
-        if row["method"] == "eth_getCode":
-            return code_read_type(row)
-        return row["result"]
+        target, *calldata = CHAINS[chain][2][label]
+        method, args = ("eth_call", [{"to": target, "data": calldata[0]}]) if calldata else (
+            "eth_getCode", [target])
+        value = pinned_read(chains[chain], label, method, *args)
+        if value is None:
+            raise ValueError(f"missing pinned read {chain}/{label}")
+        return value
 
     def units(chain, label, scale):
         return D(int(result(chain, label), 16)).scaleb(-int(result(chain, scale), 16))
 
-    def deposit(fund, label, scale, nav):
-        read = chains["ethereum"]["reads"][label]
-        code = chains["ethereum"]["reads"][f"{label}_code"]
-        dest = "0x" + read["params"][0]["data"][-40:]
-        code_type = result("ethereum", f"{label}_code")
-        if code["params"][0].lower() != dest or code_type not in ("contract code", "delegated EOA"):
-            raise ValueError(f"missing verified contract at {dest}")
+    def deposit(fund, label, scale, nav, dest):
         native = units("ethereum", label, scale)
+        code_type = result("ethereum", f"{label}_code")
+        if code_type not in ("contract code", "delegated EOA"):
+            raise ValueError(f"missing verified contract at {dest}")
         return Position(fund, "ethereum", dest, "wrapper_contract", native * nav, native)
 
     ustb_nav, = [D(row["value"]) for row in ustb_history["nav"] if row["date"] == DATE]
     ustb_aum, = [D(row["value"]) for row in ustb_history["aum"] if row["date"] == DATE]
     buidl_nav = D(facts["buidl_nav_usd"])
+    if buidl_nav <= ZERO or ustb_nav <= ZERO:
+        raise ValueError("invalid fund NAV")
     reported_ethereum_usdtb = D(facts["anchorage_ethereum_usdtb_redeemable"])
     ethereum_usdtb = units("ethereum", "usdtb", "usdtb_decimals")
-    def market(token, prefix, balance_read, output_index):
+    def market(token, prefix, balance_read, output_index, expected_coins):
         pool, = load(f"curve-{token}-pool.json")
+        if tuple(coin["address"].lower() for coin in pool["coins"]) != expected_coins:
+            raise ValueError(f"{token} market assets mismatch")
         for index, coin in enumerate(pool["coins"]):
             label = f"{prefix}_coin_{index}"
             call = chains["ethereum"]["reads"][label]["params"][0]
@@ -175,8 +169,9 @@ def load_evidence(directory):
             raise ValueError(f"{token} secondary route has no verified inventory or quote")
         return inventory, quote
 
-    pool_usdtb, pool_quote = market("usdtb", "curve", "curve_usdtb", 1)
-    pool_frxusd, frax_quote = market("frxusd", "curve_frxusd", "curve_frxusd_balance", 0)
+    pool_usdtb, pool_quote = market("usdtb", "curve", "curve_usdtb", 1, (USDC, USDTB))
+    pool_frxusd, frax_quote = market("frxusd", "curve_frxusd", "curve_frxusd_balance", 0, (
+        FRXUSD, "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e"))
     if abs(ethereum_usdtb - reported_ethereum_usdtb) > D(1) or pool_usdtb > ethereum_usdtb:
         raise ValueError("USDtb token supply does not corroborate attestation")
 
@@ -186,11 +181,13 @@ def load_evidence(directory):
         for row in facts["anchorage_reserve_legs"]
     ]
     reserve_total = sum(row.usd for row in reserve)
-    if reserve_total != D(facts["anchorage_total_buidl_usd"]):
+    if (sorted(row.chain for row in reserve) != ["aptos", "avalanche", "bsc", "solana"]
+            or any(row.usd <= 1 for row in reserve)
+            or reserve_total != D(facts["anchorage_total_buidl_usd"])):
         raise ValueError("attested reserve legs do not reconcile")
 
-    buidl_frax = deposit("BUIDL", "frax_buidl", "buidl_decimals", buidl_nav)
-    ustb_frax = deposit("USTB", "frax_ustb", "ustb_decimals", ustb_nav)
+    buidl_frax = deposit("BUIDL", "frax_buidl", "buidl_decimals", buidl_nav, FRAX_BUIDL)
+    ustb_frax = deposit("USTB", "frax_ustb", "ustb_decimals", ustb_nav, FRAX_USTB)
 
     # The platform and USYC totals are rounded publisher disclosures. The
     # transcriptions include a full displayed $0.1B increment as headroom.
@@ -205,14 +202,16 @@ def load_evidence(directory):
 
     usyc_total = D(facts["circle_usyc_display_usd"])
     usyc_headroom = D(facts["circle_rounding_allowance_usd"])
-    usyc_oracle = result("ethereum", "usyc_nav")[2:]
-    usyc_nav = D(int(usyc_oracle[64:128], 16)).scaleb(-int(result("ethereum", "usyc_nav_decimals"), 16))
-    usyc_oracle_updated = int(usyc_oracle[192:256], 16)
-    if not ZERO < usyc_nav or not 0 < usyc_oracle_updated <= CUTOFF:
+    round_id, answer, started_at, usyc_oracle_updated, answered_in_round = abi_words(result("ethereum", "usyc_nav"))
+    usyc_nav = D(answer).scaleb(-int(result("ethereum", "usyc_nav_decimals"), 16))
+    if (not 0 < answer < 2**255 or not 0 < started_at <= usyc_oracle_updated
+            <= int(chains["ethereum"]["block"]["timestamp"], 16)
+            or not 0 < round_id <= answered_in_round):
         raise ValueError("invalid USYC oracle round")
     benji_value = D(facts["franklin_benji_net_assets_usd"])
     filing = load(f"franklin-filing-readback-{DATE}.json")
-    if (filing["report_period"] != DATE or filing["class"] != "C000215714"
+    if (filing["report_period"] != DATE or filing["series"] != "S000067043"
+            or filing["class"] != "C000215714"
             or filing["item_8_share_classes"] != 1
             or D(filing["item_b4_net_assets_usd"]) != benji_value
             or D(filing["item_b5_shares"]) != D(facts["franklin_benji_shares"])):
@@ -249,23 +248,23 @@ def load_evidence(directory):
             chain: {"buidl_native": units(chain, "anchorage_buidl", "buidl_decimals"),
                     "code_present": result(chain, "anchorage_code") in ("contract code", "delegated EOA")}
             for chain in ("bsc", "avalanche")
-            if {"anchorage_buidl", "anchorage_code", "buidl_decimals"} <= chains[chain]["reads"].keys()
         },
     }
     for row in reserve:
         corroboration = observations["anchorage_evm"].get(row.chain)
-        if corroboration and abs(corroboration["buidl_native"] * buidl_nav - row.usd) > D(1):
+        if corroboration and (row.holder.lower() != ANCHORAGE.lower()
+                              or abs(corroboration["buidl_native"] * buidl_nav - row.usd) > D(1)):
             raise ValueError(f"{row.chain} attestation and RPC diverge outside rounding")
     return funds, positions, observations
 
 
 def ousg_model(marks, adjacent, ethereum_native, xrpl_native):
-    if {row["timestamp"] for row in marks} != {
+    if sorted(row["timestamp"] for row in marks) != [
         f"{date}T00:00:00Z" for date in ("2026-09-29", "2026-09-30", "2026-10-01")
-    } or {row["timestamp"] for row in adjacent} != {
+    ] or sorted(row["timestamp"] for row in adjacent) != [
         f"2026-10-0{day}T00:00:00Z" for day in (2, 3, 4)
-    }:
-        raise ValueError("missing OUSG daily marks")
+    ]:
+        raise ValueError("missing or duplicate OUSG daily marks")
     # Ethereum canonical ERC-20 and XRPL direct issuer obligations are distinct
     # by the native-issuance assumption. Wrappers such as rOUSG are omitted.
     prices = [row["asset"]["priceUsd"] for row in marks + adjacent]
@@ -301,12 +300,12 @@ def gated_receipt(capture, report, address, label, selector):
 
 def load_revised_evidence(directory):
     if __package__:
-        from .review_evidence import MIDAS, STBL, observations as review_observations
+        from .review_evidence import MARKET_CONTROLS, MIDAS, STBL, nest_routes, observations as review_observations
         from .holder_audit import (
             USUAL_TREASURY, USYC_BNB_LARGEST, audit_xrpl, load_holders, verify_bnb_discovery, verify_usual,
         )
     else:
-        from review_evidence import MIDAS, STBL, observations as review_observations
+        from review_evidence import MARKET_CONTROLS, MIDAS, STBL, nest_routes, observations as review_observations
         from holder_audit import (
             USUAL_TREASURY, USYC_BNB_LARGEST, audit_xrpl, load_holders, verify_bnb_discovery, verify_usual,
         )
@@ -383,6 +382,19 @@ def load_revised_evidence(directory):
         Position("USTB", "ethereum", MIDAS, "wrapper_contract", midas_usd, midas["native"], dust_only=dust_only),
         Position("OUSG", "ethereum", STBL, "wrapper_contract", stbl_native * ousg_exclusion_nav, stbl_native),
     ])
+    plume = json.loads((directory / MARKET_CONTROLS).read_text())["chains"]["plume"]
+    nest = nest_routes(plume, captures["ustb/plume"])
+    observations["nest_pinned"] = nest
+    for name, route in nest.items():
+        share = route["share"]
+        row, = [row for row in reports["ustb/plume"]["rows"] if row["address"] == share]
+        native = row["native"]
+        usd = native * observations["ustb_nav_usd"]
+        if row["address_type"] != "contract code" or not 0 < usd <= route["share_supply"] / route["quotes"][1]["output"]:
+            raise ValueError(f"Nest share supply does not support the observed USTB allocation: {name}")
+        dust_only = (max(quote["fee_pips"] for quote in route["quotes"].values()) >= DUST_FEE_PIPS
+                     or route["quoted_output_at_small_quote_usd"] < DUST_MIN_QUOTED_USD)
+        revised.append(Position("USTB", "plume", share, "wrapper_contract", usd, native, dust_only=dust_only))
     benji_nav = next(row.supply_floor_usd for row in funds if row.ticker == "BENJI") / observations["benji_shares"]
     exclusion_mark = {
         "buidl/avalanche": D(1),

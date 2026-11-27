@@ -1,0 +1,1375 @@
+{
+  "block": {
+    "hash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+    "number": "0x18e28a9",
+    "parentHash": "0xe462ded73f3e06f54ba5b557c20ff53b43d5d9b1279e45e68dfdb7496177aeba",
+    "timestamp": "0x6abda27f"
+  },
+  "successor": {
+    "hash": "0x41ebfe304393a8d19fb0b8273a5fa88573cc9a1962a6b8645d139a1d4f860edb",
+    "number": "0x18e28aa",
+    "parentHash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+    "timestamp": "0x6abda28b"
+  },
+  "reads": {
+    "frax/buidl/frxUSD()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+          "data": "0x3b1c4f4a"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000cacd6fd266af91b8aed52accc382b4e165586e29"
+    },
+    "frax/buidl/custodianTkn()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+          "data": "0x32d361df"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000007712c34205737192402172409a8f7ccef8aa2aec"
+    },
+    "frax/buidl/frxUSDMinted()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+          "data": "0xce16e3b6"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "frax/buidl/mintCap()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+          "data": "0x76c71ca1"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000"
+    },
+    "frax/buidl/owner()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+          "data": "0x8da5cb5b"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000ffffff4f3bac444b2c0ecf2a1840d018be783937"
+    },
+    "frax/ustb/frxUSD()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+          "data": "0x3b1c4f4a"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000cacd6fd266af91b8aed52accc382b4e165586e29"
+    },
+    "frax/ustb/custodianTkn()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+          "data": "0x32d361df"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000043415eb6ff9db7e26a15b704e7a3edce97d31c4e"
+    },
+    "frax/ustb/frxUSDMinted()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+          "data": "0xce16e3b6"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "frax/ustb/mintCap()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+          "data": "0x76c71ca1"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000422ca8b0a00a425000000"
+    },
+    "frax/ustb/owner()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+          "data": "0x8da5cb5b"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000ffffff4f3bac444b2c0ecf2a1840d018be783937"
+    },
+    "midas/mToken()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0xc3b6f939"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000dd629e5241cbc5919847783e6c96b2de4754e438"
+    },
+    "midas/ustbRedemption()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0xfabe60dc"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000004c21b7577c8fe8b0b0669165ee7c8f67fa1454cf"
+    },
+    "midas/accessControl()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x13007d55"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000312a9d1ff2372ddedcbb21e4b6389afc919ac4b"
+    },
+    "midas/greenlistEnabled()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x105ed2b2"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "midas/paused()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x5c975abb"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "midas/vaultRole()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0xeaf896fd"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x57df534b215589c7ade8c8abe0978debf2ea95cf1d442550f94eec78a69d238e"
+    },
+    "midas/tokensReceiver()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x1fa1e8d4"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d375ca22d63bf0408c5967cc08cc656a76791653"
+    },
+    "mtbill/accessControl()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0x13007d55"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000312a9d1ff2372ddedcbb21e4b6389afc919ac4b"
+    },
+    "mtbill/paused()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0x5c975abb"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "mtbill/totalSupply()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0x18160ddd"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000038025d3ab3d823d3d54f97"
+    },
+    "mtbill/M_TBILL_BURN_OPERATOR_ROLE()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0x60348156"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x82830251f95316fd2426de66b9298a230aae8afa718479a58eb92f667eaa8b2d"
+    },
+    "midas/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000489a797714708cf088d158714a376d8ff740d701"
+    },
+    "mtbill/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d4998cc1ba435298c521f250b81856b1f25c8455"
+    },
+    "stbl/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x64bef4478942d8fd62be281707076442aa2d055e",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000cfeae702a0d93f0fc39be3d45178969751954f7e"
+    },
+    "midas/proxy_admin": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+        "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103",
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000bf25b58cb8dfad688f7bcb2b87d71c23a6600aac"
+    },
+    "stbl/fetchRegistry()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x64bef4478942d8fd62be281707076442aa2d055e",
+          "data": "0xdd0b9ff0"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000a58b634c10df2665a3de1680675d5bb9065847d2"
+    },
+    "stbl/fetchAssetID()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x64bef4478942d8fd62be281707076442aa2d055e",
+          "data": "0x04834711"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "stbl/fetchVaultData()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x64bef4478942d8fd62be281707076442aa2d055e",
+          "data": "0x93adbb8c"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000007c09f9429d8ed00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007c09f9429d8ed00000000000000000000000000000000000000000000000000178de2cc21bc69dc9000000000000000000000000000000000000000000000111a3f037247fed234000000000000000000000000000000000000000000000d55a9ee4980ef14b15800000000000000000000000000000000000000000000001e486f5ac3775dc80000000000000000000000000000000000000000000000001d4d633fa1d24fcb5f5"
+    },
+    "flux/fousg/mintGuardianPaused(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x731f0c2b0000000000000000000000001dd7950c266fb1be96180a8fdb0591f70200e018"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/fousg/borrowGuardianPaused(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x6d154ea50000000000000000000000001dd7950c266fb1be96180a8fdb0591f70200e018"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    "flux/fousg/markets(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x8e8f294b0000000000000000000000001dd7950c266fb1be96180a8fdb0591f70200e018"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000cc47f20295c00000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/fusdc/mintGuardianPaused(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x731f0c2b000000000000000000000000465a5a630482f3abd6d3b84b39b29b07214d19e5"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/fusdc/borrowGuardianPaused(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x6d154ea5000000000000000000000000465a5a630482f3abd6d3b84b39b29b07214d19e5"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/fusdc/markets(address)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x8e8f294b000000000000000000000000465a5a630482f3abd6d3b84b39b29b07214d19e5"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/admin()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0xf851a440"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000002c5898da4df1d45eab2b7b192a361c3b9eb18d9c"
+    },
+    "flux/pauseGuardian()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x24a3d622"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000118919e891d0205a7492650ad32e727617fa9452"
+    },
+    "flux/comptrollerImplementation()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0xbb82aa5e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000dc7b90593cafe7a919d22b903fed21bf27da9719"
+    },
+    "flux/transferGuardianPaused()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0x87f76303"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "flux/seizeGuardianPaused()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x95af143a021df745bc78e845b54591c53a8b3a51",
+          "data": "0xac0b0bb7"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/buidl_i_2/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000034cfac646f301356faa8b21e94227e3583fe3f5f"
+    },
+    "safe/buidl_i_2/VERSION()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+          "data": "0xffa1ad74"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005312e312e31000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/buidl_i_2/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    "safe/buidl_i_2/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 7
+    },
+    "safe/buidl_i_2/modules": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+          "data": "0xcc2f84520000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a"
+        },
+        "0x18e28a9"
+      ],
+      "module_count": 0
+    },
+    "safe/usyc_1/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+    },
+    "safe/usyc_1/VERSION()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+          "data": "0xffa1ad74"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005312e342e31000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/usyc_1/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/usyc_1/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 4
+    },
+    "safe/usyc_1/modules": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+          "data": "0xcc2f84520000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a"
+        },
+        "0x18e28a9"
+      ],
+      "module_count": 0
+    },
+    "safe/ousg_2/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+    },
+    "safe/ousg_2/VERSION()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb",
+          "data": "0xffa1ad74"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005312e342e31000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/ousg_2/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/ousg_2/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 3
+    },
+    "safe/ousg_2/modules": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb",
+          "data": "0xcc2f84520000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a"
+        },
+        "0x18e28a9"
+      ],
+      "module_count": 0
+    },
+    "safe/ousg_3/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x56e60979d5934a05d22606b0455d52f59f20a6a0",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d9db270c1b5e3bd161e8c8503c55ceabee709552"
+    },
+    "safe/ousg_3/VERSION()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x56e60979d5934a05d22606b0455d52f59f20a6a0",
+          "data": "0xffa1ad74"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000005312e332e30000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/ousg_3/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x56e60979d5934a05d22606b0455d52f59f20a6a0",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/ousg_3/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x56e60979d5934a05d22606b0455d52f59f20a6a0",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 4
+    },
+    "safe/ousg_3/modules": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x56e60979d5934a05d22606b0455d52f59f20a6a0",
+          "data": "0xcc2f84520000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a"
+        },
+        "0x18e28a9"
+      ],
+      "module_count": 1
+    },
+    "midas_pool/3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e/getSlot0(bytes32)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+          "data": "0xc815641c3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000036be228714b308847a8aa9ce7b00000000000000000000000000000000000000000000000000000000000138b800000000000000000000000000000000000000000000000000000000003e83e800000000000000000000000000000000000000000000000000000000000c0df0"
+    },
+    "midas_pool/3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e/getLiquidity(bytes32)": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+          "data": "0xfa6793d53852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000004c025a94dbc94859"
+    },
+    "midas_redemption/SUPERSTATE_TOKEN()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x4c21b7577c8fe8b0b0669165ee7c8f67fa1454cf",
+          "data": "0x11e2e8f7"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000043415eb6ff9db7e26a15b704e7a3edce97d31c4e"
+    },
+    "midas_redemption/USDC()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x4c21b7577c8fe8b0b0669165ee7c8f67fa1454cf",
+          "data": "0x89a30271"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    },
+    "midas_role/vault_burn": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0312a9d1ff2372ddedcbb21e4b6389afc919ac4b",
+          "data": "0x91d1485482830251f95316fd2426de66b9298a230aae8afa718479a58eb92f667eaa8b2d000000000000000000000000569d7dccbf6923350521ecbc28a555a500c4f0ec"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    "midas/proxyAdminOwner": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xbf25b58cb8dfad688f7bcb2b87d71c23a6600aac",
+          "data": "0x8da5cb5b"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000e3eee3e0d2398799c884a47fc40c029c8e241852"
+    },
+    "frax/frxUSD_supply": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xcacd6fd266af91b8aed52accc382b4e165586e29",
+          "data": "0x18160ddd"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000004ad37d33094f5ed9715281"
+    },
+    "stbl/fetchAssetData": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xa58b634c10df2665a3de1680675d5bb9065847d2",
+          "data": "0x08c9f4f20000000000000000000000000000000000000000000000000000000000000003"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000028000000000000000000000000000000000000000000000000000000000000002c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000004c4b4000000000000000000000000000000000000000000000fe1c215e8f838e0000000000000000000000000000001b19c19393e2d034d8ff31ff34c81252fcbbee92000000000000000000000000f8acf255854c8d36010c849f1702eb350c8c4087000000000000000000000000447a8f3608fb2002c1aa8e44b076b7d62b6fa618000000000000000000000000bb0c396119730cd6f54bf81f20ed5e819890e70500000000000000000000000064bef4478942d8fd62be281707076442aa2d055e00000000000000000000000000000000000000000000000000000000000f424000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000005f5e10000000000000000000000000000000000000000000000000000000000000f42400000000000000000000000000000000000000000000000000000000001da9c000000000000000000000000000000000000000000000000000000000000278d00000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000000000000084f5553475f50543100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000194f555347204f4e444f2070657270657475616c2061737365740000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "midas_pool_eth/initialization": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getLogs",
+      "params": [
+        {
+          "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+          "fromBlock": "0x167ebe0",
+          "toBlock": "0x167ebe6",
+          "topics": [
+            "0xdd466e674ea557f56295e2d0218a125ea4b4f0f6f3307b95f85e6110838d6438",
+            "0x3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e"
+          ]
+        }
+      ],
+      "result": [
+        {
+          "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+          "topics": [
+            "0xdd466e674ea557f56295e2d0218a125ea4b4f0f6f3307b95f85e6110838d6438",
+            "0x3852f242aca476f28fd5e8cf6c59347c1f92a51d5cb17232efa9db3fc7c2fd2e",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dd629e5241cbc5919847783e6c96b2de4754e438"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000000000000000c0df00000000000000000000000000000000000000000000000000000000000003db800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000036c538bb9200c7afc50526e0e900000000000000000000000000000000000000000000000000000000000138c3",
+          "blockHash": "0xd5b0026e1c4166867c801d1c651ce1505f1f3491cc8edb66b3e71799f550e37c",
+          "blockNumber": "0x167ebe3",
+          "blockTimestamp": "0x68f07293",
+          "transactionHash": "0x96b59a351a21a4a0519c652004e3fb4569479aece112b9580a0300f413824a51",
+          "transactionIndex": "0x22",
+          "logIndex": "0xa8",
+          "removed": false
+        }
+      ]
+    },
+    "midas_pool_eth/quote": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+          "data": "0xaa9d21cb00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000dd629e5241cbc5919847783e6c96b2de4754e43800000000000000000000000000000000000000000000000000000000000c0df00000000000000000000000000000000000000000000000000000000000003db80000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000005af3107a400000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000000df4f26e7894443000000000000000000000000000000000000000000000000000000000000a753"
+    },
+    "midas_pool_eth/manager_inventory": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0x70a08231000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000000a5d362295aaefa283"
+    },
+    "midas/mTokenDataFeed()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x6254afb6"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000fcee9754e8c375e145303b7ce7beca3201734a2b"
+    },
+    "midas/instantDailyLimit()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x569d7dccbf6923350521ecbc28a555a500c4f0ec",
+          "data": "0x3972183c"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000000000000000000000084595161401484a000000"
+    },
+    "midas_role/timelock_default_admin": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0312a9d1ff2372ddedcbb21e4b6389afc919ac4b",
+          "data": "0x91d148540000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e3eee3e0d2398799c884a47fc40c029c8e241852"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "midas_role/timelock_vault_admin": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0312a9d1ff2372ddedcbb21e4b6389afc919ac4b",
+          "data": "0x91d1485457df534b215589c7ade8c8abe0978debf2ea95cf1d442550f94eec78a69d238e000000000000000000000000e3eee3e0d2398799c884a47fc40c029c8e241852"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "stbl/pool_coin_0": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2877ece562057ee8b0a711bffa10987c3d6398e7",
+          "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000f9d82660828d8f5d121b14a9dc9c677d91f60065"
+    },
+    "stbl/pool_coin_1": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2877ece562057ee8b0a711bffa10987c3d6398e7",
+          "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    },
+    "stbl/quote_from_1": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2877ece562057ee8b0a711bffa10987c3d6398e7",
+          "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f4240"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000de1db0baf6ccb8f"
+    },
+    "stbl/ussts_pool": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xf9d82660828d8f5d121b14a9dc9c677d91f60065",
+          "data": "0x70a082310000000000000000000000002877ece562057ee8b0a711bffa10987c3d6398e7"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000000000000000000000001b1ec2913974c12fe880"
+    },
+    "stbl/ussts_total": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xf9d82660828d8f5d121b14a9dc9c677d91f60065",
+          "data": "0x18160ddd"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000000000000000000000000f32dc95d2401a9ef80ab"
+    },
+    "stbl/ussts_decimals": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xf9d82660828d8f5d121b14a9dc9c677d91f60065",
+          "data": "0x313ce567"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    "safe/buidl_eth_other/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xc0d9ed97ccdfca762b1bbeb40c9c7679a7290e43",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+    },
+    "safe/buidl_eth_other/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xc0d9ed97ccdfca762b1bbeb40c9c7679a7290e43",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/buidl_eth_other/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xc0d9ed97ccdfca762b1bbeb40c9c7679a7290e43",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 4
+    },
+    "proxy/buidl_eth_other": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0xc0d9ed97ccdfca762b1bbeb40c9c7679a7290e43",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/ousg_9/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x3ee60c57d70a6ec4877dc24aa7d0e6fac61cd11a",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d9db270c1b5e3bd161e8c8503c55ceabee709552"
+    },
+    "safe/ousg_9/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x3ee60c57d70a6ec4877dc24aa7d0e6fac61cd11a",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "safe/ousg_9/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x3ee60c57d70a6ec4877dc24aa7d0e6fac61cd11a",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 7
+    },
+    "proxy/ousg_9": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x3ee60c57d70a6ec4877dc24aa7d0e6fac61cd11a",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "safe/ousg_11/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x609517eacd9ec2e24dffd4eeca54c6fd88c866fe",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d9db270c1b5e3bd161e8c8503c55ceabee709552"
+    },
+    "safe/ousg_11/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x609517eacd9ec2e24dffd4eeca54c6fd88c866fe",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/ousg_11/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x609517eacd9ec2e24dffd4eeca54c6fd88c866fe",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 4
+    },
+    "proxy/ousg_11": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x609517eacd9ec2e24dffd4eeca54c6fd88c866fe",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "proxy/ustb_other": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0xbb50bf72fa9f301478befb8c4f021b22b7315b31",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "midas_pool_eth/token_transfer_simulation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdd629e5241cbc5919847783e6c96b2de4754e438",
+          "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+          "from": "0x000000000004444c5dc75cb358380d2e3de08a90"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    "stbl/token_transfer_simulation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xf9d82660828d8f5d121b14a9dc9c677d91f60065",
+          "data": "0xa9059cbb000000000000000000000000000000000000000000000000000000000000dead0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+          "from": "0x2877ece562057ee8b0a711bffa10987c3d6398e7"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    "midas/nav": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xfcee9754e8c375e145303b7ce7beca3201734a2b",
+          "data": "0x63692905"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000ee68e40c47cb400"
+    },
+    "midas_role/test_greenlisted": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0312a9d1ff2372ddedcbb21e4b6389afc919ac4b",
+          "data": "0x91d14854d2576bd6a4c5558421de15cb8ecdf4eb3282aac06b94d4f004e8cd0d00f3ebd8000000000000000000000000000000000000000000000000000000000000dead"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "frax/buidl/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000bccd08e2996a5c748e01fde3feca959dee24276b"
+    },
+    "frax/ustb/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000007617e69d47c1c18e2e3bb0b470aa0fbbd45b57da"
+    },
+    "stbl/usst/implementation": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_getStorageAt",
+      "params": [
+        "0xf9d82660828d8f5d121b14a9dc9c677d91f60065",
+        "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000001497a376d4c0d9bea9682070b131e921d3e5375d"
+    },
+    "safe/ustb_b437/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb4370cf83bae43beb4539fa5882a128d0c772402",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d9db270c1b5e3bd161e8c8503c55ceabee709552"
+    },
+    "safe/ustb_b437/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb4370cf83bae43beb4539fa5882a128d0c772402",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    "safe/ustb_b437/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb4370cf83bae43beb4539fa5882a128d0c772402",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 3
+    },
+    "safe/ustb_2ec9/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2ec96c9af82ddd650c0776cb0da93beaa7ce2a10",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+    },
+    "safe/ustb_2ec9/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2ec96c9af82ddd650c0776cb0da93beaa7ce2a10",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "safe/ustb_2ec9/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x2ec96c9af82ddd650c0776cb0da93beaa7ce2a10",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 9
+    },
+    "safe/ustb_25ec/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x25ec9e5a96add501cb544ccd9451be551acefab6",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+    },
+    "safe/ustb_25ec/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x25ec9e5a96add501cb544ccd9451be551acefab6",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "safe/ustb_25ec/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x25ec9e5a96add501cb544ccd9451be551acefab6",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 7
+    },
+    "safe/ustb_9d95/masterCopy()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x9d9588c082634fd4c7f54cb0243d6792cfd7b4c4",
+          "data": "0xa619486e"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000d9db270c1b5e3bd161e8c8503c55ceabee709552"
+    },
+    "safe/ustb_9d95/getThreshold()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x9d9588c082634fd4c7f54cb0243d6792cfd7b4c4",
+          "data": "0xe75235b8"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "safe/ustb_9d95/getOwners()": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x9d9588c082634fd4c7f54cb0243d6792cfd7b4c4",
+          "data": "0xa0e67e2b"
+        },
+        "0x18e28a9"
+      ],
+      "owner_count": 5
+    },
+    "midas_pool_eth/quoter_manager": {
+      "url": "https://eth.drpc.org",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+          "data": "0xdc4c90d3"
+        },
+        "0x18e28a9"
+      ],
+      "result": "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90"
+    }
+  },
+  "note": "Successful pinned Ethereum reads use the saved September cutoff block. Pool initialize is a pre-pin log. Failed probes are retained where they inform unresolved classifications. Transfer simulations are read-only eth_call."
+}

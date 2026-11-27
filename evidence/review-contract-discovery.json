@@ -1,0 +1,181 @@
+{
+  "source": "https://sourcify.dev/server/v2/contract/1/{address}?fields=compilation.name,proxyResolution",
+  "accessed": "2026-11-26",
+  "note": "Current verification leads. Pin identity independently where stated.",
+  "contracts": {
+    "0x0529fb0d7493e8c76babf80c0b51c87e4e5c852e": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0x25ec9e5a96add501cb544ccd9451be551acefab6": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x41675C099F32341bf84BFc5382aF534df5C7461a"
+      ]
+    },
+    "0x2cf8d5089d3cc289b369bff29646d4070459c66b": {
+      "reported_contract": "PositionPauser",
+      "match": "exact_match",
+      "proxy": false,
+      "implementations": []
+    },
+    "0x2ec96c9af82ddd650c0776cb0da93beaa7ce2a10": {
+      "reported_contract": "Proxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x41675C099F32341bf84BFc5382aF534df5C7461a"
+      ]
+    },
+    "0x341c281d11677795f1192bf1f7438666909841c8": {
+      "reported_contract": "CrossMarginPhysicalEngineProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x181D053611a754Df9A1aDa64FED24a12B63A39F8"
+      ]
+    },
+    "0x3ee60c57d70a6ec4877dc24aa7d0e6fac61cd11a": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0x51c72848c68a965f66fa7a88855f9f7784502a7f": {
+      "reported_contract": "Bot",
+      "match": "match",
+      "proxy": false,
+      "implementations": []
+    },
+    "0x569d7dccbf6923350521ecbc28a555a500c4f0ec": {
+      "reported_contract": "TransparentUpgradeableProxy",
+      "match": "exact_match",
+      "proxy": true,
+      "implementations": [
+        "0x489a797714708cf088D158714a376d8FF740d701"
+      ]
+    },
+    "0x56e60979d5934a05d22606b0455d52f59f20a6a0": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb": {
+      "reported_contract": null,
+      "match": null,
+      "proxy": null,
+      "implementations": []
+    },
+    "0x609517eacd9ec2e24dffd4eeca54c6fd88c866fe": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0x64bef4478942d8fd62be281707076442aa2d055e": {
+      "reported_contract": "ERC1967Proxy",
+      "match": "exact_match",
+      "proxy": true,
+      "implementations": [
+        "0xcfeAe702a0D93F0FC39Be3D45178969751954f7e"
+      ]
+    },
+    "0x68a99f89e475a078645f4bac491360afe255dff1": {
+      "reported_contract": "Proxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x34CfAC646f301356fAa8B21e94227e3583Fe3F5F"
+      ]
+    },
+    "0x9c742aef14cc875c49f52bbd4473b35bebad26ae": {
+      "reported_contract": "CrossMarginEngineProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x1d2103251C2f5EdeC640eF6e5a99D99E6bD53889"
+      ]
+    },
+    "0x9ca46d1b02be5283111499a2f188a0a16fb4546d": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0x9d9588c082634fd4c7f54cb0243d6792cfd7b4c4": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0xa2af0b03aaf167cfc9624c6ef587581b6fcced92": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0xb1748c79709f4ba2dd82834b8c82d4a505003f27": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0x41675C099F32341bf84BFc5382aF534df5C7461a"
+      ]
+    },
+    "0xb4370cf83bae43beb4539fa5882a128d0c772402": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    },
+    "0xbb50bf72fa9f301478befb8c4f021b22b7315b31": {
+      "reported_contract": null,
+      "match": null,
+      "proxy": null,
+      "implementations": []
+    },
+    "0xc0d9ed97ccdfca762b1bbeb40c9c7679a7290e43": {
+      "reported_contract": null,
+      "match": null,
+      "proxy": null,
+      "implementations": []
+    },
+    "0xe257e2f1f544dfda152ba508bdd87832cec1406c": {
+      "reported_contract": "GnosisSafeProxy",
+      "match": "match",
+      "proxy": true,
+      "implementations": [
+        "0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552"
+      ]
+    }
+  }
+}

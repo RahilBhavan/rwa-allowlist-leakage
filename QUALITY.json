@@ -1,0 +1,98 @@
+{
+  "rubric_version": 1,
+  "round": 1,
+  "reviewer": "claude-opus-5-5",
+  "reviewed_head": "73d93f81409f00f905f036d453d74e124a78ebb1",
+  "reviewed_at": "2026-11-27T03:34:16Z",
+  "scores": {
+    "answer": 6,
+    "evidence": 8,
+    "reproducibility": 9,
+    "usefulness": 7,
+    "completeness": 7,
+    "documentation": 7,
+    "post_kit": 5,
+    "code": 7
+  },
+  "overall": 5,
+  "gaps": [
+    {
+      "dimension": "post_kit",
+      "issue": "Drafts 1-3 need a footnote to be true. Draft 1 depends on the 'modeled ceiling', Draft 2 says 'Both shares are conditional on the modeled ceiling', and Draft 3 calls a 0.0001 ETH quote at a 79% LP fee 'a way to buy mTBILL'. Drafts pack 3-6 numbers each (Draft 1: $86.67M, 0.94%, 62.20%, 5%), so no single point lands at a glance. Draft 1's point is 'unresolved', which is not a postable finding.",
+      "fix": "Rewrite each draft around one claim whose numbers need no caveat: e.g. '$533M of BlackRock's BUIDL backed USDtb, a stablecoin anyone can buy on Curve (Sep 30, 2026)'. Move the bounds and caveats into the linked RESULTS section. Drop or demote Draft 1. Recast Draft 3 so it does not imply a usable buy route; say the vault exists and the only open route found was a dust pool at a 79% fee.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "post_kit",
+      "issue": "The BRIEF asks for drafts with card images ('at most 20 words on any card image, the point visible at a glance'). DRAFTS.md is text-only, with no card, chart or automated check. The strongest visual, the per-fund reach map / USDtb route, exists only as ASCII in REACH.md.",
+      "fix": "Produce one or two card or chart specs for the lead claims, e.g. a five-fund bar of verified open-route backing (USDtb $533M, Midas $72M, Usual $14M, STBL $1M) against the basket. Use the research-exhibit/tufte-graphics workflow with each number receipted to RESULTS, keep ≤20 words per card, run the exhibit lint and layout checks, and leave design approval to Rahil.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "answer",
+      "issue": "The README lead is not graspable in 10 seconds. It opens with a convoluted question ('directly in contracts backing tokens obtainable on open secondary markets'), then gives '0.94%–62.20% bounds straddle 5%' plus a second 6.74% measure, followed by four caveat sentences. The strongest answer the evidence supports is not stated in one line: at least $619m (≥6.7% of a conservatively large basket) backed DEX-tradable tokens, mostly BUIDL behind USDtb, while contract-held leakage is verified at only $86.67m and cannot be capped below 5% with public data.",
+      "fix": "Rewrite README's first two lines as a plain question plus a one-sentence answer that names the USDtb channel and the verified contract amount. Put the bounds and definitions on the next lines. Keep both estimands, but lead with what is verified, not with the width of the interval.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "answer",
+      "issue": "Most of the 62.20% direct ceiling comes from the BUIDL denominator: Securitize's $4.9bn whole-platform figure (funds plus equities, including BRSRV, HINC and tokenized stocks), which leaves $3.92bn of the $4.27bn slack. Pinned EVM BUIDL supply sums to about $1.136bn and the attested Solana/Aptos custody adds ≥$0.377bn. No pinned Ethereum BUIDL holder has the shape of a bridge lockbox (the top holders have no code), yet no BUIDL-specific scenario is shown.",
+      "fix": "Add a labelled sensitivity row using a BUIDL-specific ceiling: the sum of pinned per-chain supplies plus a stated allowance for Solana/Aptos. Take that allowance from current keyless getTokenSupply / Aptos view reads, marked as non-pinned, or from any dated BUIDL-specific issuer figure. Test whether any deployment is lock-and-mint before summing. Report the resulting direct upper bound and custody-inclusive lower bound next to the headline.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "evidence",
+      "issue": "The Midas lot is $71.64m, 83% of the $86.67m direct numerator. It qualifies only on a 0.0001 ETH Uniswap v4 quote at a 79% LP fee. There is no sensitivity without it: the direct lower bound would fall from 0.94% to about 0.16%, and the custody-inclusive bound from 6.74% to about 5.97%.",
+      "fix": "Add an 'exclude dust-only routes' sensitivity to kill_test.py and the RESULTS table. Either find a non-dust acquisition route for mTBILL at the pin (another pool or chain, or a liquidation route) or state plainly that the lot rests on a technically open but economically prohibitive route.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "evidence",
+      "issue": "The RESULTS table header 'Economic backing verified' includes $377.4m of Solana/Aptos BUIDL that is attested by Anchorage's examined report but not observed onchain. The five evidence layers are tagged in SOURCES.md but not on the RESULTS claims, so issuer statement, arithmetic and onchain fact mix within paragraphs.",
+      "fix": "Rename the column (e.g. 'verified or attested') or split it into onchain-verified and attested columns. Add a compact layer tag (issuer / terms / arithmetic / onchain / interpretation) to each headline number in RESULTS, or add a claim-by-layer table.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "usefulness",
+      "issue": "Prior art is not named or compared anywhere in README or RESULTS. BIS Bulletin 115 appears only as 'framing' in SOURCES, and Tümer & Mafrur (arXiv 2610.05873), rwa.xyz holder pages, issuer transparency pages and protocol risk reports go unmentioned. A reader cannot see what this adds, though the pinned, code-verified route map (USDtb $533m, Midas, Usual, STBL, Flux credit path) is new.",
+      "fix": "Add a short 'Prior art and what is new' section to README/RESULTS. Say what BIS 115 asserts qualitatively, what Tümer & Mafrur classify and at what resolution, and what dashboards show. State what this adds: block-pinned contract-level attribution, an acquisition test and a redemption-pause dependency map. Verify each prior-art claim against its primary source.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "completeness",
+      "issue": "Holder classification per fund and chain is partial. BUIDL on Arbitrum, Optimism, Polygon and Tempo, BENJI on Arbitrum, Base and Polygon, and USTB on Plume are 100% unobserved. Solana holders are not covered for any fund, and ousg/polygon and usyc/arc show no table row. HANDOFF records this as PARTLY DONE.",
+      "fix": "For small deployments, use keyless Routescan or chain-native explorers and public RPC with bounded log scans to certify the top-N by residual, or document per chain the exact failed command and why that chain's supply can't move the 5% test. For Solana, record current getTokenLargestAccounts as a non-pinned indication with an explicit caveat.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "documentation",
+      "issue": "HOLDERS.md labels Anchorage's BNB USDtb reserve 'Issuer / ops' (buidl/bsc 75.996%), although the kill test treats it as reserve custody backing a tradable stablecoin, so the docs and code disagree on the class. DECISIONS and HANDOFF refer to 'Sol', 'Astra' and 'Sonnet' without explaining the roles. README gives no Python version (verified on 3.14.8, stdlib only). The prose is dense with internal terms ('strict excluded', 'denominator slack', 'route-local') and has no glossary.",
+      "fix": "Add a 'reserve custody (third-party stablecoin)' holder class or rename the column. Add a one-line role key for the agent names. State 'Python ≥3.x, stdlib only' in README. Add a five-term glossary to METHOD.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "code",
+      "issue": "Three of six quick mutations of kill_test.py survived all 19 tests. Removing the Franklin filing readback check, widening the Anchorage attestation-vs-RPC tolerance from $1 to $1bn and disabling the mTBILL supply cap all leave the suite green. Other guards in load_evidence are also untested: mixed snapshot dates, USDtb supply vs attestation, reserve legs not reconciling, classified > ceiling. The nonzero-frxUSDMinted cap branch never runs. Several checks pass only on golden totals.",
+      "fix": "Add negative tests that corrupt a copied evidence fixture in a temp directory and assert a ValueError for each guard: Franklin mismatch, attestation divergence, mTBILL supply below the lot, USDtb supply mismatch, unreconciled reserve legs, mixed dates, classified > ceiling. Add a unit test for the Frax minted-cap branch with a synthetic nonzero counter.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "reproducibility",
+      "issue": "The fixtures hold every read's URL, method and params, but the repair fixtures (review-ethereum, review-contract-discovery, usual-source) have no fetch script that regenerates them; only inline replay snippets in METHOD exist. Hand transcriptions (primary-transcriptions JSON) are checksummed but have no automated PDF-to-value check.",
+      "fix": "Add a small script (or a fetch_evm mode) that replays every read in each fixture and reports match/mismatch/error counts. Add a pdftotext assertion for the Securitize $4.8bn and Anchorage $532,696,711 transcriptions.",
+      "owner": "agent"
+    }
+  ],
+  "rahil_decisions": [
+    "Which estimand leads publicly: the custody-inclusive ≥6.74% (passes the brief's 5% kill test, includes 'stablecoin reserves' as the brief lists them) or the narrower contract-only 0.94% lower bound with an unresolved ceiling.",
+    "Whether to publish any draft, and design approval for any card or chart produced from the post-kit fix.",
+    "GitHub publication was pending at the time of review. See current authorization in BRIEF.md."
+  ],
+  "history": [
+    {
+      "round": 1,
+      "overall": 5,
+      "head": "73d93f81409f00f905f036d453d74e124a78ebb1"
+    }
+  ]
+}

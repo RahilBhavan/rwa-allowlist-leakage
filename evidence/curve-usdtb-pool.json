@@ -1,0 +1,16 @@
+[
+  {
+    "address": "0xC2921134073151490193AC7369313c8e0b08e1E7",
+    "implementation": "plainstableng",
+    "coins": [
+      {
+        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+        "decimals": "6"
+      },
+      {
+        "address": "0xC139190F447e929f090Edeb554D95AbB8b18aC1C",
+        "decimals": "18"
+      }
+    ]
+  }
+]

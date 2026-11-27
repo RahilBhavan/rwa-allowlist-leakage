@@ -1,0 +1,14 @@
+{
+  "url": "https://api.avax.network/ext/bc/C/rpc",
+  "method": "eth_getTransactionByHash",
+  "params": [
+    "0x459eeaaaa439148abd2c26fa292f8ca2e788545441a9dd2d6a5aaf67ed208f4a"
+  ],
+  "result": {
+    "hash": "0x459eeaaaa439148abd2c26fa292f8ca2e788545441a9dd2d6a5aaf67ed208f4a",
+    "from": "0x76a38a6ab201b1d6fa8617352538a7260df65377",
+    "to": "0x53fc82f14f009009b440a706e31c9021e1196a2f",
+    "blockNumber": "0x56d8a06",
+    "signature_present": true
+  }
+}

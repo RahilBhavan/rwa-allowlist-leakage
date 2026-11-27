@@ -1,0 +1,705 @@
+{
+  "cutoff": 1790812799,
+  "chains": {
+    "ethereum": {
+      "reads": {
+        "buidl": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x7712c34205737192402172409a8f7ccef8aa2aec",
+              "data": "0x18160ddd"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000b8fb3c40bc4d"
+        },
+        "buidl_i": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x18160ddd"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000da232850bbb4"
+        },
+        "buidl_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x7712c34205737192402172409a8f7ccef8aa2aec",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "buidl_i_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "ustb": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e",
+              "data": "0x18160ddd"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000002e09ef5166bb"
+        },
+        "ustb_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "usyc": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x136471a34f6ef19fe571effc1ca711fdb8e49f2b",
+              "data": "0x18160ddd"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000021722290f988"
+        },
+        "usyc_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x136471a34f6ef19fe571effc1ca711fdb8e49f2b",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "usyc_nav": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x4c48bcb2160f8e0adbf9d4f3b034f1e36d1f8b3e",
+              "data": "0xfeaf968c"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000032d0000000000000000000000000000000000000000000000000000000006c9a898000000000000000000000000000000000000000000000000000000006abd0637000000000000000000000000000000000000000000000000000000006abd0637000000000000000000000000000000000000000000000000000000000000032d"
+        },
+        "usyc_nav_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x4c48bcb2160f8e0adbf9d4f3b034f1e36d1f8b3e",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000008"
+        },
+        "usdtb": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+              "data": "0x18160ddd"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000019ac1078a0684439423b800"
+        },
+        "usdtb_decimals": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+              "data": "0x313ce567"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+        },
+        "curve_usdtb": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+              "data": "0x70a08231000000000000000000000000c2921134073151490193ac7369313c8e0b08e1e7"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000008ac48a6fde90094acf489"
+        },
+        "curve_coin_0": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc2921134073151490193ac7369313c8e0b08e1e7",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        "curve_coin_1": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc2921134073151490193ac7369313c8e0b08e1e7",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000c139190f447e929f090edeb554d95abb8b18ac1c"
+        },
+        "curve_quote": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xc2921134073151490193ac7369313c8e0b08e1e7",
+              "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000de0c11cb3994fc9"
+        },
+        "usual_treasury_usyc": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x136471a34f6ef19fe571effc1ca711fdb8e49f2b",
+              "data": "0x70a08231000000000000000000000000dd82875f0840aad58a455a70b88eed9f59cec7c7"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000b348122386f"
+        },
+        "usual_dao_usyc": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x136471a34f6ef19fe571effc1ca711fdb8e49f2b",
+              "data": "0x70a08231000000000000000000000000de6e1f680c4816446c8d515989e2358636a38b04"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "usual_treasury_code": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xdd82875f0840aad58a455a70b88eed9f59cec7c7",
+            "0x18e28a9"
+          ],
+          "code_type": "contract code",
+          "sha256": "5b8bff324e02136edb0775bd77aa0fe773c1e23092305fe63f50a9e92f5b8faf"
+        },
+        "usual_dao_code": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xde6e1f680c4816446c8d515989e2358636a38b04",
+            "0x18e28a9"
+          ],
+          "code_type": "contract code",
+          "sha256": "afaf368c89efec6ce498780f6055f6e3cb5389e55ad07e8c28a30c4e50cdd533"
+        },
+        "frax_buidl": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x7712c34205737192402172409a8f7ccef8aa2aec",
+              "data": "0x70a08231000000000000000000000000e827abf9f462ac4f147753d86bc5f91e186e4e9c"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000e65b7c2c240"
+        },
+        "frax_ustb": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e",
+              "data": "0x70a082310000000000000000000000005fbaa3a3b489199338fbd85f7e3d444dc0504f33"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000192b9c83e64"
+        },
+        "frax_buidl_code": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xe827abf9f462ac4f147753d86bc5f91e186e4e9c",
+            "0x18e28a9"
+          ],
+          "code_type": "contract code",
+          "sha256": "b87d0a9590668cde517c3d2ab6269f1003ff94d5885f4cba86a325a39191c07e"
+        },
+        "frax_ustb_code": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x5fbaa3a3b489199338fbd85f7e3d444dc0504f33",
+            "0x18e28a9"
+          ],
+          "code_type": "contract code",
+          "sha256": "1da52378bcf0c651067f6561d6a99a903ba2afc1ca176e190ab1a08ebd061c2d"
+        },
+        "spark_alm_proxy_buidl_i": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x70a082310000000000000000000000001601843c5e9bc251a3272907010afa41fa18347e"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "spark_freezable_alm_proxy_buidl_i": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x70a08231000000000000000000000000e5c6318456a7cb6f74f93b4eee4616db5fcef699"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "spark_deposit_buidl_i": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x70a08231000000000000000000000000d1917664be3fdaea377f6e8d5bf043ab5c3b1312"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "spark_redeem_buidl_i": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x6a9da2d710bb9b700acde7cb81f10f1ff8c89041",
+              "data": "0x70a082310000000000000000000000008780dd016171b91e4df47075da0a947959c34200"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "curve_frxusd_coin_0": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x13e12bb0e6a2f1a3d6901a59a9d585e89a6243e1",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000cacd6fd266af91b8aed52accc382b4e165586e29"
+        },
+        "curve_frxusd_coin_1": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x13e12bb0e6a2f1a3d6901a59a9d585e89a6243e1",
+              "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x000000000000000000000000f939e0a03fb07f59a73314e73794be0e57ac1b4e"
+        },
+        "curve_frxusd_quote": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x13e12bb0e6a2f1a3d6901a59a9d585e89a6243e1",
+              "data": "0x5e0d443f000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a7640000"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000dded558531cf7af"
+        },
+        "curve_frxusd_balance": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xcacd6fd266af91b8aed52accc382b4e165586e29",
+              "data": "0x70a0823100000000000000000000000013e12bb0e6a2f1a3d6901a59a9d585e89a6243e1"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x00000000000000000000000000000000000000000004804651490bc338d64ddd"
+        }
+      },
+      "block": {
+        "number": "0x18e28a9",
+        "timestamp": "0x6abda27f",
+        "hash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+        "parentHash": "0xe462ded73f3e06f54ba5b557c20ff53b43d5d9b1279e45e68dfdb7496177aeba"
+      },
+      "successor": {
+        "number": "0x18e28aa",
+        "timestamp": "0x6abda28b",
+        "hash": "0x41ebfe304393a8d19fb0b8273a5fa88573cc9a1962a6b8645d139a1d4f860edb",
+        "parentHash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743"
+      }
+    },
+    "bsc": {
+      "reads": {
+        "buidl": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2d5bdc96d9c8aabbdb38c9a27398513e7e5ef84f",
+              "data": "0x18160ddd"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000855982b2a7d0"
+        },
+        "buidl_decimals": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2d5bdc96d9c8aabbdb38c9a27398513e7e5ef84f",
+              "data": "0x313ce567"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "anchorage_buidl": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2d5bdc96d9c8aabbdb38c9a27398513e7e5ef84f",
+              "data": "0x70a082310000000000000000000000002004f7f7b600d962170d7f28114cc123c5e98451"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000655725051450"
+        },
+        "anchorage_code": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_getCode",
+          "params": [
+            "0x2004F7f7B600d962170d7f28114Cc123c5e98451",
+            "0x7735c32"
+          ],
+          "code_type": "no runtime code",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "usyc": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x8d0fa28f221eb5735bc71d3a0da67ee5bc821311",
+              "data": "0x18160ddd"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000075e3c418f82bc"
+        },
+        "usyc_decimals": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x8d0fa28f221eb5735bc71d3a0da67ee5bc821311",
+              "data": "0x313ce567"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      },
+      "block": {
+        "number": "0x7735c32",
+        "timestamp": "0x6abda27f",
+        "hash": "0x4642801f5cc8c6d2c61cd9d51c4d568e8900751b0c72f5ed101e4695f279c16e",
+        "parentHash": "0x95f78ad85533b9eea7a9d4874c9bf4878253e7b360e29c637c1d30f678aa6d33"
+      },
+      "successor": {
+        "number": "0x7735c33",
+        "timestamp": "0x6abda280",
+        "hash": "0xd70ca151898bd994f80c0a78d54c51b2444ba2e4da28fd07d3287d903e6ef377",
+        "parentHash": "0x4642801f5cc8c6d2c61cd9d51c4d568e8900751b0c72f5ed101e4695f279c16e"
+      }
+    },
+    "avalanche": {
+      "reads": {
+        "buidl_decimals": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x53fc82f14f009009b440a706e31c9021e1196a2f",
+              "data": "0x313ce567"
+            },
+            "0x5c04dc3"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        },
+        "buidl": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x53fc82f14f009009b440a706e31c9021e1196a2f",
+              "data": "0x18160ddd"
+            },
+            "0x5c04dc3"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000001ba80046ca580"
+        },
+        "anchorage_buidl": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x53fc82f14f009009b440a706e31c9021e1196a2f",
+              "data": "0x70a082310000000000000000000000002004f7f7b600d962170d7f28114cc123c5e98451"
+            },
+            "0x5c04dc3"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000027deb4eb1c10"
+        },
+        "anchorage_code": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_getCode",
+          "params": [
+            "0x2004F7f7B600d962170d7f28114Cc123c5e98451",
+            "0x5c04dc3"
+          ],
+          "code_type": "no runtime code",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "block": {
+        "number": "0x5c04dc3",
+        "timestamp": "0x6abda27f",
+        "hash": "0x4f9082afe2fdd4e3544dca1aac66a15fde7c967614b4100572a7adaa057b884c",
+        "parentHash": "0xda6b5b6e5267efddd912067d883fefbb6964262dba95c42e845984391bd9e43f"
+      },
+      "successor": {
+        "number": "0x5c04dc4",
+        "timestamp": "0x6abda280",
+        "hash": "0x97a4693d44bbb92f7e86870b946168b0269b2814935a1d600ff45f4e146c6052",
+        "parentHash": "0x4f9082afe2fdd4e3544dca1aac66a15fde7c967614b4100572a7adaa057b884c"
+      }
+    },
+    "polygon": {
+      "reads": {
+        "buidl": {
+          "url": "https://polygon.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2893ef551b6dd69f661ac00f11d93e5dc5dc0e99",
+              "data": "0x18160ddd"
+            },
+            "0x5a59807"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000006db96686af0"
+        },
+        "buidl_decimals": {
+          "url": "https://polygon.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2893ef551b6dd69f661ac00f11d93e5dc5dc0e99",
+              "data": "0x313ce567"
+            },
+            "0x5a59807"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      },
+      "block": {
+        "number": "0x5a59807",
+        "timestamp": "0x6abda27f",
+        "hash": "0x8094b637b5e510e864279d6822ff7d68e895a5ce756d8a1116d70cd15a70e6a3",
+        "parentHash": "0x05404462374e35d63c9bf8a45d9926820112a05881ee6da61a29f118fabb5f55"
+      },
+      "successor": {
+        "number": "0x5a59808",
+        "timestamp": "0x6abda280",
+        "hash": "0x8747a25e0b02abe6a5b45c5b6ad1b504d8389bb9fe6b27a785a3f222b2662b4a",
+        "parentHash": "0x8094b637b5e510e864279d6822ff7d68e895a5ce756d8a1116d70cd15a70e6a3"
+      }
+    },
+    "optimism": {
+      "reads": {
+        "buidl": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+              "data": "0x18160ddd"
+            },
+            "0x964e463"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000018139f366f30"
+        },
+        "buidl_decimals": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+              "data": "0x313ce567"
+            },
+            "0x964e463"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      },
+      "block": {
+        "number": "0x964e463",
+        "timestamp": "0x6abda27f",
+        "hash": "0x1e26a4283c3d54f91d04ad1350ed7f0ad30467253e57c4ca0728117c08819ac4",
+        "parentHash": "0xfd6954bb43e7d4c3ac20f2ec6b2af82fe8c80a2fb6a4863f1cd656601453b9f7"
+      },
+      "successor": {
+        "number": "0x964e464",
+        "timestamp": "0x6abda281",
+        "hash": "0xddd3059aed3c7b54dfa3fa2fc42900591b6f255777903dd21bd29608eef5d731",
+        "parentHash": "0x1e26a4283c3d54f91d04ad1350ed7f0ad30467253e57c4ca0728117c08819ac4"
+      }
+    },
+    "tempo": {
+      "reads": {
+        "buidl": {
+          "url": "https://rpc.tempo.xyz",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb5ff12bd8010baef823d1bfa2ce6bdc0109cbb24",
+              "data": "0x18160ddd"
+            },
+            "0x2813429"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000f8df0666dd0"
+        },
+        "buidl_decimals": {
+          "url": "https://rpc.tempo.xyz",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xb5ff12bd8010baef823d1bfa2ce6bdc0109cbb24",
+              "data": "0x313ce567"
+            },
+            "0x2813429"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      },
+      "block": {
+        "number": "0x2813429",
+        "timestamp": "0x6abda27f",
+        "hash": "0x684615b3dbbb4af4fd838aa1ac053c27d489b3ac63696784d3ed8b60ded5f814",
+        "parentHash": "0x1b3e260db391b686a82d0ac859e7212514a5f3be6486e59977e183542b313ae6"
+      },
+      "successor": {
+        "number": "0x281342a",
+        "timestamp": "0x6abda280",
+        "hash": "0x9edec2bd52846f9a978f945d605a5792370dafe8f6d613096558a797353da91b",
+        "parentHash": "0x684615b3dbbb4af4fd838aa1ac053c27d489b3ac63696784d3ed8b60ded5f814"
+      }
+    },
+    "arbitrum": {
+      "reads": {
+        "buidl": {
+          "url": "https://arbitrum-one.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa6525ae43edcd03dc08e775774dcabd3bb925872",
+              "data": "0x18160ddd"
+            },
+            "0x1e6d905f"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000007cd1636f2f0"
+        },
+        "buidl_decimals": {
+          "url": "https://arbitrum-one.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa6525ae43edcd03dc08e775774dcabd3bb925872",
+              "data": "0x313ce567"
+            },
+            "0x1e6d905f"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+        }
+      },
+      "block": {
+        "number": "0x1e6d905f",
+        "timestamp": "0x6abda27f",
+        "hash": "0xf428fa165f436490fb973bde0addddc5a1dcf82e8f4821cff699de5dbf6dc4be",
+        "parentHash": "0x8a82e51e5fb0df8466e12791609fdd6403744ecdb3db9974e66f5ea377720dab"
+      },
+      "successor": {
+        "number": "0x1e6d9060",
+        "timestamp": "0x6abda280",
+        "hash": "0x5b97cbd8347867d252781fd607278f5498bfcb8ba47d8644587c68cc6771a9de",
+        "parentHash": "0xf428fa165f436490fb973bde0addddc5a1dcf82e8f4821cff699de5dbf6dc4be"
+      }
+    }
+  }
+}

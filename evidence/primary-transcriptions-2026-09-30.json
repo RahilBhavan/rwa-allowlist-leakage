@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-30",
+  "securitize_platform_value_display_usd": "4800000000",
+  "securitize_rounding_allowance_usd": "100000000",
+  "circle_usyc_display_usd": "2400000000",
+  "circle_rounding_allowance_usd": "100000000",
+  "franklin_benji_net_assets_usd": "667960091.75",
+  "franklin_benji_shares": "667967346.6700",
+  "buidl_nav_usd": "1",
+  "anchorage_total_buidl_usd": "532696711",
+  "anchorage_total_usdtb_redeemable": "537487768",
+  "anchorage_ethereum_usdtb_redeemable": "496571142",
+  "anchorage_reserve_legs": [
+    {"chain": "solana", "custody_address": "HYP6YSsagbnNtENSXbvNE95a6SUM83fLXiFYQMqLM9sz", "buidl_usd": "231923254"},
+    {"chain": "bsc", "custody_address": "0x2004F7f7B600d962170d7f28114Cc123c5e98451", "buidl_usd": "111424958"},
+    {"chain": "avalanche", "custody_address": "0x2004F7f7B600d962170d7f28114Cc123c5e98451", "buidl_usd": "43837472"},
+    {"chain": "aptos", "custody_address": "0xb95ce931098b76d171652108644838eeb3584a6bf89751b0c406b0a223d809a4", "buidl_usd": "145511027"}
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "url": "https://s2.ripple.com:51234/",
+  "cutoff": 1790812799,
+  "ledger": {
+    "index": 107347788,
+    "hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+    "parent": "47714CB88BAB6FDB52F162BFB526A9CE640AB2877033AFF3437B91B90EF23BEE",
+    "timestamp": 1790812791
+  },
+  "successor": {
+    "index": 107347789,
+    "hash": "E9B37227BB87086C8147A03F8EED6479E074264D4632DB58006B682A938B51CA",
+    "parent": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+    "timestamp": 1790812800
+  },
+  "pages": [
+    {
+      "params": {
+        "account": "rHuiXXjHLpMP8ZE9sSQU5aADQVWDwv6h5p",
+        "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+        "limit": 400
+      },
+      "result": {
+        "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+        "account": "rHuiXXjHLpMP8ZE9sSQU5aADQVWDwv6h5p",
+        "validated": true,
+        "lines": [
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rNkymmNNiNSAGUhS5hTi3SBZR6iKzkwAsN",
+            "balance": "0",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rGs149XZXGqQ2VhdWzvdWkwokyDraDvRe3",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rMwNibdiFaEzsTaFCG1NnmAM3Rv3vHUy5L",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rMTHVkP3KkQiP4DbJEKpwdQ5jonVPvDAQ5",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "ra7bPmF2EbGpTBGbP19CfU2Qb5bnhN1CmJ",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rPZBg4n9AjXNY2PUvEVpiRb81MYaMxXjr",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rHprwRkvDexV5LF5tzKQmx7U7Ku2836DA1",
+            "balance": "-0.00000011",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rfYkB2iX7UPv1bRisH1t2b8kEcbpe3356G",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rh5cBsZM2TAzE9gdFkrDBo4wKDvS9zQfTw",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rDUdUcFPSQbsdLrU5vfFsaioKDKJUJ5mAR",
+            "balance": "-0.0081771406",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "riCVfEub3ndrkB5GvfrX1qad6CFWU4rMd",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rpu9GzrojSNUEeyPNKYhFzbufHHZBBLVcG",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rsRQYbM22zwEAb9Q7fNUgf7JupDmijh47T",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rKYfNH8Bqz3GDvCJVtYQRMRJfUFqik9rDS",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rQHFkJWUWch55ykUM3ZFHHLpLyWnjN577M",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rEmZEKN7LLVwia32hLfMybPzdh7s7rUDM2",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rp6vx6zwXkiXTXAZvxhADT7YiLuPhoyZzz",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "r4mjCAQBUpD52FPAkdnjRhJndGgjShRiL",
+            "balance": "-1181505.57614436",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rJqiMb94hyz41SBTNr2AyPNW8AzELa8nE",
+            "balance": "-178655.564832",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rDeW23AZHLXnnwFwj53dPu1V8mX7kxJyU3",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rKx18DbLxJ2oLz21TR43vRuQ9xhqPesdhd",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rpMDp3mug7Kp3YiUUZ9Ftew8qrD281EeMm",
+            "balance": "0",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rssUVoVq3R7UqWJQqqUUBmfuVZp2KCW6za",
+            "balance": "-245456.57619873",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rLmNxepe9bkKwvc4eA8DVqTMKFgcGzXAbK",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rpkHXWZuixXfEo8RT2ry4Znnf4iPGNzdpG",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rrhdzEBtUShYRuGZfts6Su82DEBzb5KE5",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rE5hWMbxqPkaec1B3xNQcKQ5GwJcB8rBpt",
+            "balance": "0"
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rLos1E4YRJB2PddRqk7xNY8eLSHZrvKchH",
+            "balance": "0",
+            "authorized": true
+          },
+          {
+            "currency": "4F55534700000000000000000000000000000000",
+            "account": "rDHUh4PJrSmU8MyhY7N7PvEJAcmn9RaBzj",
+            "balance": "0",
+            "authorized": true
+          }
+        ]
+      }
+    }
+  ],
+  "account_info": {
+    "params": {
+      "account": "rHuiXXjHLpMP8ZE9sSQU5aADQVWDwv6h5p",
+      "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB"
+    },
+    "result": {
+      "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+      "account_data": {
+        "Domain": "6F6E646F2E66696E616E6365"
+      },
+      "account_flags": {
+        "requireAuthorization": true
+      }
+    }
+  },
+  "gateway_balances": {
+    "params": {
+      "account": "rHuiXXjHLpMP8ZE9sSQU5aADQVWDwv6h5p",
+      "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB"
+    },
+    "result": {
+      "ledger_hash": "150A840C74117345986798937720457FFC24F5AE04219AEFB13C60D95540CEEB",
+      "obligations": {
+        "4F55534700000000000000000000000000000000": "1605617.725352341"
+      }
+    }
+  }
+}

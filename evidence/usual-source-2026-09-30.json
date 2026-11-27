@@ -1,0 +1,14 @@
+{
+  "DaoCollateral": {
+    "implementation": "0x0eec861d49f15f585d6bb4301fc4f89bce22af4e",
+    "url": "https://api.routescan.io/v2/network/mainnet/evm/1/etherscan/api?module=contract&action=getsourcecode&address=0x0eec861d49f15f585d6bb4301fc4f89bce22af4e",
+    "path_in_compiler_input": "src/daoCollateral/DaoCollateral.sol",
+    "utf8_source_sha256": "9039d037801391a963486ce09f3e235755eca981a5c9b6770311bc52a3e061c5"
+  },
+  "Usd0": {
+    "implementation": "0xae12f6f805842e6dafe71a6d2b41b28ba5fc821e",
+    "url": "https://api.routescan.io/v2/network/mainnet/evm/1/etherscan/api?module=contract&action=getsourcecode&address=0xae12f6f805842e6dafe71a6d2b41b28ba5fc821e",
+    "path_in_compiler_input": "src/token/Usd0.sol",
+    "utf8_source_sha256": "1f6942e94881819451dc261da1c34ca56bfba6272bfdcffcd10dd8d1fe690ad5"
+  }
+}

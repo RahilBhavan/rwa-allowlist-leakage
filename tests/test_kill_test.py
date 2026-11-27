@@ -1,10 +1,14 @@
 from decimal import Decimal as D
 from pathlib import Path
 import json
+import shutil
+from tempfile import TemporaryDirectory
 import unittest
 
 from scripts.holder_audit import load_holders
-from scripts.kill_test import Fund, Position, calculate, eligible_no_code, gated_receipt, load_revised_evidence, ousg_model, sensitivity
+from scripts.kill_test import (
+    Fund, Position, calculate, eligible_no_code, gated_receipt, load_revised_evidence, ousg_model, sensitivity,
+)
 
 EVIDENCE = Path(__file__).resolve().parents[1] / "evidence"
 
@@ -79,6 +83,77 @@ class KillTest(unittest.TestCase):
         self.assertTrue(D("0.99") < observed["curve_quote_1_crvusd_to_frxusd"] < D("1.01"))
         self.assertGreater(observed["curve_usdtb_balance"], D(10_000_000))
         self.assertTrue(D("0.99") < observed["curve_quote_1_usdc_to_usdtb"] < D("1.01"))
+
+    def test_separate_attested_and_dust_only_sensitivities(self):
+        funds, positions, observed = load_revised_evidence(EVIDENCE)
+        custody = calculate(funds, positions, True)
+        self.assertEqual(custody["attested_only_backing_usd"], D(377434279))
+        self.assertEqual(custody["onchain_backing_usd"].quantize(D("0.01")), D("241931783.06"))
+        scenarios = sensitivity(funds, positions, observed)
+        dust = scenarios["without_dust_only_routes"]
+        self.assertEqual(dust["direct_backing_usd"].quantize(D("0.01")), D("15032143.93"))
+        self.assertGreater(dust["custody_inclusive_lower"], D("0.05"))
+        self.assertEqual(dust["direct"]["share_upper"], calculate(funds, positions, False)["share_upper"])
+        model = observed["buidl_deployment_scenario"]
+        self.assertEqual(model["non_evm_allowance_native"]["aptos"], D("145511027"))
+        self.assertEqual(model["non_evm_allowance_native"]["solana"], D("380840998.07"))
+        self.assertEqual(model["pinned_evm_sum_native"], D("1136079649.177649"))
+        scenario = scenarios["buidl_deployment_ceiling"]
+        self.assertEqual(scenario["denominator_ceiling_usd"], D("5941489570.397649"))
+        self.assertLess(scenario["direct"]["share_lower"], D("0.05"))
+        self.assertGreater(scenario["direct"]["share_upper"], D("0.05"))
+
+    def test_guards_reject_corrupt_copied_evidence(self):
+        facts = "primary-transcriptions-2026-09-30"
+        review = "review-ethereum-2026-09-30"
+        cases = [
+            ("franklin-filing-readback-2026-09-30", ("item_b4_net_assets_usd",), "1", "Franklin filing readback"),
+            (facts, ("date",), "2026-10-01", "mixed snapshot dates"),
+            (facts, ("anchorage_ethereum_usdtb_redeemable",), "496571144", "USDtb token supply"),
+            (facts, ("anchorage_total_buidl_usd",), "532696710", "reserve legs do not reconcile"),
+            ("evm-2026-09-30", ("chains", "bsc", "reads", "anchorage_buidl", "result"),
+             hex(111_424_960 * 10**6), "attestation and RPC diverge"),
+            (review, ("reads", "mtbill/totalSupply()", "result"), hex(50_000_000 * 10**18),
+             "mTBILL Ethereum NAV and supply"),
+            (facts, ("circle_usyc_display_usd",), "2200000000", "classified balances exceed denominator"),
+        ]
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary) / "evidence"
+            shutil.copytree(EVIDENCE, directory)
+            for name, keys, value, error in cases:
+                with self.subTest(guard=error):
+                    path = directory / f"{name}.json"
+                    original = path.read_text()
+                    fixture = json.loads(original)
+                    cursor = fixture
+                    for key in keys[:-1]:
+                        cursor = cursor[key]
+                    cursor[keys[-1]] = value
+                    path.write_text(json.dumps(fixture))
+                    try:
+                        with self.assertRaisesRegex(ValueError, error):
+                            funds, positions, _ = load_revised_evidence(directory)
+                            calculate(funds, positions, False)
+                    finally:
+                        path.write_text(original)
+
+    def test_nonzero_frax_counter_caps_credited_inventory(self):
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary) / "evidence"
+            shutil.copytree(EVIDENCE, directory)
+            path = directory / "review-ethereum-2026-09-30.json"
+            fixture = json.loads(path.read_text())
+            fixture["reads"]["frax/buidl/frxUSDMinted()"]["result"] = hex(250_000 * 10**18)
+            fixture["reads"]["frax/ustb/frxUSDMinted()"]["result"] = hex(40_000_000 * 10**18)
+            path.write_text(json.dumps(fixture))
+            funds, positions, observed = load_revised_evidence(directory)
+        buidl, = [row for row in positions if row.fund == "BUIDL" and row.kind == "wrapper_contract"]
+        self.assertEqual((buidl.native, buidl.usd), (D(250_000), D(250_000)))
+        ustb, = [row for row in positions if row.fund == "USTB" and row.kind == "wrapper_contract" and not row.dust_only]
+        self.assertEqual(ustb.native, D("1729693.761124"))
+        self.assertEqual(ustb.usd, ustb.native * observed["ustb_nav_usd"])
+        self.assertEqual(observed["frax_unattributed_reserves"], [])
+        self.assertGreater(calculate(funds, positions, False)["verified_usd"], D(100_000_000))
 
     def test_no_code_exclusions_reject_delegation_and_failed_code_reads(self):
         for address_type in ("delegated EOA", "code unknown", "contract code"):

@@ -4,24 +4,32 @@ This report gives the measured positions, conditional bounds and unresolved cove
 
 ## Direct-contract test
 
-On **September 30, 2026** the conditional direct-contract bounds for **BUIDL, USTB, USYC, OUSG and BENJI** were **0.94%–62.20% by value**. The bounds straddle the brief's **5%** cutoff. The qualifying positions were Midas’s USTB redemption vault for mTBILL, Usual’s USYC collateral treasury for USD0, and the attributable portion of STBL’s OUSG vault for USST. The EVM snapshot uses the last block at or before **23:59:59 UTC**. The fund figures use the reporting dates and conventions detailed below. [Cutoff in the brief](../BRIEF.md) · [Snapshot and scope](METHOD.md#snapshot-and-scope)
+The September 30, 2026 direct-contract test found **$86.67m** of BUIDL, USTB, USYC, OUSG and BENJI backing in three contracts, at least **0.94%** of the modeled basket. The conditional upper endpoint was **62.20%**. The range leaves the **5%** cutoff unresolved. The qualifying positions were Midas’s USTB redemption vault for mTBILL, Usual’s USYC collateral treasury for USD0, and the attributable portion of STBL’s OUSG vault for USST. Removing the dust-only Midas route leaves **$15.03m** of direct backing. [Cutoff in the brief](../BRIEF.md) · [Snapshot and scope](METHOD.md#snapshot-and-scope) · [Sensitivity table](#buidl-deployment-scenario)
 
-`python3 scripts/kill_test.py` emits `date`, `threshold`, the underlying `positions`, and the two estimates as `direct_contract_holdings` and `economic_exposure`. The table reports USD millions to nearest, lower shares down and upper shares up. The code compares unrounded values to the cutoff. BUIDL and BENJI each have a zero direct lower bound under the strict evidence threshold. [Calculation and classification rules](METHOD.md#bound-arithmetic-and-rerun)
+Run `python3 scripts/kill_test.py` for the underlying positions, the `direct_contract_holdings` and `economic_exposure` calculations and the scenarios. The table reports USD millions to nearest, lower shares down and upper shares up. A zero means no backing met the evidence threshold. [Calculation and classification](METHOD.md#bound-arithmetic-and-rerun)
 
-| Fund | Denominator ceiling | Direct verified | Strict excluded | Direct share interval | Economic backing verified | Economic share lower |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| BUIDL, including I Class | 4,900.00 | 0.00 | 597.95 | 0.00–87.80% | 532.70 | 10.87% |
-| USTB | 754.87 | 71.64 | 386.56 | 9.48–48.80% | 71.64 | 9.48% |
-| USYC | 2,500.00 | 14.03 | 2,361.78 | 0.56–5.53% | 14.03 | 0.56% |
-| OUSG | 356.23 | 1.00 | 75.18 | 0.28–78.90% | 1.00 | 0.28% |
-| BENJI / FOBXX | 667.96 | 0.00 | 48.24 | 0.00–92.78% | 0.00 | 0.00% |
-| **Total** | **9,179.06** | **86.67** | **3,469.71** | **0.94–62.20%** | **619.37** | **6.74%** |
+| Fund | Supply ceiling | Direct contracts | Excluded from direct upper bound | Direct share interval | Including custody, pinned balances | Including custody, attested only | Including custody, lower share |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| BUIDL, including I Class | 4,900.00 | 0.00 | 597.95 | 0.00–87.80% | 155.26 | 377.43 | 10.87% |
+| USTB | 754.87 | 71.64 | 386.56 | 9.48–48.80% | 71.64 | 0.00 | 9.48% |
+| USYC | 2,500.00 | 14.03 | 2,361.78 | 0.56–5.53% | 14.03 | 0.00 | 0.56% |
+| OUSG | 356.23 | 1.00 | 75.18 | 0.28–78.90% | 1.00 | 0.00 | 0.28% |
+| BENJI / FOBXX | 667.96 | 0.00 | 48.24 | 0.00–92.78% | 0.00 | 0.00 | 0.00% |
+| **Total** | **9,179.06** | **86.67** | **3,469.71** | **0.94–62.20%** | **241.93** | **377.43** | **6.74%** |
 
 At the **$9.17906bn** modeled ceiling, 5% corresponds to **$458.95m**. The **$5.623bn** between verified and excluded balances and the modeled ceiling comprises **$1.351bn** of unresolved coverage at the modeled floor and **$4.272bn** of denominator slack. The upper endpoint therefore combines missing coverage, including unknown holder roles and access, with room in the supply model. Most denominator slack comes from using Securitize’s whole-platform figure for BUIDL. Treat 62.20% as a coverage ceiling under these assumptions. [Bound calculation](../scripts/kill_test.py) · [Coverage by holder class](HOLDERS.md#share-of-pinned-deployment-supply)
 
 ## Custody-inclusive backing
 
-Including Anchorage’s BUIDL reserves adds **$532,696,708.18** after reporting adjustments. The custody-inclusive total of **$619.37m** is a **6.74%** rounded-down lower bound for the same basket. This companion clears 5% and relies on Anchorage’s examined Solana and Aptos reserve legs. Removing those two legs leaves **$241.93m** and a **2.63%** lower share. The arithmetic upper bound is 100% because the strict exclusions address contract form or receipt access. [Calculation and sensitivity](../scripts/kill_test.py) · [USDtb bank custody](#usdtb-bank-custody)
+Including Anchorage’s BUIDL reserves adds **$532,696,708.18** after reporting adjustments. The custody-inclusive total of **$619.37m** gives a **6.74%** rounded-down lower bound under the same basket assumptions. The **$241.93m** backed by pinned balances includes **$155.26m** of BUIDL in Avalanche and BNB Chain custody, plus the direct contracts. The remaining **$377.43m** relies on Anchorage’s examined Solana and Aptos disclosures. With only the pinned balances, the lower share is **2.63%**. The arithmetic upper bound is 100% because the direct exclusions concern contract form or receipt access. [Calculation](../scripts/kill_test.py) · [USDtb bank custody](#usdtb-bank-custody)
+
+### How the headline claims are supported
+
+| Claim | Evidence layers |
+| --- | --- |
+| About $533m of BUIDL backed USDtb | **Issuer statement and accountant examination:** Anchorage’s Schedule II itemizes the four reserve legs. **Onchain:** two EVM balances corroborate their legs and Curve quotes a USDtb swap. **Terms:** Anchorage sets eligibility for issuer-facing redemption. [Reserve evidence](#usdtb-bank-custody) · [Stablecoin terms](https://www.anchorage.com/anchorage-digital-bank-n-a-covered-stablecoin-terms) |
+| $86.67m in direct contracts | **Onchain:** pinned balances, custody linkage and market probes. **Issuer statement:** Superstate’s NAV and Ondo’s price marks. **Arithmetic:** sum qualified positions after the applicable caps and marks. **Interpretation:** the technical-access test includes a dust route. [Midas](#midas-mtbill) · [Usual](#usual-usd0-collateral) · [STBL](#stbl-usst) |
+| 0.94%–62.20% direct and at least 6.74% including custody | **Arithmetic:** divide evidenced backing and the maximum unresolved eligible value by the modeled basket ceiling. **Interpretation:** the direct range leaves 5% unresolved and the custody-inclusive lower bound clears it conditional on the model and attestation. [Denominators](#denominator-sensitivity) · [Bound arithmetic](METHOD.md#bound-arithmetic-and-rerun) |
 
 ## Evidence that moves the bounds
 
@@ -43,7 +51,7 @@ Ethereum Frax holds **15,830,037.48 BUIDL** with zero route-local minted frxUSD 
 
 Ethereum USTB rank 2 is Midas’s USTB-backed redemption vault at `0x569d7dccbf6923350521ecbc28a555a500c4f0ec`. Its **6,379,144.864074 USTB** equals **$71,637,209.94** at Superstate’s September 30 NAV. The pinned implementation matches verified `RedemptionVaultWithUSTB` source. `mToken()` points to mTBILL, `ustbRedemption()` points to a helper that names USTB and USDC, and the vault holds mTBILL’s burn role. The proxy admin is owned by the Midas timelock listed by the protocol. The separate Midas access controller manages operating roles. Both the vault and token were unpaused. The implementation burns mTBILL on instant redemption and can convert the held USTB to cover a USDC shortfall. At the pin Ethereum had **67.71m mTBILL**, worth about **$72.70m** at its pinned **$1.07370197** feed, above the attributed USTB lot. [Historical reads](../evidence/review-ethereum-2026-09-30.json) · [Midas sources and offering evidence](SOURCES.md#independent-review-repair)
 
-An initialized, hook-free Uniswap v4 pool had active liquidity at the pin. Its quoter returned **0.062855948318360643 mTBILL for 0.0001 ETH** with a **79% LP fee**. A separate read-only call accepted an mTBILL transfer from PoolManager to an address without the Midas greenlist role. Verified token code checks pause and blacklist on transfers. The quote establishes a costly small-size route. Trading depth and primary redemption remain separate from this access test. [Pool event, state, quote and token checks](../evidence/review-ethereum-2026-09-30.json)
+An initialized, hook-free Uniswap v4 pool had active liquidity at the pin. Its quoter returned **0.062855948318360643 mTBILL for 0.0001 ETH** with a **79% LP fee**. A separate read-only call accepted an mTBILL transfer from PoolManager to an address without the Midas greenlist role. Verified token code checks pause and blacklist on transfers. This was the only open mTBILL route found at the pin. The fee and tested size make it economically prohibitive as evidence of meaningful access. We leave depth and primary redemption separately unresolved and show the result with the entire Midas lot removed from the lower-bound calculation. [Pool event, state, quote and token checks](../evidence/review-ethereum-2026-09-30.json)
 
 ### STBL USST
 
@@ -63,7 +71,7 @@ Horizon held **1,410,692.832857 USTB** and **100 USYC**. Flux’s Ethereum fOUSG
 
 ### USDtb bank custody
 
-Anchorage's examined report itemizes **$532,696,711 of BUIDL** backing USDtb across Solana, Aptos, Avalanche and BNB Chain in Schedule II. The economic measure includes all four after conservative rounding adjustments. The Avalanche and BNB Chain custody addresses have historical no-code corroboration and enter the strict exclusion once each. The Avalanche leg is already included in its no-code subtotal. The Solana and Aptos legs remain unresolved for strict classification. At the Ethereum pin the Curve USDtb pool held **10,484,993.79 USDtb**, quoting **1.000011446292664265 USDtb** for 1 USDC. [Anchorage report, Schedules I–II](https://learn.anchorage.com/09.30.26_USDtb-Stablecoin-Attestation-Report-signed.pdf) · [Pinned reads](../evidence/evm-2026-09-30.json) · [Curve registry row](../evidence/curve-usdtb-pool.json)
+Anchorage's examined report itemizes **$532,696,711 of BUIDL** backing USDtb across Solana, Aptos, Avalanche and BNB Chain in Schedule II. The economic measure uses pinned amounts for BNB Chain and Avalanche and attestation-only amounts for Solana and Aptos, with a full dollar removed from each whole-dollar attested leg. The Avalanche and BNB Chain custody addresses have historical no-code corroboration and enter the strict exclusion once each. The Avalanche leg is already included in its no-code subtotal. The Solana and Aptos legs remain unresolved for strict classification. At the Ethereum pin the Curve USDtb pool held **10,484,993.79 USDtb**, quoting **1.000011446292664265 USDtb** for 1 USDC. [Anchorage report, Schedules I–II](https://learn.anchorage.com/09.30.26_USDtb-Stablecoin-Attestation-Report-signed.pdf) · [Pinned reads](../evidence/evm-2026-09-30.json) · [Curve registry row](../evidence/curve-usdtb-pool.json)
 
 ### Covered secondary markets
 
@@ -85,3 +93,22 @@ Ondo’s October 2–4 marks of **$319.73m**, **$319.76m** and **$321.23m** exce
 | $10m time and $25m unknown-chain allowances | $356.23m | 0.94–62.20% | 6.74% |
 | Double both allowances | $391.23m | 0.94–62.35% | 6.72% |
 | Double the modeled OUSG ceiling | $712.45m | 0.90–63.62% | 6.49% |
+
+### BUIDL deployment scenario
+
+Eight September EVM supply reads, including both Ethereum share classes, sum to **1,136,079,649.177649 BUIDL units**. Current reads returned **380,840,998.07** on Solana and **59,531,686.71** on Aptos. Use the larger of the current supply and Anchorage’s September custody on each chain, giving allowances of **380,840,998.07** and **145,511,027** units respectively. At $1 per BUIDL the gross scenario is **$1.66243bn** for BUIDL and **$5.94149bn** for the basket. Current reads serve as scenario inputs. September total supply on those two chains could have exceeded the allowances, and an undocumented deployment could add supply. [Supplemental reads](../evidence/round1-supplement.json) · [BUIDL bridge and denominator method](METHOD.md#buidl-supply-and-bridge-check)
+
+| Basket scenario | Supply ceiling | Direct backing | Direct share interval | Backing with custody | Lower share with custody |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Platform-based headline | $9.17906bn | $86.67m | 0.94–62.20% | $619.37m | 6.74% |
+| Platform-based, excluding dust-only mTBILL route | $9.17906bn | $15.03m | 0.16–62.20% | $547.73m | 5.96% |
+| BUIDL deployment scenario | $5.94149bn | $86.67m | 1.45–41.61% | $619.37m | 10.42% |
+| BUIDL deployment scenario, excluding dust-only mTBILL route | $5.94149bn | $15.03m | 0.25–41.61% | $547.73m | 9.21% |
+
+The dust sensitivity removes Midas from both numerators and leaves the holding unresolved for the direct upper endpoint. The tighter BUIDL scenario leaves the direct verdict open. [Scenario calculation](../scripts/kill_test.py)
+
+## Prior art and contribution
+
+- BIS Bulletin 115 describes why allow-lists constrain direct ownership while indirect exposures can persist. This study measures specific channels at a common cutoff. [BIS Bulletin 115](https://www.bis.org/publications/bulletin-115-rise-tokenised-money-market-funds)
+- Tümer and Mafrur use selected Ethereum contracts and monthly windows to classify transfers by economic function and measure address concentration with and without known intermediaries. This study uses a cross-chain snapshot and asks whether positions at particular intermediary addresses support a token a buyer could acquire. [Tümer and Mafrur, arXiv 2610.05873](https://arxiv.org/html/2610.05873v1)
+- RWA.xyz publishes deployment and holder metrics. Issuer and custodian transparency pages publish fund values or reserve composition. Protocol risk reports such as LlamaRisk’s Horizon updates document collateral, borrowing and parameters within a market. The study combines historical balances, control and quote checks with a six-protocol account of who depends on issuer redemptions. [RWA.xyz BUIDL](https://app.rwa.xyz/assets/BUIDL) · [Superstate USTB](https://superstate.com/assets/ustb) · [Anchorage reports](https://www.anchorage.com/platform/usdtb-reserve-attestations) · [Horizon risk updates](https://governance.aave.com/t/horizon-weekly-highlights/23078?page=2) · [Dependency map](REACH.md#six-protocol-collateral-and-redemption-pause-map)

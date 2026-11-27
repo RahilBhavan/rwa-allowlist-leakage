@@ -1,0 +1,28 @@
+{
+  "design": "Rahil Bhavan / Proofline 1.0.0",
+  "status": "design review pending",
+  "form": "sentence",
+  "reader": "A tokenization reader scanning the post at phone width",
+  "point": "Anchorage reported about $533M of BUIDL in USDtb reserves at September month-end.",
+  "visible_text": "$533M of BlackRock’s BUIDL backed USDtb Anchorage reserve report · September 30, 2026",
+  "alt": "Anchorage reported approximately $533 million of BlackRock’s BUIDL backing USDtb on September 30, 2026.",
+  "words": 12,
+  "size_px": [1200, 675],
+  "feed_width_viewed_px": 342,
+  "font_families_loaded": ["Archivo", "IBM Plex Sans"],
+  "renderer": "Chromium 155.0.8059.84 via Playwright 1.63.0",
+  "layout_check": "PASS. 4 text runs, 35–192 px, lowest contrast 13.20:1 at 1200 × 675",
+  "feed_check": "Exact PNG was inspected at 342 px wide. The claim and source/date remained legible. Static sentence card, no lengths or areas encode data.",
+  "contrast_ink_on_paper": 13.198876015328636,
+  "evidence_url": "https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usdtb-bank-custody",
+  "publisher_url": "https://learn.anchorage.com/09.30.26_USDtb-Stablecoin-Attestation-Report-signed.pdf",
+  "value_basis": "Schedule II total BUIDL fair value, $532,696,711 rounded to the nearest million",
+  "html": {
+    "path": "posts/cards/usdtb-buidl.html",
+    "sha256": "f7c5a9e03b3bfdeb96e62965096c51167990c8053a4e963b4a815a82db79afc1"
+  },
+  "png": {
+    "path": "docs/figures/usdtb-buidl.png",
+    "sha256": "65ceaf29f67742c1a67555a437d4188bd15b69c71c19993e4315f0ee11130b0c"
+  }
+}

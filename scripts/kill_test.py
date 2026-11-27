@@ -6,9 +6,9 @@ import json
 from pathlib import Path
 
 if __package__:
-    from .holder_audit import pinned_read
+    from .holder_audit import balance, pinned_read
 else:
-    from holder_audit import pinned_read
+    from holder_audit import balance, pinned_read
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = "2026-09-30"
@@ -33,6 +33,8 @@ class Position:
     usd: D
     native: D
     strict_custody_exclusion: bool = False
+    attested_only: bool = False
+    dust_only: bool = False
 
 
 def calculate(funds, positions, include_reserve_custody):
@@ -62,6 +64,7 @@ def calculate(funds, positions, include_reserve_custody):
         if custody + contracts + other_exclusions > fund.supply_ceiling_usd:
             raise ValueError(f"classified balances exceed denominator ceiling for {fund.ticker}")
         counted = contracts + custody if include_reserve_custody else contracts
+        attested = sum((row.usd for row in rows if row.attested_only), ZERO) if include_reserve_custody else ZERO
         corroborated_custody = sum((row.usd for row in rows
                                     if row.kind == "reserve_custody" and row.strict_custody_exclusion), ZERO)
         excluded = ZERO if include_reserve_custody else corroborated_custody + other_exclusions
@@ -70,6 +73,7 @@ def calculate(funds, positions, include_reserve_custody):
                         "denominator_slack_usd": fund.supply_ceiling_usd - floor,
                         "denominator_ceiling_usd": fund.supply_ceiling_usd,
                         "verified_usd": counted, "excluded_usd": excluded,
+                        "onchain_backing_usd": counted - attested, "attested_only_backing_usd": attested,
                         "unclassified_at_ceiling_usd": fund.supply_ceiling_usd - counted - excluded,
                         "share_lower": counted / fund.supply_ceiling_usd,
                         "share_upper": (fund.supply_ceiling_usd - excluded) / fund.supply_ceiling_usd})
@@ -90,6 +94,8 @@ def calculate(funds, positions, include_reserve_custody):
         "funds": results,
         "denominator_floor_usd": floor, "denominator_ceiling_usd": ceiling,
         "verified_usd": verified, "excluded_usd": excluded,
+        "onchain_backing_usd": sum(row["onchain_backing_usd"] for row in results),
+        "attested_only_backing_usd": sum(row["attested_only_backing_usd"] for row in results),
         "unclassified_at_ceiling_usd": ceiling - verified - excluded,
         "denominator_slack_usd": ceiling - floor,
         "unclassified_at_floor_usd": floor - verified - excluded,
@@ -335,7 +341,7 @@ def load_revised_evidence(directory):
         if evm is None:
             # Schedule II displays whole dollars. Allow a full increment.
             revised.append(Position(row.fund, row.chain, row.holder, row.kind,
-                                    row.usd - D(1), row.native - D(1)))
+                                    row.usd - D(1), row.native - D(1), attested_only=True))
         else:
             exact = evm["buidl_native"] * row.usd / row.native
             revised.append(Position(row.fund, row.chain, row.holder, row.kind,
@@ -368,7 +374,7 @@ def load_revised_evidence(directory):
                       usst["recorded_net_stable_value_usd"] / model["high_nav_usd"],
                       usst["ethereum_usst"] / model["high_nav_usd"])
     revised.extend([
-        Position("USTB", "ethereum", MIDAS, "wrapper_contract", midas_usd, midas["native"]),
+        Position("USTB", "ethereum", MIDAS, "wrapper_contract", midas_usd, midas["native"], dust_only=True),
         Position("OUSG", "ethereum", STBL, "wrapper_contract", stbl_native * ousg_exclusion_nav, stbl_native),
     ])
     benji_nav = next(row.supply_floor_usd for row in funds if row.ticker == "BENJI") / observations["benji_shares"]
@@ -412,7 +418,45 @@ def load_revised_evidence(directory):
                                 native * exclusion_mark[deployment], native))
         exclusion_reasons["gated_receipt"].append({"deployment": deployment, "address": address})
     observations["additional_strict_exclusions"] = exclusion_reasons
+    supplement = json.loads((directory / "round1-supplement.json").read_text())
+    observations["buidl_deployment_scenario"] = buidl_deployment_model(supplement, captures, reports, positions)
+    small_marks = {"buidl": D(1), "ustb": observations["ustb_nav_usd"], "benji": benji_nav}
+    observations["small_deployments_supply_usd"] = {
+        name: reports[name]["supply_native"] * small_marks[name.split("/")[0]]
+        for name in supplement["holder_probes"]
+    }
     return funds, revised, observations
+
+
+def buidl_deployment_model(capture, captures, reports, positions):
+    solana = capture["solana"]["buidl"]["supply"]["result"]["value"]
+    aptos = capture["aptos"]
+    recent = {
+        "solana": D(solana["amount"]).scaleb(-solana["decimals"]),
+        "aptos": D(aptos["supply"]["result"]["value"][0]["vec"][0]).scaleb(
+            -aptos["metadata"]["result"]["value"]["decimals"]),
+    }
+    # Neither a later point nor a custody balance proves September chain supply.
+    custody = {row.chain: row for row in positions if row.kind == "reserve_custody"}
+    reported = {chain: custody[chain].native for chain in recent}
+    allowances = {chain: max(current, reported[chain]) for chain, current in recent.items()}
+    nav = custody["solana"].usd / custody["solana"].native
+    pinned = {name: report["supply_native"] for name, report in reports.items()
+              if name.startswith(("buidl/", "buidl_i/"))}
+    evm_sum = sum(pinned.values())
+    bridge_balances = {}
+    for name, observation in capture["issuer_bridge"]["deployments"].items():
+        token, calldata = balance(reports[name]["token"], observation["address"])
+        bridge = {"block": captures[name]["block"], "reads": {"balance": observation["balance"]}}
+        balance_hex = pinned_read(bridge, "balance", "eth_call", {"to": token, "data": calldata})
+        bridge_balances[name] = int(balance_hex, 16)
+    # Use a gross sum even when a duplicate is possible. It is a modeled ceiling
+    # only if the included deployments and allowances cover the full pin.
+    return {"pinned_evm_native": pinned, "pinned_evm_sum_native": evm_sum,
+            "recent_native": recent, "reported_custody_native": reported,
+            "bridge_balances_raw": bridge_balances, "non_evm_allowance_native": allowances,
+            "ceiling_usd": (evm_sum + sum(allowances.values())) * nav}
+
 
 
 def sensitivity(funds, positions, observed):
@@ -421,11 +465,18 @@ def sensitivity(funds, positions, observed):
         "frax_documentary_reserve_attribution": (
             funds, [*positions, *(Position(**row) for row in observed["frax_unattributed_reserves"])],
         ),
+        "without_dust_only_routes": (funds, [row for row in positions if not row.dust_only]),
         "without_solana_aptos_attestation": (
             funds, [row for row in positions if not (
                 row.kind == "reserve_custody" and row.chain in {"solana", "aptos"})],
         ),
     }
+    buidl_ceiling = observed["buidl_deployment_scenario"]["ceiling_usd"]
+    buidl_funds = [replace(fund, supply_ceiling_usd=buidl_ceiling) if fund.ticker == "BUIDL" else fund
+                   for fund in funds]
+    scenarios["buidl_deployment_ceiling"] = (buidl_funds, positions)
+    scenarios["buidl_deployment_ceiling_without_dust"] = (
+        buidl_funds, [row for row in positions if not row.dust_only])
     for label, ceiling in (
         ("ousg_pinned_high_or_published_max", model["ceiling_basis_usd"]),
         ("ousg_double_allowances", model["ceiling_basis_usd"] +
@@ -441,6 +492,9 @@ def sensitivity(funds, positions, observed):
         outcomes[label] = {
             "direct": {key: direct[key] for key in ("share_lower", "share_upper")},
             "custody_inclusive_lower": broad["share_lower"],
+            "denominator_ceiling_usd": direct["denominator_ceiling_usd"],
+            "direct_backing_usd": direct["verified_usd"],
+            "custody_inclusive_backing_usd": broad["verified_usd"],
         }
     return outcomes
 

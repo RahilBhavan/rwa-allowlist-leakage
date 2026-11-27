@@ -190,6 +190,19 @@ def load_holders(directory):
     for name, capture in captures.items():
         if capture["target"] != config["targets"][name]:
             raise ValueError(f"captured target differs from inventory: {name}")
+    supplement = json.loads((directory / "round1-supplement.json").read_text())
+    for name, probe in supplement["holder_probes"].items():
+        capture = captures[name]
+        candidates = set(capture["candidates"])
+        for label, row in probe["reads"].items():
+            kind, address = label.split("/")
+            if kind == "balance":
+                candidates.add(address)
+            if "error" not in row:
+                previous = capture["reads"].setdefault(label, row)
+                if previous != row:
+                    raise ValueError(f"conflicting supplemental holder read for {name}/{label}")
+        capture["candidates"] = sorted(candidates)
     return captures, {name: audit(capture) for name, capture in captures.items()}
 
 
@@ -306,8 +319,8 @@ def add_holder_classes(directory, reports):
         raise ValueError("Avalanche holder signer evidence does not precede the pin")
     verify_bnb_discovery(directory, reports["usyc/bsc"])
     anchorage = "0x2004f7f7b600d962170d7f28114cc123c5e98451"
+    reserve = {("buidl/avalanche", anchorage), ("buidl/bsc", anchorage)}
     operations = {
-        ("buidl/avalanche", anchorage), ("buidl/bsc", anchorage),
         ("usyc/ethereum", "0x5c73e1cfdd85b7f1d608f7f7736fc8c653513b7a"),
     }
     signers = {("buidl/avalanche", signer), ("usyc/bsc", USYC_BNB_LARGEST)}
@@ -316,12 +329,15 @@ def add_holder_classes(directory, reports):
             supply_native, residual = report["outstanding_native"], Decimal(0)
         else:
             supply_native, residual = report["supply_native"], report["residual_native"]
-        totals = dict.fromkeys(("issuer_ops", "contract", "eoa", "no_code", "unknown_control", "unobserved"),
+        totals = dict.fromkeys(("issuer_ops", "reserve_custody", "contract", "eoa", "no_code", "unknown_control", "unobserved"),
                                Decimal(0))
         for row in report["rows"]:
             key = deployment, row["address"]
             kind = row["address_type"]
-            if key in operations:
+            if key in reserve:
+                location = "reserve_custody"
+                row["documented_role"] = "Anchorage USDtb reserve custody"
+            elif key in operations:
                 location = "issuer_ops"
             elif kind == "delegated EOA" or (kind == "no runtime code" and key in signers):
                 location = "eoa"

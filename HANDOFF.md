@@ -1,21 +1,37 @@
-# Final handoff
+# Round-one repair handoff
 
-**DONE — September 30, 2026 research and review.** Three direct contract positions qualify under the study’s acquisition test. Midas held $71.64m of USTB, Usual held $14.03m of USYC, and STBL accounted for $1.00m of attributable OUSG. Together they represent $86.67m. Under the stated supply assumptions, the five-fund direct share lies between 0.94% and 62.20%. The evidence leaves the 5% cutoff open. The upper endpoint includes $1.351bn of unresolved coverage at the modeled floor and $4.272bn of additional denominator allowance. [Results](docs/RESULTS.md)
+**DONE — findings and sensitivity.** USDtb’s examined reserve report lists about $533m of BUIDL. The custody-inclusive estimate is $619.37m, with $241.93m supported by pinned balances and $377.43m from attested-only legs. Direct contracts account for $86.67m, or $15.03m without the dust-only mTBILL route. The new BUIDL scenario narrows the conditional direct range from 0.94%–62.20% to 1.45%–41.61%. Both ranges still span 5%. [Results and scenarios](docs/RESULTS.md)
 
-Including Anchorage’s BUIDL reserves for USDtb raises the lower bound to 6.74%. Omitting the Solana and Aptos balances supported by the accountant-examined report lowers it to 2.63%. The Midas acquisition evidence is a small historical quote at a 79% pool fee. The $35.25m Frax inventory is a separate sensitivity because both route-local mint counters were zero. [Method](docs/METHOD.md) · [Sources](docs/SOURCES.md)
+**DONE — scope and drafts.** The report compares prior art, distinguishes onchain and examined amounts, documents the observed bridge implementations and adds a glossary. Four X drafts link to the public evidence. The original Proofline USDtb card passed its 12-word, artifact hash, contrast and layout checks and was inspected at full and phone widths. Design review is pending. [Method](docs/METHOD.md) · [Drafts and card](posts/DRAFTS.md)
 
-**PARTLY DONE — holder coverage.** The holder tables document all 33 observed contracts, available rankings and unresolved balances. Missing deployments, incomplete historical registers, unidentified operators and the OUSG denominator assumptions limit precision. The five fund diagrams and six-protocol map distinguish verified positions from potential credit and redemption dependencies. [Holder tables](docs/HOLDERS.md) · [Fund diagrams and protocol map](docs/REACH.md)
+**PARTLY DONE — deployment coverage.** Optimism BUIDL and Plume USTB now reconcile to pinned supply. The Optimism Safe’s role and the pinned secondary-access terms for the two Nest vault lots remain unresolved. The holder report gives request and failure records for small deployments and tests how much their full supply could move the bounds. Current Solana reads cover all five mint supplies plus BENJI’s largest returned token account. Four other largest-account requests failed at the tested endpoints. [Coverage details](docs/HOLDERS.md)
 
-**NOT DONE — exhaustive census and market depth.** The study does not establish an exact basket share, September BENJI portfolio allocation, executable exit liquidity at size or losses under a redemption pause.
+**NOT DONE — full September registers, global bridge deduplication and market depth.** The public evidence leaves some chain state and operators unknown. The current non-EVM supply scenario cannot certify September supply. A pinned quote tests one route at its stated size. The study leaves exit depth, recovery under a pause and the exact five-fund share unresolved. [Decisions](docs/DECISIONS.md#2026-11-26--round-one-quality-repair)
 
 ## Verification
 
-Claude Sonnet independently reviewed the pre-repair research. GPT-6.2 Sol completed the research repair and GPT-6.2 Astra verified that revision. The publication evidence reproduces both calculation outputs byte for byte and passes all 19 offline tests. The 18 published JSON fixtures have their own checksum manifest. The later Opus assessment scored the earlier research snapshot 5 overall. Its scores and findings remain in the review record. [Review decisions](docs/DECISIONS.md) · [Opus assessment](docs/QUALITY.md) · [Replay commands](docs/METHOD.md#repair-fixtures-and-replay)
+Role key. Sol implemented the repair. Astra verifies and owns publication. Sonnet reviewed the earlier research and Opus recorded the historical round-one score. Use Python 3.10 or newer from the repository root. The offline checks passed on Python 3.10.21 and 3.14.8.
 
-## Rahil’s decision
+```sh
+git status --short --branch
+git diff --check
+git diff --exit-code -- QUALITY.json docs/QUALITY.md LICENSE
+sha256sum -c evidence/SHA256SUMS
+python3 -m unittest discover -s tests -v
+python3 scripts/holder_audit.py
+python3 scripts/kill_test.py
+python3 scripts/check_post_card.py
+```
 
-Choose whether to publish a draft. The direct-contract result answers the original holder question. If using the custody-inclusive figure, retain its separate definition and dependence on attested balances. Rahil authorized public GitHub publication. The draft-post decision and the later quality repair remain separate. [Five draft posts](posts/DRAFTS.md)
+All 22 offline tests and 19 fixture checksums passed. The clean public-tree audit checked 177 relative Markdown links and found no credential patterns or private paths. Eight isolated code mutations were rejected, including removal of the Franklin check, widening the reserve tolerance, removing the mTBILL supply cap and ignoring a nonzero Frax mint counter. Use the optional live checks from [the method](docs/METHOD.md#repair-fixtures-and-replay). The first command replays saved historical evidence and reports mismatches and endpoint errors by read. The full pass matched 677 checks and encountered one Arbitrum HTTP 429. The exact-read retry matched the remaining check, for 678 matches and zero mismatches across the two runs. The PDF verifier passed 15 checks against three hash-verified publisher files fetched to an empty directory. Its normal destination is ignored `data/upstream/`. A separate supplement refresh completed with live results or explicit per-request errors in ignored storage.
 
-## Publication and quality loop
+```sh
+python3 scripts/replay_evidence.py --workers 1
+python3 scripts/replay_evidence.py --fixture round1-supplement \
+  --read round1-supplement/bridge/buidl/arbitrum/implementation --workers 1
+python3 scripts/verify_pdf_facts.py
+```
 
-The sanitized study is public. The reopened quality loop scored 5/10 in round one. Sol’s repairs and a fresh Opus review follow. [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)
+## Rahil’s decisions and review
+
+Choose the public lead, approve the exact card and decide whether to publish a draft. The original-code license is recorded on the public base. Review the revised slice independently after Astra verifies and commits it. [Historical round-one review](docs/QUALITY.md) · [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)

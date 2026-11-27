@@ -13,11 +13,11 @@ Native units, rounded for readability. “Verified” counts addresses with a ce
 | BUIDL BNB Chain | 125,000,754 | 146,619,491.33 | 35,194,533.68 | 1 / 1 | Anchorage is rank 1 with 111.42m at a no-code address. Other holders remain unresolved. |
 | BUIDL Avalanche | 96,488,899 | 486,533,969.52 | 0 | 6 / 6 | Rank 1 is a no-code holder at 432.87m with a signed redemption-route transfer before the pin. Anchorage is rank 2 at 43.84m. Rank 5 is the sBUIDL token contract with 9,240 BUIDL. All five other positive accounts have no runtime code. |
 | BUIDL Arbitrum | 510,496,863 | 8,577,422.39 | 8,577,422.39 | 0 / 0 | Supply read. Holder index rejected the network. |
-| BUIDL Optimism | 157,607,011 | 26,472,554.59 | 26,472,554.59 | 0 / 0 | Supply read. Holder index rejected the network. |
+| BUIDL Optimism | 157,607,011 | 26,472,554.59 | 0 | 2 / 2 | Rank 1 held 26,472,446.76 in a code-bearing account. Rank 2 had no runtime code. |
 | BUIDL Polygon | 94,738,439 | 7,540,191.03 | 7,540,191.03 | 0 / 0 | Supply read. Holder index rejected the network. |
 | BUIDL Tempo | 42,021,929 | 17,102,298.05 | 17,102,298.05 | 0 / 0 | Supply read. Holder index rejected the network and the official RPC caps log windows. |
 | USTB Ethereum | 26,093,737 | 50,620,204.672699 | 5,374,817.685102 | 3 / 29 | Rank 1 has no code and holds 13.83m. Verified rank 2 is the Midas mTBILL vault at 6.38m. Rank 3 holds 5.85m with no runtime code and unresolved identity. Frax holds 1.73m and Horizon’s non-transferable USTB collateral receipt contract holds 1.41m. |
-| USTB Plume | 96,561,570 | 339,802.153683 | 339,802.153683 | 0 / 0 | Issuer-address supply read. Holder index rejected the network. |
+| USTB Plume | 96,561,570 | 339,802.153683 | 0 | 2 / 2 | Two Nest vault contracts reconcile supply. nTBILL held 338,816.706554 and nBASIS held 985.447129 USTB. |
 | USYC Ethereum | 26,093,737 | 36,774,089.914760 | 6,593,845.515318 | 2 / 23 | Rank 1 is a 2-of-4 Safe with 13.85m and unresolved operator and wrapper role. Usual’s collateral treasury is rank 2 with 12.32m. Horizon holds 100 USYC. Morpho Blue’s documented Ethereum singleton holds zero USYC. |
 | USYC BNB Chain | 125,000,754 | 2,073,937,727.947452 | 10.002084 | 1 / 1 | Rank 1 is a transaction signer with no runtime code at the pin and holds 2,073,937,717.945368. Transfer receipt discovery and pinned balance plus supply prove rank 1. Custody operator and the residual holders are unresolved. |
 | USYC Arc | 23,620,687 | 0 | 0 | 0 / 0 | Zero supply at the discovered mainnet address. The explorer denied holder-list access. Arc’s post-launch product references do not provide a September holder register. |
@@ -32,36 +32,35 @@ Native units, rounded for readability. “Verified” counts addresses with a ce
 
 ## Share of pinned deployment supply
 
-Percentages use each deployment's own `totalSupply()`, or reconciled issuer obligations for XRPL. They describe account locations and are mutually exclusive. Documented fund or custody operations take precedence over account type. EOA requires a signed transaction corroboration or EIP-7702 designation. No-code means empty runtime at the pin with insufficient signer or role evidence. Unknown control is an observed balance with unresolved account class, including trust-line accounts. Unobserved is the supply residual. Rounding can affect the row sum. A dash means the share is undefined. Where supply is unavailable, see the remaining deployment gaps. The holdings in different rows may represent the same fund shares. [Class calculation](../scripts/holder_audit.py) · [Avalanche signed transaction](../evidence/buidl-avalanche-signer.json) · [BNB signed sender and burn](../evidence/usyc-bnb-receipt-2026-09-25.json)
+Percentages use each deployment's own `totalSupply()`, or reconciled issuer obligations for XRPL. They describe account locations and are mutually exclusive. Documented fund operations and third-party stablecoin reserve custody take precedence over account type. EOA requires a signed transaction corroboration or EIP-7702 designation. No-code means empty runtime at the pin with insufficient signer or role evidence. Unknown control is an observed balance with unresolved account class, including trust-line accounts. Unobserved is the supply residual. Rounding can affect the row sum. A dash means the share is undefined. Where supply is unavailable, see the remaining deployment gaps. The holdings in different rows may represent the same fund shares. [Class calculation](../scripts/holder_audit.py) · [Avalanche signed transaction](../evidence/buidl-avalanche-signer.json) · [BNB signed sender and burn](../evidence/usyc-bnb-receipt-2026-09-25.json)
 
-| Fund / chain | Issuer / ops | Contract | EOA | No-code | Unknown control | Unobserved |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| benji/arbitrum | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| benji/avalanche | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% |
-| benji/base | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| benji/ethereum | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% |
-| benji/polygon | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| buidl/arbitrum | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| buidl/avalanche | 9.010% | 0.002% | 88.971% | 2.017% | 0.000% | 0.000% |
-| buidl/bsc | 75.996% | 0.000% | 0.000% | 0.000% | 0.000% | 24.004% |
-| buidl/ethereum | 0.000% | 10.558% | 0.000% | 83.296% | 0.000% | 6.147% |
-| buidl/optimism | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| buidl/polygon | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| buidl/tempo | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| buidl_i/ethereum | 0.000% | 96.825% | 0.000% | 3.175% | 0.000% | 0.000% |
-| ousg/ethereum | 0.000% | 72.729% | 0.000% | 27.166% | 0.000% | 0.105% |
-| ousg/polygon | — | — | — | — | — | — |
-| ustb/ethereum | 0.000% | 24.167% | 0.000% | 65.215% | 0.000% | 10.618% |
-| ustb/plume | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
-| usyc/arc | — | — | — | — | — | — |
-| usyc/bsc | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% | 0.000% |
-| usyc/ethereum | 0.000% | 71.159% | 0.000% | 10.911% | 0.000% | 17.931% |
-| ousg/xrpl | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% |
-
+| Fund / chain | Issuer / ops | Third-party stablecoin reserve custody | Contract | EOA | No-code | Unknown control | Unobserved |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| benji/arbitrum | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| benji/avalanche | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% |
+| benji/base | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| benji/ethereum | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% |
+| benji/polygon | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| buidl/arbitrum | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| buidl/avalanche | 0.000% | 9.010% | 0.002% | 88.971% | 2.017% | 0.000% | 0.000% |
+| buidl/bsc | 0.000% | 75.996% | 0.000% | 0.000% | 0.000% | 0.000% | 24.004% |
+| buidl/ethereum | 0.000% | 0.000% | 10.558% | 0.000% | 83.296% | 0.000% | 6.147% |
+| buidl/optimism | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% | 0.000% | 0.000% |
+| buidl/polygon | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| buidl/tempo | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
+| buidl_i/ethereum | 0.000% | 0.000% | 96.825% | 0.000% | 3.175% | 0.000% | 0.000% |
+| ousg/ethereum | 0.000% | 0.000% | 72.729% | 0.000% | 27.166% | 0.000% | 0.105% |
+| ousg/polygon | — | — | — | — | — | — | — |
+| ousg/xrpl | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% |
+| ustb/ethereum | 0.000% | 0.000% | 24.167% | 0.000% | 65.215% | 0.000% | 10.618% |
+| ustb/plume | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% | 0.000% | 0.000% |
+| usyc/arc | — | — | — | — | — | — | — |
+| usyc/bsc | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% | 0.000% |
+| usyc/ethereum | 0.000% | 0.000% | 71.159% | 0.000% | 10.911% | 0.000% | 17.931% |
 
 ## Observed contracts and wrapper decisions
 
-This is the full positive-balance contract census in the observed EVM candidates. The pinned holder fixture carries runtime classifications and byte hashes alongside exact balances. Ranks marked “uncertified” are candidate observations. Ranks use exact raw units and the supply residual. Source verification leads identify contract types where available. A control type, including a Safe with no enabled module, cannot resolve offchain reserve commitments or a downstream receipt. Safes with unresolved backing stay in the direct upper bound. [Pinned holder capture](../evidence/holders-2026-09-30.json) · [Supplemental control and market reads](../evidence/review-ethereum-2026-09-30.json) · [Source-match leads](../evidence/review-contract-discovery.json) · [Protocol documents and source limits](SOURCES.md)
+This is the full positive-balance contract census in the observed EVM candidates. The pinned holder fixture and supplemental reads carry runtime classifications and byte hashes alongside exact balances. Ranks marked “uncertified” are candidate observations. Ranks use exact raw units and the supply residual. Source verification leads identify contract types where available. A control type, including a Safe with no enabled module, cannot resolve offchain reserve commitments or a downstream receipt. Safes with unresolved backing stay in the direct upper bound. [Pinned holder capture](../evidence/holders-2026-09-30.json) · [Supplemental control and market reads](../evidence/review-ethereum-2026-09-30.json) · [Round-one coverage additions](../evidence/round1-supplement.json) · [Source-match leads](../evidence/review-contract-discovery.json) · [Protocol documents and source limits](SOURCES.md)
 
 | Fund / chain | Certified rank | Holder | Native units | Control and evidence | Direct wrapper decision |
 | --- | ---: | --- | ---: | --- | --- |
@@ -73,6 +72,9 @@ This is the full positive-balance contract census in the observed EVM candidates
 | buidl/ethereum | uncertified | `0xb1748c79709f4ba2dd82834b8c82d4a505003f27` | 10,000.000000 | Current verified source lead names GnosisSafeProxy / GnosisSafe. Historical operator unresolved. | Downstream backing and access unresolved. Kept inside strict ceiling. |
 | buidl_i/ethereum | 1 | `0x491edfb0b8b608044e227225c715981a30f3a44e` | 119,322,905.350000 | Grove ALMProxy named in Sky governance. | Allocator credit path. Exact public-receipt reserve attribution unresolved. |
 | buidl_i/ethereum | 2 | `0x68a99f89e475a078645f4bac491360afe255dff1` | 112,907,656.670000 | Pinned Safe 4-of-7 via master copy and threshold/owner reads. No enabled module returned. | Operator and backing relationship unresolved. Kept inside strict ceiling. |
+| buidl/optimism | 1 | `0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29` | 26,472,446.760000 | Code at the pin. The [current explorer identifies SafeProxy](https://optimism.blockscout.com/api/v2/addresses/0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29). | Operator, custody function and downstream token unresolved. |
+| ustb/plume | 1 | `0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9` | 338,816.706554 | Pinned symbol nTBILL and runtime code. Nest documents vault shares. | Historically open secondary acquisition at the pin unresolved. |
+| ustb/plume | 2 | `0x11113ff3a60c2450f4b22515cb760417259ee94b` | 985.447129 | Pinned symbol nBASIS and runtime code. Nest documents vault shares. | Historically open secondary acquisition at the pin unresolved. |
 | ousg/ethereum | 1 | `0x1dd7950c266fb1be96180a8fdb0591f70200e018` | 336,339.561726 | Flux fOUSG. Pinned underlying, Comptroller markets and controls. | Gated fOUSG excluded. Indirect stablecoin lending mapped separately. |
 | ousg/ethereum | 2 | `0x5d87fa995c54fff52cfe1c18d8ebf79f0eeb3aeb` | 261,208.832946 | Pinned Safe 2-of-3 via master copy and threshold/owner reads. No enabled module returned. | Operator and backing relationship unresolved. Kept inside strict ceiling. |
 | ousg/ethereum | 3 | `0x56e60979d5934a05d22606b0455d52f59f20a6a0` | 187,133.335682 | Pinned Safe 2-of-4 via master copy and threshold/owner reads. 1 enabled module returned. Module purpose unresolved. | Operator and backing relationship unresolved. Kept inside strict ceiling. |
@@ -103,7 +105,7 @@ This is the full positive-balance contract census in the observed EVM candidates
 
 | Fund / deployment | Coverage |
 | --- | --- |
-| BUIDL Solana | Anchorage Schedule II attests 231,923,254 BUIDL at the report timestamp. A current holder index provides candidates. Keyless Solana largest-account and supply reads cannot select historical state. No historic rank or independent control attribution. |
+| BUIDL Solana | Anchorage Schedule II attests 231,923,254 BUIDL at the report timestamp. The current mint supply is below. Historical rank and independent control attribution remain unresolved. |
 | BUIDL Aptos | Schedule II reports 145,511,027 BUIDL. The public node’s retention does not reach the report time. No historic rank or independent control attribution. |
 | BUIDL Arc | Circle names BUIDL in its mainnet launch ecosystem. A September issuer token-address mapping and supply were not independently established. |
 | USTB Solana | Issuer provides the SPL mint. Historical payer or program-controlled holder ranking and supply are unresolved. |
@@ -119,4 +121,40 @@ This is the full positive-balance contract census in the observed EVM candidates
 
 [Evidence and discovery sources](SOURCES.md) · [Pin and exclusion rules](METHOD.md)
 
-Solana and Aptos BUIDL have known Anchorage custody balances on the attestation date. Each chain’s total supply and technical account control are unknown, so their issuer/ops share of chain supply remains undefined. All other deployments in the gap table have unknown class shares. The September BENJI allocation inside OUSG remains unverified.
+Solana and Aptos BUIDL have known Anchorage custody balances on the attestation date. Each chain’s September total supply and technical account control remain unknown, so the share of supply in reserve custody remains undefined. All other deployments in the gap table have unknown class shares. The September BENJI allocation inside OUSG remains unverified.
+
+### Small EVM deployments revisited
+
+The [supplement capture](../scripts/fetch_supplement.py) tries at most 12 explorer holders and a 1,000-block `eth_getLogs` window ending at each pin. It reads candidate balances and code at the historical block. The rows below describe the exact endpoints, requests and responses recorded in the [supplement fixture](../evidence/round1-supplement.json). The Blockscout results give candidate addresses. The supply residual certifies the Optimism and Plume ranks.
+
+```sh
+mkdir -p data
+python3 scripts/fetch_supplement.py data/live-supplement.json
+```
+
+| Target | Explorer holder query | Pinned transfer window | Maximum supply at the pin |
+| --- | --- | --- | ---: |
+| BUIDL Arbitrum | Arbitrum Blockscout 403 | Blast API 400 | $8.58m |
+| BUIDL Optimism | Optimism Blockscout found both holders | dRPC 400 | $26.47m |
+| BUIDL Polygon | Polygon Blockscout 403 | dRPC 400 | $7.54m |
+| BUIDL Tempo | Tempo explorer 404 | Tempo RPC returned zero logs in the window | $17.10m |
+| BENJI Arbitrum | Arbitrum Blockscout 403 | Blast API 400 | $47.98m |
+| BENJI Base | Base Blockscout 403 | Base RPC 429 | $59.76m |
+| BENJI Polygon | Polygon Blockscout 403 | dRPC 400 | $32.23m |
+| USTB Plume | Plume explorer found both positive holders at the pin | Plume RPC returned zero logs in the window | $3.82m |
+| OUSG Polygon | Zero identified contract supply | Holder ranking undefined | $0 |
+| USYC Arc | Zero identified contract supply | Holder ranking undefined | $0 |
+
+The eight positive-supply deployments together are worth at most **$203.48m** at the applied fund marks (see `observations.small_deployments_supply_usd`), even with gross counting across chains. Adding all eight to the qualifying direct backing would bring it to $290.15m, below the $458.95m headline cutoff and the $297.07m BUIDL deployment scenario cutoff. Excluding all eight from possible direct backing still leaves both direct upper endpoints above 5%. These extremes isolate the possible effect of these deployments while holding the rest of the model fixed. The pinned Plume symbols identify both vaults. Protocol materials describe their share tokens and routes, but no historical market and permission check qualifies their lots for the lower bound. [Arithmetic](RESULTS.md#buidl-deployment-scenario) · [Nest vaults](https://docs.nest.credit/about/available-vaults) · [Plume integration](https://www.plume.org/blog/plume-brings-institutional-real-world-yield-to-solana-with-launch-of-rwa-nest-vaults)
+
+### Current Solana observations
+
+November 27, 2026 UTC, separate from the September pin. Each successful `getTokenSupply` response reports its finalized slot. A largest token account can be a custody or program account and is not an owner or beneficial-holder count. Recorded keyless attempts that hit rate limits, index exclusions or access denials leave rank unknown. [Requests and responses](../evidence/round1-supplement.json) · [Solana RPC](https://solana.com/docs/rpc/http/gettokenlargestaccounts)
+
+| Fund | Supply slot | Current mint units | Largest-account indication |
+| --- | ---: | ---: | --- |
+| BUIDL | 474,405,838 | 380,840,998.07 | Index unavailable at the tested endpoints |
+| USTB | 474,405,845 | 110,538.814980 | Index unavailable at the tested endpoints |
+| USYC | 474,405,845 | 122.481545 | Index unavailable at the tested endpoints |
+| OUSG | 474,405,838 | 0 | Zero current supply for the issuer-listed mint. The largest-account requests failed. |
+| BENJI | 474,405,841 | 512,250.879500249 | At slot 474,405,851, one returned account held 512,250.879500249. Owner and September balance are unknown. |

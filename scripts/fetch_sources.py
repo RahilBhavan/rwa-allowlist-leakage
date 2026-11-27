@@ -58,40 +58,47 @@ class SameHostRedirect(HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+def fetch_source(source):
+    """Return a publisher file after verifying any pinned byte hash."""
+    url, filename, expected_hash = SOURCES[source]
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    destination = OUTPUT / filename
+    if destination.exists():
+        with destination.open("rb") as existing:
+            body = existing.read(MAX_BYTES + 1)
+    else:
+        with build_opener(SameHostRedirect()).open(url, timeout=30) as response:
+            body = response.read(MAX_BYTES + 1)
+    if len(body) > MAX_BYTES:
+        raise ValueError("source exceeded the download limit")
+    digest = sha256(body).hexdigest()
+    if expected_hash and (digest != expected_hash or not body.startswith(b"%PDF-")):
+        raise ValueError("publisher file differs from the pinned PDF")
+    if not destination.exists():
+        with destination.open("xb") as output:
+            output.write(body)
+    return destination, digest
+
+
+def extract_pdf(source, destination):
+    pages = ["-f", "12", "-l", "12"] if source == "circle" else []
+    return subprocess.check_output(["pdftotext", "-layout", *pages, str(destination), "-"])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", choices=tuple(SOURCES))
     parser.add_argument("--extract", action="store_true", help="extract verified PDF text using pdftotext")
     args = parser.parse_args()
-    url, filename, expected_hash = SOURCES[args.source]
-    if args.extract and expected_hash is None:
+    if args.extract and SOURCES[args.source][2] is None:
         parser.error("--extract requires a pinned PDF source")
-
-    OUTPUT.mkdir(parents=True, exist_ok=True)
-    destination = OUTPUT / filename
     try:
-        if destination.exists():
-            with destination.open("rb") as existing:
-                body = existing.read(MAX_BYTES + 1)
-        else:
-            with build_opener(SameHostRedirect()).open(url, timeout=30) as response:
-                body = response.read(MAX_BYTES + 1)
-        if len(body) > MAX_BYTES:
-            raise ValueError("source exceeded the download limit")
-        digest = sha256(body).hexdigest()
-        if expected_hash and (digest != expected_hash or not body.startswith(b"%PDF-")):
-            raise ValueError("publisher file differs from the pinned PDF")
-        if not destination.exists():
-            with destination.open("xb") as output:
-                output.write(body)
+        destination, digest = fetch_source(args.source)
         if args.extract:
-            pages = ["-f", "12", "-l", "12"] if args.source == "circle" else []
-            extracted = subprocess.check_output(["pdftotext", "-layout", *pages, str(destination), "-"])
-            destination.with_suffix(".txt").write_bytes(extracted)
+            destination.with_suffix(".txt").write_bytes(extract_pdf(args.source, destination))
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         parser.exit(1, f"{args.source}: {error}\n")
-
-    print(f"{digest}  data/upstream/{filename}")
+    print(f"{digest}  data/upstream/{destination.name}")
 
 
 if __name__ == "__main__":

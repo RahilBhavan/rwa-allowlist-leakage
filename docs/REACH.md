@@ -26,17 +26,18 @@ Frax and Anchorage carry different custody evidence. BUIDL’s Securitize and Un
 
 ```text
 USTB → qualified investor / book-entry account → Superstate USD or USDC exit
-   ├── Midas Ethereum redemption vault → mTBILL → Uniswap v4 buyer
+   ├── Midas Ethereum redemption vault → mTBILL → Uniswap v4 dust quote
    │    [$71.64m USTB backing, small open quote at 79% LP fee]
    ├── Ethereum Frax USTB custodian → frxUSD → Curve buyer
    │    [$19.42m inventory, zero route-local minted frxUSD, attribution sensitivity]
    ├── Ethereum Horizon aToken → permissioned borrower → open stablecoin lender
    │    [1.41m USTB; collateral receipt cannot be traded by end users]
    ├── Other Ethereum contracts [operators or downstream backing unresolved]
-   └── Solana Kamino, Plume and book entry [holder data incomplete]
+   ├── Plume Nest nTBILL and nBASIS [vault balances pinned, secondary access unresolved]
+   └── Solana Kamino and book entry [historical holder data incomplete]
 ```
 
-Book entry and Solana/Plume are included in issuer AUM. Kamino is a product integration, with size at the pin unresolved. The Midas route gives mTBILL exposure through a secondary swap. Primary redemption follows issuer terms and relies on USTB liquidation when USDC balances run short. [Midas pinned evidence](RESULTS.md#midas-mtbill) [Superstate instrument and integrations](https://superstate.com/assets/ustb) · [Aave RWA receipt mechanics](https://aave.com/docs/aave-v3/smart-contracts/tokenization)
+Book entry and Solana/Plume are included in issuer AUM. Kamino is a product integration, with size at the pin unresolved. The only open mTBILL acquisition evidence found at the pin is a dust quote with a 79% pool fee. Primary redemption follows issuer terms and relies on USTB liquidation when USDC balances run short. [Midas pinned evidence](RESULTS.md#midas-mtbill) · [Plume holder evidence](HOLDERS.md#small-evm-deployments-revisited) · [Superstate instrument and integrations](https://superstate.com/assets/ustb) · [Aave RWA receipt mechanics](https://aave.com/docs/aave-v3/smart-contracts/tokenization)
 
 ## USYC
 

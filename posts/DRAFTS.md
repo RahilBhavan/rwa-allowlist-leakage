@@ -1,33 +1,35 @@
 # Standalone X drafts
 
-Drafts for Rahil’s tokenization audience. Editorial evidence links sit below each block.
+Drafts for Rahil’s tokenization audience. The card is an original draft pending design approval.
 
-## Direct contracts
+## USDtb reserves
 
-> On Sep 30, 2026, I found $86.67M in contracts backing DEX-tradable tokens across five tokenized Treasury funds. That’s at least 0.94% by value. Missing holder coverage and supply headroom put the modeled ceiling at 62.20%, leaving the 5% cutoff unresolved.
+> On September 30, 2026, Anchorage reported that $533M of BlackRock’s BUIDL backed USDtb. USDtb had a quoted Curve market, giving DEX buyers exposure to the stablecoin’s reserves.
 
-- The five funds, verified amount and rounded bounds come from the aggregate row. The ceiling combines missing coverage with denominator slack. [Direct-contract test](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#direct-contract-test)
+[USDtb reserve evidence and Curve quote](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usdtb-bank-custody) · [Anchorage’s examined report](https://learn.anchorage.com/09.30.26_USDtb-Stablecoin-Attestation-Report-signed.pdf)
 
-## Bank reserves
+![Anchorage reported approximately $533 million of BlackRock’s BUIDL backing USDtb on September 30, 2026.](../docs/figures/usdtb-buidl.png)
 
-> On Sep 30, Anchorage reported $532.7M of BUIDL backing USDtb. Including bank custody takes the five-fund lower bound to 6.74%. That relies on the Solana and Aptos attestation legs. Without those two legs, the lower bound is 2.63%.
+[Card source](cards/usdtb-buidl.html) · [Card evidence and checks](cards/usdtb-buidl.json)
 
-- The date is September 30, 2026. The first dollar figure rounds the examined report value. Both shares are conditional on the modeled ceiling. [USDtb bank custody](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usdtb-bank-custody) · [Custody-inclusive arithmetic](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#custody-inclusive-backing)
+## The mTBILL market
 
-## Midas redemption vault
+> On September 30, 2026, a Midas vault held USTB for mTBILL redemptions. The only open mTBILL route this study found at that snapshot was a dust-size Uniswap quote with a 79% pool fee.
 
-> On Sep 30, 2026, a Midas vault held $71.64M of USTB to support mTBILL redemptions. A Uniswap v4 quote showed a way to buy mTBILL without onboarding, even with a 79% pool fee. That tiny quote tells us the route existed. Depth at size is still unknown.
-
-- The vault links to mTBILL by pinned source, token, helper and burn permission. The quote was for 0.0001 ETH, and a separate read-only token delivery call succeeded for a non-greenlisted address. [Midas results](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#midas-mtbill)
+[Midas vault and quote](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#midas-mtbill)
 
 ## Usual’s collateral treasury
 
-> On Sep 30, 2026, Usual’s treasury contract held $14.03M of USYC backing USD0. Curve quoted a swap from USDC to USD0. A DEX buyer gets USD0, while direct USYC access still follows Circle’s eligibility rules.
+> On September 30, 2026, Usual’s treasury held $14.03M of Circle’s USYC as collateral for USD0. The collateral contract was configured to draw USYC from that treasury for redemptions.
 
-- The pinned treasury linkage, trade direction, value and issuer access distinction trace to the collateral evidence. [Usual USD0 collateral](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usual-usd0-collateral)
+[Usual’s treasury balance and contract linkage](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usual-usd0-collateral)
 
 ## Flux lending
 
-> On Sep 30, 2026, Flux held about 336,340 OUSG. Eligible users could supply OUSG, and borrowing OUSG was paused. USDC lending stayed open. Its lenders could bear losses if a borrower defaulted and the pledged OUSG was hard to sell.
+> On September 30, 2026, Flux let users lend USDC against a debt book that could include loans secured by OUSG. For a USDC lender, recovery after a borrower default can depend on whether an eligible liquidator can sell the OUSG.
 
-- The figure rounds the pinned fOUSG balance. Pinned Comptroller flags and protocol rules support the conditional credit path. [Gated collateral and open lending](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#gated-collateral-and-open-lending)
+[Pinned Flux controls and credit path](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#gated-collateral-and-open-lending)
+
+## Card verification
+
+Run `python3 scripts/check_post_card.py` from the repository root. It checks the exact exported PNG, the visible-text word count, the amount and date against the source transcription, and the links from the draft. The visual receipt records the layout, palette and feed-size checks. The editable HTML uses Archivo Variable and IBM Plex Sans Regular from the selected Proofline kit. To re-render, place those font files in a sibling `fonts/` directory beside a scratch copy of the HTML. Open the copy with Chromium at 1200 × 675, device scale 1, wait for fonts to load and capture the viewport. Fonts are linked as dependencies and kept outside the public export. [Archivo](https://github.com/Omnibus-Type/Archivo) · [IBM Plex](https://github.com/IBM/plex)

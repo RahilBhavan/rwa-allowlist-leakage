@@ -1,0 +1,967 @@
+{
+  "as_of_utc": "2026-11-27T03:51:18+00:00",
+  "solana": {
+    "buidl": {
+      "supply": {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenSupply",
+        "params": [
+          "GyWgeqpy5GueU2YbkE8xqUeVEokCMMCEeUrfbtMw6phr",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.0",
+            "slot": 474405838
+          },
+          "value": {
+            "amount": "380840998070000",
+            "decimals": 6,
+            "uiAmount": 380840998.07,
+            "uiAmountString": "380840998.07"
+          }
+        }
+      },
+      "largest_attempts": [
+        {
+          "url": "https://api.mainnet-beta.solana.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "GyWgeqpy5GueU2YbkE8xqUeVEokCMMCEeUrfbtMw6phr",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://solana.api.pocket.network",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "GyWgeqpy5GueU2YbkE8xqUeVEokCMMCEeUrfbtMw6phr",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "{'code': -32010, 'message': 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb excluded from account secondary indexes; this RPC method unavailable for key'}"
+        },
+        {
+          "url": "https://solana-rpc.publicnode.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "GyWgeqpy5GueU2YbkE8xqUeVEokCMMCEeUrfbtMw6phr",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ]
+    },
+    "ustb": {
+      "supply": {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenSupply",
+        "params": [
+          "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.0",
+            "slot": 474405845
+          },
+          "value": {
+            "amount": "110538814980",
+            "decimals": 6,
+            "uiAmount": 110538.81498,
+            "uiAmountString": "110538.81498"
+          }
+        }
+      },
+      "largest_attempts": [
+        {
+          "url": "https://api.mainnet-beta.solana.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://solana.api.pocket.network",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "{'code': -32010, 'message': 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb excluded from account secondary indexes; this RPC method unavailable for key'}"
+        },
+        {
+          "url": "https://solana-rpc.publicnode.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "usyc": {
+      "supply": {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenSupply",
+        "params": [
+          "7LWanZteUKtvFjv4MHYgKXXdAuCQYFPJysL9pxxdRQGn",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.0",
+            "slot": 474405845
+          },
+          "value": {
+            "amount": "122481545",
+            "decimals": 6,
+            "uiAmount": 122.481545,
+            "uiAmountString": "122.481545"
+          }
+        }
+      },
+      "largest_attempts": [
+        {
+          "url": "https://api.mainnet-beta.solana.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "7LWanZteUKtvFjv4MHYgKXXdAuCQYFPJysL9pxxdRQGn",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://solana.api.pocket.network",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "7LWanZteUKtvFjv4MHYgKXXdAuCQYFPJysL9pxxdRQGn",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "{'code': -32010, 'message': 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb excluded from account secondary indexes; this RPC method unavailable for key'}"
+        },
+        {
+          "url": "https://solana-rpc.publicnode.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "7LWanZteUKtvFjv4MHYgKXXdAuCQYFPJysL9pxxdRQGn",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "ousg": {
+      "supply": {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenSupply",
+        "params": [
+          "i7u4r16TcsJTgq1kAG8opmVZyVnAKBwLKu6ZPMwzxNc",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.0",
+            "slot": 474405838
+          },
+          "value": {
+            "amount": "0",
+            "decimals": 6,
+            "uiAmount": 0.0,
+            "uiAmountString": "0"
+          }
+        }
+      },
+      "largest_attempts": [
+        {
+          "url": "https://api.mainnet-beta.solana.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "i7u4r16TcsJTgq1kAG8opmVZyVnAKBwLKu6ZPMwzxNc",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://solana.api.pocket.network",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "i7u4r16TcsJTgq1kAG8opmVZyVnAKBwLKu6ZPMwzxNc",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "{'code': -32010, 'message': 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA excluded from account secondary indexes; this RPC method unavailable for key'}"
+        },
+        {
+          "url": "https://solana-rpc.publicnode.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "i7u4r16TcsJTgq1kAG8opmVZyVnAKBwLKu6ZPMwzxNc",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        }
+      ]
+    },
+    "benji": {
+      "supply": {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenSupply",
+        "params": [
+          "5Tu84fKBpe9vfXeotjvfvWdWbAjy3hqsExvuHgFqFxA1",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.0",
+            "slot": 474405841
+          },
+          "value": {
+            "amount": "512250879500249",
+            "decimals": 9,
+            "uiAmount": 512250.879500249,
+            "uiAmountString": "512250.879500249"
+          }
+        }
+      },
+      "largest_attempts": [
+        {
+          "url": "https://api.mainnet-beta.solana.com",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "5Tu84fKBpe9vfXeotjvfvWdWbAjy3hqsExvuHgFqFxA1",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "error": "HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://solana.api.pocket.network",
+          "method": "getTokenLargestAccounts",
+          "params": [
+            "5Tu84fKBpe9vfXeotjvfvWdWbAjy3hqsExvuHgFqFxA1",
+            {
+              "commitment": "finalized"
+            }
+          ],
+          "result": {
+            "context": {
+              "apiVersion": "4.4.1",
+              "slot": 474405851
+            },
+            "value": [
+              {
+                "address": "8puwvzaJsN3SqBKJK2rYkPayuZzzFYGYN2zKDttzhLHY",
+                "amount": "512250879500249",
+                "decimals": 9,
+                "uiAmount": 512250.879500249,
+                "uiAmountString": "512250.879500249"
+              },
+              {
+                "address": "Fg9zxLouC8DM1fVg42EiRsedUNoeojk9eeAg5yev2Nb3",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "FcZegGzQodjYXTRert2jyun2u6e6jYwwxpWHy1Q9pUzM",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "EXkSREDDtunkyP6MHCYsXCJNxh66QsSQXAMEd7gPtVfh",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "E1FcyCzyyovd3WLqrcB7sDusnE1MFL71E9YiWP51s82u",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "DjJYtWJs9zM7HjzzJ6vpCpk8KSDgAAJYyDzQcZTxGG57",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "DaPqN5zCj4kfGmkuisLLX8ZCgdvDs9SFDGNsACyQ2Tdj",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "BTpb8uoXn1YsGfZPVapwhVWz1qyVDutynPoq63FB62BF",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "Aw2phQd7RTCLCAYV5KxUwYshiyx6x2Gx1UssX7fADSTW",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "9gvfszTgaA37Hktz9vTYHsZtHeK3VeJCXCub8hwosnLU",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "9WD7EaGJboe6AxeidsEH8BcqH5Bv2tHHma6aaDKtDznw",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "7rqniJDGtJNatVEg986tbPCzLPqE7u5u2e3yLapzBvTG",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "7SpP5aKdWX94x5bB7YQbmZC2qtfjNWs7avLPB9cRTnvc",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "6ZNiYkYSn1mgfikt8ySMrBKmAvVr1vanZY7VNEq2gVWP",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "67g9aRoNgB1QsbYvT4mh7FoNWY1UNTXok3SBshLkznmq",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "67L7XG9mxvMuPxq9xctABLxoNR8KbzkUro5DPkJHPWyZ",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "63q9fxaHjEtynFNS5CNVMv7dFTXkzXshtMVr1hP1wDDi",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "4EFFR2kGYhBywkRdXBavrK9ZuyAkybH6WxVzffGhUZAV",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "AyaKUs4m4tewWoB6wqjqtzQACygWStiU8s8Pjvu6zsx",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              },
+              {
+                "address": "14gp7wDeYsFYxEM5ExK8NUyvVyT2mcpGyyzsbJbQ8com",
+                "amount": "0",
+                "decimals": 9,
+                "uiAmount": 0.0,
+                "uiAmountString": "0"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aptos": {
+    "supply": {
+      "url": "https://api.mainnet.aptoslabs.com/v1/view",
+      "method": "POST",
+      "params": {
+        "function": "0x1::fungible_asset::supply",
+        "type_arguments": [
+          "0x1::fungible_asset::Metadata"
+        ],
+        "arguments": [
+          "0x50038be55be5b964cfa32cf128b5cf05f123959f286b4cc02b86cafd48945f89"
+        ]
+      },
+      "result": {
+        "ledger_version": "8242714984",
+        "value": [
+          {
+            "vec": [
+              "59531686710000"
+            ]
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "url": "https://api.mainnet.aptoslabs.com/v1/accounts/0x50038be55be5b964cfa32cf128b5cf05f123959f286b4cc02b86cafd48945f89/resource/0x1::fungible_asset::Metadata",
+      "method": "GET",
+      "params": null,
+      "result": {
+        "ledger_version": "8242714999",
+        "value": {
+          "name": "BlackRock BUIDL",
+          "symbol": "BUIDL",
+          "decimals": 6
+        }
+      }
+    }
+  },
+  "issuer_bridge": {
+    "url": "https://public-feed.securitize.io/asset-info?symbol=BUIDL",
+    "deployments": {
+      "buidl/arbitrum": {
+        "address": "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+        "balance": {
+          "url": "https://arbitrum-one.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa6525ae43edcd03dc08e775774dcabd3bb925872",
+              "data": "0x70a08231000000000000000000000000cbb5b950a76b82ec7982baba99f5d4a92ba2288e"
+            },
+            "0x1e6d905f"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://arbitrum-one.public.blastapi.io",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x1e6d905f"
+          ],
+          "result": "0x0000000000000000000000003ef5db4b59885c09e82882c144cb12d82ec33373"
+        }
+      },
+      "buidl/avalanche": {
+        "address": "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+        "balance": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x53fc82f14f009009b440a706e31c9021e1196a2f",
+              "data": "0x70a08231000000000000000000000000cbb5b950a76b82ec7982baba99f5d4a92ba2288e"
+            },
+            "0x5c04dc3"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://api.avax.network/ext/bc/C/rpc",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x5c04dc3"
+          ],
+          "result": "0x0000000000000000000000003ef5db4b59885c09e82882c144cb12d82ec33373"
+        }
+      },
+      "buidl/bsc": {
+        "address": "0x0ddaac0c6fc44523b41b6fa3e0ff32c144b1f517",
+        "balance": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2d5bdc96d9c8aabbdb38c9a27398513e7e5ef84f",
+              "data": "0x70a082310000000000000000000000000ddaac0c6fc44523b41b6fa3e0ff32c144b1f517"
+            },
+            "0x7735c32"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://bsc-mainnet.public.blastapi.io",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0x0ddaac0c6fc44523b41b6fa3e0ff32c144b1f517",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x7735c32"
+          ],
+          "result": "0x000000000000000000000000ecf9d48d1f0b54de64d3a3f79d3f7bcdf6bdc2cf"
+        }
+      },
+      "buidl/ethereum": {
+        "address": "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+        "balance": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x7712c34205737192402172409a8f7ccef8aa2aec",
+              "data": "0x70a08231000000000000000000000000cbb5b950a76b82ec7982baba99f5d4a92ba2288e"
+            },
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://eth.drpc.org",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x18e28a9"
+          ],
+          "result": "0x0000000000000000000000003ef5db4b59885c09e82882c144cb12d82ec33373"
+        }
+      },
+      "buidl/optimism": {
+        "address": "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+        "balance": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+              "data": "0x70a08231000000000000000000000000cbb5b950a76b82ec7982baba99f5d4a92ba2288e"
+            },
+            "0x964e463"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x964e463"
+          ],
+          "result": "0x0000000000000000000000003ef5db4b59885c09e82882c144cb12d82ec33373"
+        }
+      },
+      "buidl/polygon": {
+        "address": "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+        "balance": {
+          "url": "https://polygon.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x2893ef551b6dd69f661ac00f11d93e5dc5dc0e99",
+              "data": "0x70a08231000000000000000000000000cbb5b950a76b82ec7982baba99f5d4a92ba2288e"
+            },
+            "0x5a59807"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "implementation": {
+          "url": "https://polygon.drpc.org",
+          "method": "eth_getStorageAt",
+          "params": [
+            "0xcbb5b950a76b82ec7982baba99f5d4a92ba2288e",
+            "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+            "0x5a59807"
+          ],
+          "result": "0x0000000000000000000000003ef5db4b59885c09e82882c144cb12d82ec33373"
+        }
+      }
+    },
+    "source_checks": {
+      "buidl/ethereum": {
+        "url": "https://sourcify.dev/server/v2/contract/1/0x3ef5db4b59885c09e82882c144cb12d82ec33373?fields=sources",
+        "path_in_compiler_input": "contracts/bridge/SecuritizeBridge.sol",
+        "utf8_source_sha256": "06f7b7703a4f3a7dbaaaf294d81270765a6007ac5562babe37b4bf85e0688989"
+      },
+      "buidl/bsc": {
+        "url": "https://sourcify.dev/server/v2/contract/56/0xecf9d48d1f0b54de64d3a3f79d3f7bcdf6bdc2cf?fields=sources",
+        "path_in_compiler_input": "contracts/bridge/SecuritizeBridge.sol",
+        "utf8_source_sha256": "81e0186b6ed337948ff3fede21c2fcb362fe07f29ce17bee7b932c63e55cf5b7"
+      }
+    }
+  },
+  "holder_probes": {
+    "buidl/arbitrum": {
+      "index": {
+        "url": "https://arbitrum.blockscout.com/api/v2/tokens/0xa6525ae43edcd03dc08e775774dcabd3bb925872/holders",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "logs": {
+        "url": "https://arbitrum-one.public.blastapi.io",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0xa6525ae43edcd03dc08e775774dcabd3bb925872",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x1e6d8c78",
+            "toBlock": "0x1e6d905f"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      "reads": {}
+    },
+    "buidl/optimism": {
+      "index": {
+        "url": "https://optimism.blockscout.com/api/v2/tokens/0xa1cdab15bba75a80df4089cafba013e376957cf5/holders",
+        "candidates": [
+          "0x1e695a689cf29c8fe0af6848a957e3f84b61fe69",
+          "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29"
+        ]
+      },
+      "logs": {
+        "url": "https://optimism.drpc.org",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x964e07c",
+            "toBlock": "0x964e463"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      "reads": {
+        "balance/0x1e695a689cf29c8fe0af6848a957e3f84b61fe69": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+              "data": "0x70a082310000000000000000000000001e695a689cf29c8fe0af6848a957e3f84b61fe69"
+            },
+            "0x964e463"
+          ],
+          "result": "0x00000000000000000000000000000000000000000000000000000000066d5af0"
+        },
+        "code/0x1e695a689cf29c8fe0af6848a957e3f84b61fe69": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x1e695a689cf29c8fe0af6848a957e3f84b61fe69",
+            "0x964e463"
+          ],
+          "code_type": "no runtime code",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "balance/0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xa1cdab15bba75a80df4089cafba013e376957cf5",
+              "data": "0x70a08231000000000000000000000000d06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29"
+            },
+            "0x964e463"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000181398c91440"
+        },
+        "code/0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29": {
+          "url": "https://optimism.drpc.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29",
+            "0x964e463"
+          ],
+          "code_type": "contract code",
+          "sha256": "a8a0fbd3cdf49e751346664e01b529a58322a814cf8df8d85deb20e63bd6415e"
+        }
+      }
+    },
+    "buidl/polygon": {
+      "index": {
+        "url": "https://polygon.blockscout.com/api/v2/tokens/0x2893ef551b6dd69f661ac00f11d93e5dc5dc0e99/holders",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "logs": {
+        "url": "https://polygon.drpc.org",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0x2893ef551b6dd69f661ac00f11d93e5dc5dc0e99",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x5a59420",
+            "toBlock": "0x5a59807"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      "reads": {}
+    },
+    "buidl/tempo": {
+      "index": {
+        "url": "https://explore.tempo.xyz/api/v2/tokens/0xb5ff12bd8010baef823d1bfa2ce6bdc0109cbb24/holders",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "logs": {
+        "url": "https://rpc.tempo.xyz",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0xb5ff12bd8010baef823d1bfa2ce6bdc0109cbb24",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x2813042",
+            "toBlock": "0x2813429"
+          }
+        ],
+        "candidates": []
+      },
+      "reads": {}
+    },
+    "benji/arbitrum": {
+      "index": {
+        "url": "https://arbitrum.blockscout.com/api/v2/tokens/0xb9e4765bce2609bc1949592059b17ea72fee6c6a/holders",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "logs": {
+        "url": "https://arbitrum-one.public.blastapi.io",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0xb9e4765bce2609bc1949592059b17ea72fee6c6a",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x1e6d8c78",
+            "toBlock": "0x1e6d905f"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      "reads": {}
+    },
+    "benji/base": {
+      "index": {
+        "url": "https://base.blockscout.com/api/v2/tokens/0x60cfc2b186a4cf647486e42c42b11cc6d571d1e4/holders",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "logs": {
+        "url": "https://mainnet.base.org",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0x60cfc2b186a4cf647486e42c42b11cc6d571d1e4",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x3199ee7",
+            "toBlock": "0x319a2ce"
+          }
+        ],
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      "reads": {}
+    },
+    "benji/polygon": {
+      "index": {
+        "url": "https://polygon.blockscout.com/api/v2/tokens/0x408a634b8a8f0de729b48574a3a7ec3fe820b00a/holders",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "logs": {
+        "url": "https://polygon.drpc.org",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0x408a634b8a8f0de729b48574a3a7ec3fe820b00a",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x5a59420",
+            "toBlock": "0x5a59807"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      "reads": {}
+    },
+    "ustb/plume": {
+      "index": {
+        "url": "https://explorer.plume.org/api/v2/tokens/0xe4fa682f94610ccd170680cc3b045d77d9e528a8/holders",
+        "candidates": [
+          "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+          "0x34ada44769bd057a5121cbd111e9d3e4e55ca10e",
+          "0xcc7de9099a8f4371f381f8f59561f79a69a72476",
+          "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+        ]
+      },
+      "logs": {
+        "url": "https://rpc.plume.org",
+        "method": "eth_getLogs",
+        "params": [
+          {
+            "address": "0xe4fa682f94610ccd170680cc3b045d77d9e528a8",
+            "topics": [
+              "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+            ],
+            "fromBlock": "0x5c165bb",
+            "toBlock": "0x5c169a2"
+          }
+        ],
+        "candidates": []
+      },
+      "reads": {
+        "balance/0x11113ff3a60c2450f4b22515cb760417259ee94b": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe4fa682f94610ccd170680cc3b045d77d9e528a8",
+              "data": "0x70a0823100000000000000000000000011113ff3a60c2450f4b22515cb760417259ee94b"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000003abcbad9"
+        },
+        "code/0x11113ff3a60c2450f4b22515cb760417259ee94b": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "12ebc517a942aad28f60f92341c903d536e0e0444d2c7647987e45ad3dbd9334"
+        },
+        "balance/0x34ada44769bd057a5121cbd111e9d3e4e55ca10e": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe4fa682f94610ccd170680cc3b045d77d9e528a8",
+              "data": "0x70a0823100000000000000000000000034ada44769bd057a5121cbd111e9d3e4e55ca10e"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "balance/0xcc7de9099a8f4371f381f8f59561f79a69a72476": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe4fa682f94610ccd170680cc3b045d77d9e528a8",
+              "data": "0x70a08231000000000000000000000000cc7de9099a8f4371f381f8f59561f79a69a72476"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "balance/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe4fa682f94610ccd170680cc3b045d77d9e528a8",
+              "data": "0x70a08231000000000000000000000000e72fe64840f4ef80e3ec73a1c749491b5c938cb9"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x0000000000000000000000000000000000000000000000000000004ee30ca7fa"
+        },
+        "code/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_getCode",
+          "params": [
+            "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+            "0x5c169a2"
+          ],
+          "code_type": "contract code",
+          "sha256": "7427eb6049a7e8d47aba3f544d3828daa06e12e7f25bc6fdd9940c99b796d502"
+        }
+      },
+      "receipt_reads": {
+        "symbol/0x11113ff3a60c2450f4b22515cb760417259ee94b": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0x11113ff3a60c2450f4b22515cb760417259ee94b",
+              "data": "0x95d89b41"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000066e42415349530000000000000000000000000000000000000000000000000000"
+        },
+        "symbol/0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9": {
+          "url": "https://rpc.plume.org",
+          "method": "eth_call",
+          "params": [
+            {
+              "to": "0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9",
+              "data": "0x95d89b41"
+            },
+            "0x5c169a2"
+          ],
+          "result": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000066e5442494c4c0000000000000000000000000000000000000000000000000000"
+        }
+      }
+    }
+  }
+}

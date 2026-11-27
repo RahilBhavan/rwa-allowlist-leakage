@@ -1,15 +1,14 @@
-# Allow-list leakage: direct holdings leave the 5% cutoff unresolved
+# Allow-list leakage: $533 million of BUIDL backed USDtb
 
-![On September 30, 2026, USDtb reserves held $532.70 million of BUIDL, compared with $86.67 million across three direct contract positions.](docs/figures/custody-comparison.png)
+![Anchorage reported approximately $533 million of BlackRock’s BUIDL backing USDtb on September 30, 2026.](docs/figures/usdtb-buidl.png)
 
-This study measures indirect exposure to five tokenized Treasury funds through assets available on secondary markets. It combines historical chain state and issuer disclosures to bound the direct-contract share on September 30, 2026. It also measures the effect of including BUIDL in bank custody as backing for USDtb.
+How much of five tokenized Treasury funds backed tokens that traded on open markets? For the September 30, 2026 snapshot, Anchorage reported about **$533 million of BUIDL backing USDtb**, which had a quoted Curve market, and we traced **$86.67 million** more to three direct contract positions. [USDtb evidence](docs/RESULTS.md#usdtb-bank-custody) · [Direct contracts](docs/RESULTS.md#direct-contract-test)
 
 ## Results
 
-| Measure at September 30, 2026 | Finding |
-| --- | --- |
-| Direct contract holdings | Three positions backed mTBILL, USD0 and USST, totaling **$86.67 million**. The conditional **0.94%–62.20%** range spans the **5%** cutoff. [Direct-contract test](docs/RESULTS.md#direct-contract-test) |
-| Including bank reserve custody | Adding **$532.70 million** of BUIDL in USDtb reserves raises the lower bound to **6.74%**. It falls to **2.63%** without the Solana and Aptos balances reported by Anchorage. [Reserve custody](docs/RESULTS.md#custody-inclusive-backing) |
+- **Direct contracts.** The conditional range was **0.94%–62.20%**, leaving the **5%** cutoff unresolved. Removing the dust-only mTBILL route reduced the measured direct amount to **$15.03 million**. [Direct test and sensitivity](docs/RESULTS.md#direct-contract-test)
+- **Including bank reserves.** Backing totaled **$619.37 million**, at least **6.74%** under the broader supply model. Of that backing, **$241.93 million** had pinned balance evidence and **$377.43 million** came from the Solana and Aptos legs of Anchorage’s examined report. [Custody-inclusive backing](docs/RESULTS.md#custody-inclusive-backing)
+- **BUIDL supply sensitivity.** A deployment-based scenario narrowed the direct range to **1.45%–41.61%**, still spanning the cutoff. [BUIDL deployment scenario](docs/RESULTS.md#buidl-deployment-scenario)
 
 ## How it works
 
@@ -17,14 +16,17 @@ This study measures indirect exposure to five tokenized Treasury funds through a
 
 ## Run it
 
-Use Python 3.14.8 with its standard library. The offline calculation and 19 tests require no install, credentials or network access.
+Use Python 3.10 or newer with its standard library. The offline calculation and 22 tests require no package install, credentials or network access. Verified on Python 3.10.21 and 3.14.8.
 
 ```sh
 python3 -m unittest discover -s tests -v
 sha256sum -c evidence/SHA256SUMS
 python3 scripts/holder_audit.py
 python3 scripts/kill_test.py
+python3 scripts/check_post_card.py
 ```
+
+Optional live checks use keyless RPCs and Poppler’s `pdftotext`. [Live replay and PDF verification](docs/METHOD.md#repair-fixtures-and-replay)
 
 ## Repository layout
 
@@ -35,8 +37,6 @@ python3 scripts/kill_test.py
 - `tests/` contains offline tests.
 
 ## Documentation
-
-[Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)
 
 - [Results](docs/RESULTS.md) traces the bounds and sensitivities to their inputs.
 - [Holder coverage](docs/HOLDERS.md) shows which balances and ranks are established by chain.
@@ -49,6 +49,8 @@ python3 scripts/kill_test.py
 ## Sources
 
 Sources include issuer disclosures and raw measurements from public RPC calls pinned to September 30, 2026. The OUSG denominator also uses adjacent issuer marks through October 4. The source register identifies the relevant publisher documents by URL and full-file SHA-256. Published fixtures are checksummed separately. [Source register](docs/SOURCES.md)
+
+**Prior art and contribution.** BIS Bulletin 115 identifies the gap between restricting direct fund holdings and allowing indirect exposure. Tümer and Mafrur classify Ethereum transfers and intermediary balances. RWA.xyz tracks deployments and holder metrics, issuers publish fund and reserve figures, and protocol risk teams report collateral and borrowing within individual markets. This study links pinned positions to specific downstream tokens, tests secondary acquisition at the pin and maps how an issuer redemption pause could reach those tokens or stablecoin lenders. [Prior art comparison and sources](docs/RESULTS.md#prior-art-and-contribution)
 
 ## Scope and limits
 

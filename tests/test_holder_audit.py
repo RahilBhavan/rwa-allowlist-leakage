@@ -111,6 +111,11 @@ class HolderAuditTest(unittest.TestCase):
             if all(share is not None for share in shares.values()):
                 self.assertAlmostEqual(sum(shares.values()), Decimal(1))
         self.assertEqual(reports["ousg/xrpl"]["holder_class_share_of_supply"]["unknown_control"], 1)
-        self.assertEqual(reports["ustb/plume"]["holder_class_share_of_supply"]["unobserved"], 1)
-        self.assertGreater(reports["buidl/avalanche"]["holder_class_share_of_supply"]["issuer_ops"], 0)
+        for name in ("ustb/plume", "buidl/optimism"):
+            self.assertEqual(reports[name]["residual_native"], 0)
+            self.assertEqual([row["verified_rank"] for row in reports[name]["rows"]], [1, 2])
+        self.assertEqual(reports["benji/base"]["holder_class_share_of_supply"]["unobserved"], 1)
+        for name in ("buidl/avalanche", "buidl/bsc"):
+            self.assertGreater(reports[name]["holder_class_share_of_supply"]["reserve_custody"], 0)
+            self.assertEqual(reports[name]["holder_class_share_of_supply"]["issuer_ops"], 0)
         self.assertGreater(reports["buidl_i/ethereum"]["holder_class_share_of_supply"]["eoa"], 0)

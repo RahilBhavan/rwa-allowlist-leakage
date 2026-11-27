@@ -1,74 +1,68 @@
 {
   "rubric_version": 1,
-  "round": 2,
+  "round": 3,
   "reviewer": "claude-opus-5-5",
-  "reviewed_head": "af9e1bdb2fd81e3130fbc29ce61b7cb6a696527f",
-  "reviewed_at": "2026-11-27T04:14:40Z",
+  "reviewed_head": "6f4b801dd43d47050c46e234c889512ce0b9519c",
+  "reviewed_at": "2026-11-27T04:39:56Z",
   "scores": {
-    "answer": 8,
-    "evidence": 9,
+    "answer": 9,
+    "evidence": 8,
     "reproducibility": 10,
-    "usefulness": 8,
-    "completeness": 8,
+    "usefulness": 9,
+    "completeness": 9,
     "documentation": 8,
-    "post_kit": 8,
-    "code": 7
+    "post_kit": 9,
+    "code": 8
   },
-  "overall": 7,
+  "overall": 8,
   "gaps": [
     {
       "dimension": "code",
-      "issue": "15 of 18 new single-line mutants survive all 22 tests: 13 in scripts/kill_test.py and 2 in scripts/check_post_card.py. In kill_test.py, disabling any of these guards leaves the suite green: USDtb pool inventory above token supply, Curve quote/inventory, USYC oracle round, the pin bracket and successor parentHash checks in load_evidence, the Frax deposit code-type check, the Usual cross-capture equality, the BNB USYC rank/code check, the Midas/STBL runtime-code check, Franklin's share-class count and the STBL USST-supply cap. Replacing the BENJI mark for small deployments with $1 and zeroing the bridge balance reads also survive. scripts/check_post_card.py has no test: disabling its copy-match check or its PNG-link check leaves both the tests and the script passing. verify_pdf_facts.verify() and replay_evidence.compare_rpc() are also untested. The bridge balances are reported but never asserted.",
-      "fix": "Extend test_guards_reject_corrupt_copied_evidence with one corrupted-copy case for each listed guard, asserting its ValueError message. Add tests/test_post_card.py, which copies posts/, docs/figures/ and evidence/ to a temp root and asserts failure for: more than 20 words, visible copy that differs from the receipt, a changed PNG or HTML byte, a missing draft link and a date/amount mismatch. Unit-test verify() with small synthetic publisher-text strings, one per check, and compare_rpc() with a patched read(). Make kill_test fail, or subtract, when any issuer bridge balance is nonzero, and test both outcomes.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "usefulness",
-      "issue": "The headline link, $533m of BUIDL behind USDtb, comes from Anchorage's own published attestation. What the study adds is the pinned route evidence, the three small direct positions ($15.03m without the dust route) and the pause map. The brief's core quantitative question, the share in permissionless contracts, is still 0.94-62.20% (1.45-41.61% under the BUIDL deployment scenario). Nothing shows a reader which unresolved positions could actually flip the 5% verdict. Prior art is now named, and I confirmed it against the arXiv abstract and the BIS page.",
-      "fix": "Add a 'what would move the direct verdict' table to RESULTS. List the gap to 5% ($372.28m at the platform ceiling, $210.41m at the deployment ceiling). Then list the largest unresolved code-bearing holders with their values: the BUIDL-I rank-2 4-of-7 Safe ($112.91m), the Optimism BUIDL code account ($26.47m), the USYC Ethereum 2-of-4 Safe (~$15.8m), the OUSG Ethereum Safes, the Plume Nest vaults, the BENJI and USTB value outside the reconciled censuses, and the denominator slack. Show which ones, alone or combined, could cross 5%. Try public Safe getOwners/getModules reads and protocol docs on the top two Safes, and report each one as resolved or unresolved.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "answer",
-      "issue": "The README lead asks which positions 'backed tokens that traded on open markets' and answers '$86.67 million more' from direct contracts. Yet $71.64m of that rests on the mTBILL route, which RESULTS itself calls 'economically prohibitive as evidence of meaningful access'. The lead also gives no share and no 5% verdict. A stranger cannot tell within 10 seconds whether the allow-lists hold.",
-      "fix": "Rewrite the README's first paragraph to give both verdicts in one or two sentences, for example: 'Three direct contracts held $86.67M ($15.03M without a dust-only mTBILL route). Counting USDtb's reserves, at least 6.74% of the five-fund basket backed openly traded tokens, above the brief's 5% cutoff. The contract-only share stays unresolved (0.94-62.20%).' Rahil still chooses which estimand leads publicly. Stating both verdicts plainly does not wait on that choice.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "documentation",
-      "issue": "In docs/HOLDERS.md:37, the 'Share of pinned deployment supply' table has 8 header cells but 9 delimiter cells, so GitHub renders it as plain text, not a table. This is a regression from this commit, which added the reserve-custody column. STATE.md's next action ('Astra verifies the uncommitted round-one repair ... commits') and HANDOFF ('after Astra verifies and commits it') are stale: af9e1bd is committed and is origin/main. The prose is still dense with internal phrasing.",
-      "fix": "Delete the extra '---:' cell on HOLDERS.md line 38. Rewrite STATE.md's next action to list the round-2 agent gaps and Rahil's pending choices. Update the HANDOFF review line to say the slice is published at af9e1bd and that round 2 scored it. Add a Markdown table cell-count check to the public-tree audit or the tests.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "post_kit",
-      "issue": "Drafts 2-4 each state a fact without the access link that makes it a finding. The Usual draft never says USD0 had a Curve market. The mTBILL draft has no stated takeaway for a reader without context. The Flux draft is hedged ('could include', 'can depend') rather than a claim, and it omits the pinned $8.68m fUSDC borrows. Draft 1's phrase 'giving DEX buyers exposure to the stablecoin's reserves' slightly overstates holder rights, because primary redemption is eligibility-gated under Anchorage's terms.",
-      "fix": "Rewrite each draft as one footnote-free claim. Examples: 'On Sep 30, 2026, Usual's treasury held $14.03M of Circle's USYC backing USD0, a stablecoin with a Curve market.' 'Flux's open USDC market had $8.68M borrowed on Sep 30, 2026; the only collateral it lists from these funds is OUSG, which only eligible liquidators can sell.' Verify that sentence against REACH before using it. Drop the mTBILL draft, or lead it with its takeaway: the $71.64M vault had no practical open route. For Draft 1, use 'so Curve buyers held a token backed partly by BUIDL'. Link each number to RESULTS.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "post_kit",
-      "issue": "docs/figures/custody-comparison.png is tracked in the public tree but nothing references it. It has no receipt or checker. It draws the $86.67m direct amount, including the dust-only Midas lot, as a single solid bar.",
-      "fix": "Delete the file, or give it a JSON receipt and a checker like usdtb-buidl's. If you keep it, split the direct bar into $15.03m and $71.64m (dust-only route) and reference it from RESULTS. Design approval remains Rahil's.",
-      "owner": "agent"
-    },
-    {
-      "dimension": "completeness",
-      "issue": "The direct test leaves $619.72m of BENJI unclassified, outside the reconciled Ethereum and Avalanche censuses (Stellar included). USTB value outside Ethereum and Plume, Solana included, is also unclassified. Neither has a current, non-pinned holder indication, although Stellar Horizon and Solana RPC are keyless and the Solana section already records this kind of indication for one BENJI account. The Optimism BUIDL Safe role and the historical access to the Nest receipts on Plume are still unresolved. Full September non-EVM registers are not publicly reconstructible, which is a documented limit, not a gap.",
-      "fix": "Add a current Horizon accounts-by-asset top-holder read for BENJI on Stellar, and current Solana getTokenLargestAccounts reads for USTB, retrying or switching keyless endpoints with every failure recorded. Mark both as non-pinned, as the Solana section does. Resolve the Optimism Safe's owners and modules with public reads, and cite Nest's vault access terms or record them as unresolved with the exact source tried.",
+      "issue": "I ran a fresh probe of 36 single-line mutants that the builder had not listed. 24 survived the full 40-test suite. Four of the survivors change published output with no test failing. (1) Replacing the per-fund floor max() in calculate() with the issuer floor moves the BUIDL floor from $975.38m to $548.53m and the USYC floor from $2.376bn to $2.300bn. That moves the basket floor from $4.907bn to $4.405bn, unresolved coverage at the floor from $1.351bn to $0.848bn and slack from $4.272bn to $4.774bn. All three are published in RESULTS, as is the 1.77% floor ratio. The only test asserts an identity that the mutant preserves. (2) Valuing OUSG exclusions at the high NAV instead of the low NAV moves the direct upper bound from 0.62199688 to 0.62199352, but the test only checks 0.6219 < upper < 0.6220. (3) Removing the max(ZERO, ...) clamp makes the custody-inclusive shortfall -$160.41m. (4) Setting the BENJI exclusion mark to $1 changes balances, but only by an amount near rounding. The other 20 survivors are input guards that no corrupted-copy case trips. In load_evidence: the read's block parameter, the successor block number and block timestamp, the Curve coin-address match, the Frax deposit destination match, the RPC cutoff field, USYC NAV > 0, and the Franklin filing's report period, class and B.5 share count. In ousg_model: the OUSG mark timestamp set. In gated_receipt: the underlying-identity check. In calculate(): duplicate fund, floor/ceiling order, nonpositive position and unknown kind. In the STBL credit: the net-deposit cap, which does not bind on this data. In check_post_card: the PNG header and size checks and the single-claim (len(claims) != 1) check. In compare_rpc: the eth_getLogs length check, so a live response with an extra log still matches. I re-probed eight of the builder's 15 listed mutants, and all eight are killed as claimed.",
+      "fix": "In tests/test_kill_test.py, assert the published floor figures exactly: denominator_floor_usd 4907248681.91, unclassified_at_floor_usd 1350866876.34 and denominator_slack_usd 4271809214.24. Also assert the per-fund BUIDL floor 975383966.17. Quantize direct share_upper to 1e-6 and assert 0.621997. Assert that the custody-inclusive shortfall_usd_to_cutoff is 0. Add one corrupted-copy case per surviving guard to test_guards_reject_corrupt_copied_evidence: params[-1] block, successor number, block timestamp, a curve_coin_N result, the frax_buidl params destination, rpc cutoff, usyc_nav answer = 0, Franklin report_period, class and item_b5_shares, a missing Ondo mark, and the flux_underlying result. Add calculate() unit cases for duplicate fund, floor > ceiling, usd = 0 and unknown kind. In tests/test_post_card.py, add cases for a corrupted PNG header or size with an updated receipt hash, and for two '> ' claim lines. In tests/test_evidence_verifiers.py, add an eth_getLogs case where the live response has one extra log.",
       "owner": "agent"
     },
     {
       "dimension": "evidence",
-      "issue": "The dust classification is hard-coded (Position(..., dust_only=True) for Midas). It is not derived from the pinned pool_fee_pips and quote_input observations. The claim-by-evidence-layer table covers only the three headline claims. The Usual $14.03m, STBL $1.00m, Frax sensitivity and BUIDL deployment-scenario claims are not layer-tagged.",
-      "fix": "Derive dust_only from the pinned observations using a stated rule, for example LP fee >= 10% or largest tested input < $100. Test it. Extend the 'How the headline claims are supported' table with rows for the Usual, STBL, Frax and BUIDL-scenario claims.",
+      "issue": "HOLDERS.md 'Current Stellar BENJI' reports 1,325,203,561.98 BENJI in positive Stellar trust lines on November 27, 2026, and says the top three accounts hold 58.69%. Horizon's /assets endpoint confirms this: 1,325,203,536.85 authorized plus 25.13 unauthorized across 2,576 accounts. That is 1.98 times the 667,967,346.67 FOBXX shares in the September N-MFP3 used as the BENJI denominator. It is also 1.59 times the 833,590,155.07 shares in Franklin's October 31 N-MFP3 (accession 0002071691-26-025490, filed 2026-11-06, same series S000067043 and class C000215714, one share class). The docs never compare these numbers. Either the fund grew by more than $490m in November, or Stellar trust-line balances include something other than outstanding shares, such as issuer or distribution inventory. Until that is explained, the 58.69% concentration can't be read as holder concentration. The open question also affects how a reader should treat the $585.39m BENJI-residual candidate row.",
+      "fix": "Add a reconciliation paragraph beside the Stellar table that sets the trust-line sum against the September and October N-MFP3 share counts. Add the October filing readback (B.4 $833,554,415.30, B.5 833,590,155.07 shares) to evidence/ with a SHA256SUMS entry. Check whether the top trust lines are issuer-operated, using Franklin's stellar.toml ACCOUNTS list and each account's home_domain. Record each as resolved or unresolved. Until reconciled, label the 58.69% as a share of trust-line units, not of fund shares or holders.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "documentation",
+      "issue": "STATE.md's next action reads 'independently verify the round-two working tree, commit and push the verified slice'. HANDOFF.md opens with 'This working tree contains the repair for Astra to verify'. Both are stale: 6f4b801 is committed and equals origin/main, which I confirmed with git ls-remote. HANDOFF also dropped the DONE / PARTLY DONE / NOT DONE status headings that BRIEF.md requires and that the round-one HANDOFF had. The REACH.md BUIDL diagram still says 'BUIDL-I Ethereum rank-2 Safe [112.91m, operator and backing link unresolved]'. HOLDERS.md:182 and RESULTS say the organization is corroborated as Crypto Relief's donation Safe. I confirmed that the exact address appears on cryptorelief.in/donate.",
+      "fix": "Rewrite STATE.md's first line to say what is actually next: the agent gaps listed here, then Rahil's three decisions. Restate HANDOFF's opening as 'Published at 6f4b801; round 3 scored it 8/10'. Restore the DONE / PARTLY DONE / NOT DONE headings, with the unresolved registers, bridge deduplication and depth under NOT DONE. Change the REACH line to 'Crypto Relief donation Safe [112.91m; downstream backing unresolved]'.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "usefulness",
+      "issue": "The 'What would move the direct verdict' table ranks lots by size only, with no indication of evidence for or against a wrapper role. The featured crossing combination, Grove + Crypto Relief = $232.23m against the $210.41m deployment-scenario shortfall, depends on a lot that the study's own evidence identifies as a charity's donation wallet. Other combinations of identified lots with no contrary evidence also cross that shortfall but go unstated. Examples: Grove $119.32m + XRPL OUSG trust lines $187.41m, or Grove + Optimism Safe + OUSG Safes + Frax = $236.93m. A risk reader therefore cannot see which unresolved positions are the plausible verdict-movers.",
+      "fix": "Add a column with the current evidence on each lot's role. For example, Crypto Relief: 'first-party donation wallet; no wrapper evidence'. Grove: 'allocator credit line; receipt unverified'. Lead the combinations paragraph with the smallest crossing set made of lots that have no contrary evidence, and note separately that the donation-Safe combination is unlikely.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "completeness",
+      "issue": "The Plume Nest nTBILL/nBASIS secondary route at the pin is unresolved. HOLDERS cites only offering terms and current docs. No pinned transfer-control read was attempted on the Plume share tokens. The Optimism BUIDL and Ethereum USYC Safe operators remain unresolved after the explorer and issuer sources were tried, as documented. The September non-EVM registers cannot be reconstructed from public data. That is a documented limit, not a gap.",
+      "fix": "Using the keyless Plume RPC at the round-one pinned block, read the nTBILL and nBASIS share tokens' transfer-hook, authority or allowlist state and record the calldata and results in a readback fixture. Mark Nest as either 'transfer gated at pin' or 'transferable at pin; no venue found', and add the query tried for a Plume DEX pool.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "answer",
+      "issue": "The README lead is accurate and gives both verdicts. It is still dense ('direct contracts backed publicly quotable tokens with $86.67 million of fund assets'), and the lead never says what the 6.74% is conditional on. Readers have to go to the Results bullets to learn that $377.43m of it comes from Anchorage's attested Solana and Aptos legs. Without those legs the lower share is 2.63%.",
+      "fix": "Add a parenthetical to the lead sentence, for example: 'at least 6.74% if Anchorage's attested Solana and Aptos reserve legs are counted (2.63% on pinned balances alone)'. Optionally replace 'direct contracts backed publicly quotable tokens with' with 'three contracts held $86.67m of fund units behind tokens anyone could buy'.",
+      "owner": "agent"
+    },
+    {
+      "dimension": "post_kit",
+      "issue": "The Flux draft says 'the gate matters to USDC lenders when a loan backed by OUSG defaults'. The pinned evidence does not show whether OUSG was the only collateral enabled for fUSDC borrowers at the pin, so a reader cannot tell how much of the $8.68M the gate actually covers. RESULTS says borrower-level attribution is open.",
+      "fix": "Read the pinned Comptroller's getAllMarkets() and markets(address).collateralFactorMantissa at the Flux pin. If fOUSG is the only market with a nonzero collateral factor, rewrite the draft as 'all $8.68M was borrowed against OUSG, which only eligible liquidators can seize'. Otherwise state the OUSG-backed share or keep the conditional wording. Link the read from RESULTS.",
       "owner": "agent"
     }
   ],
   "rahil_decisions": [
-    "Choose the public lead estimand: the custody-inclusive at-least-6.74% share, which counts USDtb's stablecoin reserves and clears the brief's 5% cutoff, or the contract-only direct share, 0.94-62.20% and unresolved.",
-    "Approve or reject the Proofline USDtb card (docs/figures/usdtb-buidl.png), and choose which, if any, of the drafts in posts/DRAFTS.md to post on X. Agents do not post.",
-    "Already done, no action needed: public GitHub publication (origin/main at af9e1bd) and the MIT license for original code. No date-dependent ('time') items are pending."
+    "Choose the public lead estimand: the contract-only direct share (0.94-62.20%, unresolved at 5%) or the custody-inclusive share (at least 6.74%, which counts USDtb's reserves and clears 5% conditional on Anchorage's attested Solana and Aptos legs and the modeled ceiling).",
+    "Approve or decline the Proofline USDtb card (docs/figures/usdtb-buidl.png). Choose which, if any, of the four drafts in posts/DRAFTS.md to post on X. Agents do not post.",
+    "Already done, no action needed: public GitHub publication (origin/main = 6f4b801) and the MIT license for original code. No date-dependent ('time') items are pending."
   ],
   "history": [
     {
@@ -80,6 +74,11 @@
       "round": 2,
       "overall": 7,
       "head": "af9e1bdb2fd81e3130fbc29ce61b7cb6a696527f"
+    },
+    {
+      "round": 3,
+      "overall": 8,
+      "head": "6f4b801dd43d47050c46e234c889512ce0b9519c"
     }
   ]
 }

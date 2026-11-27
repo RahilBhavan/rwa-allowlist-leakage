@@ -67,3 +67,7 @@ Role key. Sol was the implementation agent. Astra owns verification and publicat
 - Record Crypto Relief’s public donation wallet attribution. Keep the possibility of downstream backing unresolved there and leave the Optimism and USYC Safe operators open. Use Nest’s published restrictions as terms evidence. The historical Plume secondary routes remain open questions. [Control reads and terms](HOLDERS.md#round-two-holder-and-control-reads)
 - Keep the November Stellar and Solana holder observations out of the September numerical test. Publish factual readbacks with requests and capture dates. [Current evidence](../evidence/round2-readbacks.json)
 - Retain the receipted USDtb card and remove the orphan custody chart. Drafts now distinguish public token acquisition, issuer access and the Flux credit path. [Drafts](../posts/DRAFTS.md)
+
+## Close after the third independent review
+
+Scores rose from 5 to 7 to 8. The three-round limit closes this loop. The third score applies to the published research snapshot at `6f4b801`. The subsequent closeout records the review, remaining work and owner decisions. See [the final review](QUALITY.md) and [handoff](../HANDOFF.md).

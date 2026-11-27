@@ -1,6 +1,138 @@
 # Quality review
 
-Rounds are listed newest first. The dashboard reads the current scores from [`QUALITY.json`](../QUALITY.json). The round-1 gap list and its fixes are in the version of `QUALITY.json` committed at `af9e1bd`.
+Rounds are listed newest first. The dashboard reads the current scores from [`QUALITY.json`](../QUALITY.json). The round-1 gap list is in the version of `QUALITY.json` committed at `af9e1bd`, and the round-2 gap list in the version committed at `c7cb413`.
+
+## Round 3 (final)
+
+- Rubric version: 1
+- Reviewed head: `6f4b801dd43d47050c46e234c889512ce0b9519c`. This is a clean tree, identical to `origin/main` at review time (confirmed with `git ls-remote`).
+- Reviewer: claude-opus-5-5. The builder was GPT-6.2 Sol and the orchestrator GPT-6.2 Astra, so the reviewer comes from a different model family. This round started fresh: every check was rerun and the mutation probe was new.
+- Reviewed at: 2026-11-27T04:39:56Z
+- Scope: authority in BRIEF.md only. The review used keyless public RPC and Horizon reads, public web and SEC pages, and local files. It did not post, push, commit, contact anyone, send transactions, use API keys or paid APIs, use Tenderly or set timers. It changed only `QUALITY.json` and this file. All work ran in a task-owned scratch clone on disk, and the live replay ran through the maintainer's workload gate.
+
+### Scores
+
+| Dimension | R1 | R2 | R3 | One-line reason |
+| --- | ---: | ---: | ---: | --- |
+| Answer | 6 | 8 | 9 | The lead now gives both verdicts: direct 0.94–62.20% (unresolved) and custody-inclusive at least 6.74% (above 5%). The $15.03m dust-free amount sits beside $86.67m. It is dense and does not say what the 6.74% is conditional on. |
+| Evidence | 8 | 9 | 8 | The dust rule is derived from pinned fee and output, the layer table covers every material claim, and every traced number matched. The new November Stellar BENJI sum is 1.98× the September fund share count and 1.59× October's, with no reconciliation. |
+| Reproducibility | 9 | 10 | 10 | A clean clone reproduces every output on Python 3.9–3.14. All 20 checksums match, the PDF check passes 15/15 with publisher hashes verified, and the gated live replay matched 696/696 reads with zero errors. |
+| Usefulness | 7 | 8 | 9 | The shortfall table ($372.28m / $210.41m) and ranked candidate lots make the unresolved result actionable. The featured crossing combination leans on a charity donation wallet. |
+| Completeness | 7 | 8 | 9 | Current Stellar and Solana reads, pinned Safe thresholds and modules, the Crypto Relief attribution and Nest terms were added. The Nest September transfer controls were never read at the pin. |
+| Documentation | 7 | 8 | 8 | The HOLDERS table is fixed and a table-shape test was added. 209 links and anchors resolve. STATE and HANDOFF again describe the slice as uncommitted, HANDOFF lost the brief's DONE / PARTLY DONE / NOT DONE headings, and REACH contradicts HOLDERS on the Crypto Relief Safe. |
+| Post kit | 5 | 8 | 9 | Four one-claim drafts, each linked to a RESULTS anchor. The 12-word card passes its checker and the orphan chart is gone. The Flux draft's scope ('a loan backed by OUSG') is left open. Design approval is Rahil's. |
+| Code | 7 | 7 | 8 | All 13 round-2 guards plus the card, PDF and replay modules are now tested, and the 8 builder mutants I re-probed are killed. In a fresh probe, 24 of 36 new mutants survive, including one that silently changes the published floor and slack figures. |
+| **Overall (lowest)** | **5** | **7** | **8** | Evidence, documentation and code set the overall score. |
+
+### What I ran
+
+| Command or check | Result |
+| --- | --- |
+| Clean clone into a task-owned scratch directory on disk and check out `6f4b801` | OK. `git ls-remote origin` shows `refs/heads/main` = `6f4b801…`. |
+| `sha256sum -c evidence/SHA256SUMS` | 20/20 OK |
+| `python3 -m unittest discover -s tests` on 3.14.8, 3.12, 3.10 and 3.9 | 40/40 pass on all four |
+| `python3 scripts/holder_audit.py` | Exit 0 |
+| `python3 scripts/kill_test.py` | Exit 0. Direct $86,669,353.88, 0.94421–62.19969%, `inconclusive`, shortfall $372,283,540.93. Custody-inclusive $619,366,062.06 (pinned $241,931,783.06 + attested $377,434,279), lower 6.7476%, `continue`. Pinned-only custody 2.6357%. Dust-free direct $15,032,143.93, custody 5.967%. BUIDL scenario: ceiling $5,941,489,570.40, direct 1.4587–41.602%, shortfall $210,405,124.64. Frax: 1.328% / 7.132%. Bridge balances are all zero. These agree with README, RESULTS, STATE, HANDOFF and the drafts under the stated rounding. |
+| Spot arithmetic of the new tables | Exclusion to get below 5%: 0.95 × 9,179.06 − 3,469.71 = 5,250.39, and 0.95 × 5,941.49 − 3,469.71 = 2,174.70. Combinations: 119.32 + 112.91 = 232.23, + 26.47 = 258.70, and 119.32 + 26.47 + 182.60 = 328.39. Floor ratio: 86.67 / 4,907.25 = 1.77%. All match. |
+| `python3 scripts/check_post_card.py` | Pass. 12 words, with HTML and PNG hashes matching the receipt. |
+| `python3 scripts/verify_pdf_facts.py` (downloads into ignored scratch `data/upstream/`) | 15 checks pass. All three publisher hashes verified. |
+| `workload_budget.py run -- python3 scripts/replay_evidence.py --workers 1` | Exit 0. 696 match, 0 mismatch, 0 error across 10 fixtures: EVM 64, holders 437, Ethereum review 115, signer 1, BNB receipt 3, XRPL 5, round-1 supplement 28, round-2 readbacks 18, discovery 23 and Usual source 2. This reproduces the builder's 696. The reservation was released on exit. |
+| Horizon `/assets?asset_code=BENJI&asset_issuer=GBHN…ZIW5` | 1,325,203,536.85 authorized + 25.13 unauthorized across 1,406 + 1,170 = 2,576 accounts, which matches the fixture. |
+| Franklin N-MFP3 for 2026-10-31 (accession `0002071691-26-025490`, filed 2026-11-06) | Series S000067043, class C000215714, one class. B.4 is $833,554,415.30 and B.5 is 833,590,155.07 shares. That is below the November Stellar trust-line sum (see Evidence). |
+| `cryptorelief.in/donate` | Lists `0x68A99f89E475a078645f4BAC491360aFe255Dff1`, the BUIDL-I rank-2 Safe, as claimed. |
+| Relative Markdown links and anchors (including this repo's GitHub `main` URLs) | 209 links, 0 broken |
+| Scan for private paths, credentials, paid providers and named individuals | None in the public tree. Endpoints are keyless public RPCs and explorers. Crypto Relief is an organization. |
+| Re-probe of 8 of the builder's 15 listed mutants (Curve quote/inventory, parentHash, USST cap, bridge balance, Franklin share-class count, PNG link, dust fee rule, USDtb pool > supply) | 8/8 killed, as claimed |
+| Fresh mutation probe: 36 new single-line mutants across `kill_test.py`, `check_post_card.py`, `verify_pdf_facts.py` and `replay_evidence.py` | 12 killed, 24 survived. Of the survivors, 4 change `kill_test.py` output and 20 are guards that no test trips. Details are under Code. |
+
+### Round-2 gaps: status
+
+| # | Round-2 gap | Status at `6f4b801` |
+| --- | --- | --- |
+| 1 | Code: 15 surviving guard mutants; card checker, PDF verifier and replay comparator untested | **Fixed as specified.** Every named guard has a corrupted-copy case, the bridge guard now raises, and three new test modules exercise the checker, verifier and comparator. A fresh probe still finds untested guards (round-3 gap). |
+| 2 | Usefulness: nothing showed what would move the direct verdict | **Fixed.** Shortfall table, ranked candidate lots and combinations. The featured combination relies on a donation wallet (round-3 nit). |
+| 3 | Answer: lead counted the dust lot and gave no verdict | **Fixed.** Both verdicts and the $15.03m dust-free amount are in the lead. |
+| 4 | Documentation: broken HOLDERS table; stale STATE/HANDOFF; no table check | **Partly fixed.** The table is fixed and a column-count test was added. STATE/HANDOFF are stale again, now for `6f4b801` (round-3 gap). |
+| 5 | Post kit: drafts 2–4 lacked the open-market link; Flux hedged | **Fixed.** Each draft states one claim with its access link, and Flux gives the pinned $8.68M. |
+| 6 | Post kit: orphan custody chart | **Fixed.** Deleted. |
+| 7 | Completeness: no current Stellar/Solana indication; Optimism Safe and Nest terms open | **Mostly fixed.** Current reads recorded with endpoint failures, Safe thresholds and modules pinned, and Nest terms cited. The Stellar sum is unreconciled (round-3 evidence gap), and the Nest pinned transfer controls were never read. |
+| 8 | Evidence: hand-set dust flag; partial layer table | **Fixed.** A derived rule (fee ≥ 10% or output < $100) is tested at both edges, and the layer table now has nine claims. |
+
+### Red-team notes
+
+#### Answer
+- In under 10 seconds a stranger gets the question, the $86.67m / $15.03m direct amounts, an explicit "unresolved" at 5% and an explicit "above the cutoff" for the custody-inclusive measure. There is no overclaim: "conditional" is stated, and the README's Results bullets give the $241.93m / $377.43m split.
+- What remains is density and an unstated condition. The lead does not say that without the attested Solana and Aptos legs the custody-inclusive share falls to 2.63%, below 5%. A reader who stops at the first paragraph misses the single assumption the 6.74% depends on.
+
+#### Evidence
+- Every headline and table number I traced matched `kill_test.py` output, the fixtures, the PDFs or the live replay. The dust flag now comes from pinned observations, and the claim-by-layer table covers all material claims.
+- **New inconsistency.** HOLDERS reports 1,325.2m BENJI in November Stellar trust lines, with the top three accounts holding 58.69%. I confirmed the sum independently through Horizon's asset statistics. Against Franklin's own N-MFP3 share counts, 667.97m at September 30 and 833.59m at October 31 (one class), the Stellar register alone is 1.98× and 1.59× larger. Either the fund grew by more than $490m in November, or trust-line balances include something other than outstanding shares, such as issuer or distribution inventory. The docs don't raise the question. This does not move any September bound, because the BENJI ceiling is the filing value. It does change how the concentration figure and the $585.39m BENJI-residual candidate should be read.
+
+#### Reproducibility
+- Offline: deterministic, standard library only, and portable from 3.9 to 3.14. Live: zero mismatches and zero endpoint errors on this run, including the new round-two Safe and current-read fixtures. The publisher PDFs re-verify by hash.
+- The card PNG is hash-pinned. Re-rendering it needs licensed fonts kept outside the export, and that procedure is documented. This does not affect results.
+
+#### Usefulness
+- An RWA risk team now gets the pause map plus the gap to 5% in both supply models and a ranked list of which unresolved lots could close it. That turns an uninformative 0.94–62.20% interval into a research agenda. Prior art (BIS Bulletin 115, Tümer and Mafrur, RWA.xyz, issuer and LlamaRisk reports) is named and the contribution stated.
+- The table gives no plausibility signal. The featured crossing combination uses the Crypto Relief donation Safe. Other identified lots with no contrary evidence also cross the deployment shortfall, for example Grove + XRPL OUSG ($306.73m), but the paragraph doesn't say so.
+
+#### Completeness
+- Every brief deliverable is present. The reshaped two-estimand result is reasoned in DECISIONS. New reads record their endpoint failures and capture windows, which is honest.
+- The Nest September secondary route rests on terms and current docs only. A pinned read of the share tokens' transfer controls is feasible with keyless Plume RPC and was not attempted. The Optimism and USYC Safe operators stay open after documented attempts. September non-EVM registers are a public-data limit.
+
+#### Documentation
+- Numbers agree across README, RESULTS, HOLDERS, STATE, HANDOFF and DRAFTS, and tables render. The new `test_public_docs.py` enforces table shape and draft length.
+- STATE.md ("verify the round-two working tree, commit and push") and HANDOFF.md ("This working tree contains the repair for Astra to verify") were committed in the same commit they describe as pending. `6f4b801` is public.
+- HANDOFF replaced the brief's required DONE / PARTLY DONE / NOT DONE structure with a per-gap table. The round-one HANDOFF had the headings.
+- REACH.md's BUIDL diagram labels the rank-2 Safe "operator and backing link unresolved", while HOLDERS:182 says the organization is corroborated (Crypto Relief).
+
+#### Post kit
+- Draft 1 (USDtb) and its card are strong and true as written. Drafts 2 (mTBILL: "only public route … under $0.07 … 79% pool fee") and 3 (Usual: "a stablecoin buyers could acquire on Curve") now carry their own takeaway. All link to RESULTS anchors that exist.
+- The Flux draft is true but leaves the scope open. A pinned read of Flux's collateral factors would show whether every fUSDC borrow was OUSG-backed and let the draft drop the conditional.
+
+#### Code
+- Tests assert values and error messages on corrupted copies of the real fixtures. There are no skipped, faked or tautological tests. The builder's claimed kills reproduce.
+- Fresh survivors that change output:
+  - Removing the per-fund floor `max()` shifts the published basket floor ($4.907bn to $4.405bn), unresolved-at-floor ($1.351bn to $0.848bn) and slack ($4.272bn to $4.774bn). Only an identity is asserted.
+  - High-NAV OUSG exclusions change the upper bound in the sixth decimal, and the test window is 1e-4.
+  - Removing the shortfall clamp gives −$160.41m for the custody-inclusive measure.
+  - A $1 BENJI exclusion mark is a near-equivalent mutant.
+- Fresh survivors among untested guards:
+  - In the pin check: the read's block parameter, the successor number and the block timestamp.
+  - Curve coin-address match, Frax deposit destination, RPC cutoff field and USYC NAV > 0.
+  - Franklin report period, class and B.5 shares, and the OUSG mark set.
+  - Gated-receipt underlying identity.
+  - `calculate()` input validation: duplicate fund, floor/ceiling order, nonpositive position and unknown kind.
+  - The non-binding STBL net-deposit cap.
+  - In the card checker: PNG header and size, and the single-claim check.
+  - In replay: the `eth_getLogs` length check, so a live response with an extra log still matches.
+- The evidence is checksummed and replayed, which lowers the practical risk. These are breadth gaps, not faked coverage.
+
+### Outstanding gaps (owner)
+
+The fix for each gap is in [`QUALITY.json`](../QUALITY.json).
+
+1. Code: assert the published floor, slack and upper figures exactly. Add corrupted-copy cases for the 20 untested guards, plus a replay extra-log case (agent).
+2. Evidence: reconcile the November Stellar BENJI sum against the September and October N-MFP3 share counts, and identify issuer-operated trust lines (agent).
+3. Documentation: refresh STATE and HANDOFF for `6f4b801`, restore the DONE / PARTLY DONE / NOT DONE headings, and fix the REACH Crypto Relief label (agent).
+4. Usefulness: add role evidence to the candidate table, and lead with crossing sets that have no contrary evidence (agent).
+5. Completeness: read the Nest share-token transfer controls at the Plume pin (agent).
+6. Answer: state the 6.74% condition and the 2.63% pinned-only share in the lead (agent).
+7. Post kit: read Flux collateral factors at the pin and tighten the Flux draft (agent).
+
+### Rahil's decisions (do not lower the score)
+
+- Lead estimand: contract-only direct share (0.94–62.20%, unresolved) or custody-inclusive share (at least 6.74%, conditional on Anchorage's attested Solana and Aptos legs and the modeled ceiling).
+- Approval of the Proofline USDtb card, and which of the four drafts, if any, to post on X.
+- Already done: public GitHub publication (`origin/main` = `6f4b801`) and the MIT licence for original code. No date-dependent items are pending.
+
+### History
+
+| Round | Head | Overall |
+| --- | --- | ---: |
+| 1 | `73d93f81409f00f905f036d453d74e124a78ebb1` | 5 |
+| 2 | `af9e1bdb2fd81e3130fbc29ce61b7cb6a696527f` | 7 |
+| 3 | `6f4b801dd43d47050c46e234c889512ce0b9519c` | 8 |
 
 ## Round 2
 

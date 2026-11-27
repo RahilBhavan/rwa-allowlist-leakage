@@ -1,6 +1,14 @@
-# Round-two repair handoff
+# Final research handoff
 
-Round 2 independently scored the published research snapshot at `af9e1bd` 7/10. This working tree contains the repair for Astra to verify. [Independent review](docs/QUALITY.md) · [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)
+## DONE
+
+The third independent review scored published research commit `6f4b801` **8/10**, after rounds of **5/10** and **7/10**. Reproducibility scored 10. The reviewer matched 696 historical reads, 20 fixture hashes and 15 publisher-document checks, and passed all 40 tests on four Python versions. Publication and MIT licensing are complete. The three-round review budget is exhausted. [Independent review](docs/QUALITY.md) · [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)
+
+The September direct-contract result spans 0.94%–62.20%. The custody-inclusive lower bound of 6.74% uses Anchorage’s examined Solana and Aptos reserves and the modeled supply ceiling. Excluding those two attestation-only legs reduces it to 2.63%. [Results](docs/RESULTS.md)
+
+## PARTLY DONE
+
+The earlier repair dispositions below document changes present in the reviewed commit. Evidence, documentation and code each received 8/10 in the final review.
 
 | Round-two gap | Disposition |
 | --- | --- |
@@ -14,6 +22,10 @@ Round 2 independently scored the published research snapshot at `af9e1bd` 7/10. 
 | Evidence layers and dust | **Done.** The numeric dust rule uses the pinned LP fee and quoted output value at NAV. A tighter sensitivity still flags Midas. Material claims identify the supporting onchain facts, issuer statements, terms, arithmetic and interpretation as applicable. [Material claim evidence](docs/RESULTS.md#how-the-material-claims-are-supported) |
 
 **Unresolved coverage.** Complete September Stellar and Solana holder registers, global bridge deduplication, borrower-level Flux collateral attribution and executable depth beyond the quoted sizes remain open. Current observations inform discovery and leave the September bounds unchanged.
+
+## NOT DONE
+
+The November Stellar BENJI trust-line total has not been reconciled to fund shares. It cannot support a fund-holder concentration claim. Other open checks include floor arithmetic under corrupted inputs, unexpected extra logs on replay, Plume Nest transfer controls and Flux collateral factors. Candidate balances in the cutoff table show mathematical capacity. Evidence for a downstream wrapper role is particularly weak for the Crypto Relief donation wallet. Its public address attribution and the economic use of the lot are separate questions. The final review records specific fixes and owners for each gap. [Remaining gaps](QUALITY.json)
 
 ## Verification
 
@@ -43,4 +55,4 @@ The workload-gated command `python3 scripts/replay_evidence.py --workers 1` repl
 
 ## Rahil’s decisions
 
-Choose which result leads publicly. Approve or decline the USDtb card and decide whether to publish any of the four drafts. Astra owns verification, commit, push and the final independent review. [Drafts and card](posts/DRAFTS.md)
+Choose which result leads publicly. Approve or decline the USDtb card and decide whether to publish any of the four drafts. Publication of an X draft and design approval remain Rahil’s decisions. [Drafts and card](posts/DRAFTS.md)

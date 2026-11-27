@@ -36,6 +36,8 @@ python3 scripts/kill_test.py
 
 ## Documentation
 
+[Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)
+
 - [Results](docs/RESULTS.md) traces the bounds and sensitivities to their inputs.
 - [Holder coverage](docs/HOLDERS.md) shows which balances and ranks are established by chain.
 - [Fund access and protocol dependencies](docs/REACH.md) maps who can obtain exposure and what depends on issuer redemptions.

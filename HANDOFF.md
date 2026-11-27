@@ -15,3 +15,7 @@ Claude Sonnet independently reviewed the pre-repair research. GPT-6.2 Sol comple
 ## Rahil’s decision
 
 Choose whether to publish a draft. The direct-contract result answers the original holder question. If using the custody-inclusive figure, retain its separate definition and dependence on attested balances. Rahil authorized public GitHub publication. The draft-post decision and the later quality repair remain separate. [Five draft posts](posts/DRAFTS.md)
+
+## Publication and quality loop
+
+The sanitized study is public. The reopened quality loop scored 5/10 in round one. Sol’s repairs and a fresh Opus review follow. [Public repository](https://github.com/RahilBhavan/rwa-allowlist-leakage)

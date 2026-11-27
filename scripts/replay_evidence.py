@@ -8,16 +8,23 @@ from pathlib import Path
 from time import sleep
 from urllib.error import HTTPError
 
-from fetch_evm import TRANSFER, read
-from fetch_supplement import fetch_json
-from fetch_xrpl_holders import header, request
-from holder_audit import OUSG_XRPL_CURRENCY, holder_type
-from review_evidence import abi_words
+if __package__:
+    from .fetch_evm import TRANSFER, read
+    from .fetch_supplement import fetch_json
+    from .fetch_xrpl_holders import header, request
+    from .holder_audit import OUSG_XRPL_CURRENCY, holder_type
+    from .review_evidence import abi_words
+else:
+    from fetch_evm import TRANSFER, read
+    from fetch_supplement import fetch_json
+    from fetch_xrpl_holders import header, request
+    from holder_audit import OUSG_XRPL_CURRENCY, holder_type
+    from review_evidence import abi_words
 
 ROOT = Path(__file__).resolve().parents[1]
 PINNED = ("evm-2026-09-30", "holders-2026-09-30", "review-ethereum-2026-09-30",
           "buidl-avalanche-signer", "usyc-bnb-receipt-2026-09-25", "ousg-xrpl-2026-09-30",
-          "round1-supplement")
+          "round1-supplement", "round2-readbacks")
 DISCOVERY = ("review-contract-discovery", "usual-source-2026-09-30")
 RPC_ALTERNATIVES = {
     "https://eth.drpc.org": "https://rpc.mevblocker.io",
@@ -55,7 +62,9 @@ def compare_rpc(row):
         if key in row:
             words = abi_words(actual)
             offset = words[0] // 32
-            return words[offset] == row[key]
+            return (words[offset] == row[key]
+                    and ("additional_module_pages" not in row
+                         or (words[1] != 1) == row["additional_module_pages"]))
     expected = row["result"]
     if row["method"] == "eth_getTransactionByHash":
         actual["signature_present"] = bool(int(actual["r"], 16) and int(actual["s"], 16))
@@ -168,6 +177,15 @@ def jobs(name, fixture):
             yield f"supply_change/{i}", compare_rpc, (row,)
     elif name == "buidl-avalanche-signer":
         yield "transaction", compare_rpc, (fixture,)
+    elif name == "round2-readbacks":
+        for deployment, probe in fixture["pinned_safes"].items():
+            url = probe["calls"]["master_copy"][0]["url"]
+            for label in ("block", "successor"):
+                yield f"{deployment}/{label}", compare_block, (url, probe[label])
+            for label, attempts in probe["calls"].items():
+                for row in attempts:
+                    if "error" not in row:
+                        yield f"{deployment}/{label}", compare_rpc, (row,)
     elif name == "round1-supplement":
         for label, row in fixture["issuer_bridge"]["deployments"].items():
             for probe in ("balance", "implementation"):

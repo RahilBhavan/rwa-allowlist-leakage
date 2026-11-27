@@ -4,7 +4,10 @@ import json
 from pathlib import Path
 import re
 
-from fetch_sources import extract_pdf, fetch_source
+if __package__:
+    from .fetch_sources import extract_pdf, fetch_source
+else:
+    from fetch_sources import extract_pdf, fetch_source
 
 EVIDENCE = Path(__file__).resolve().parents[1] / "evidence"
 MONEY = r"([0-9][0-9,]*(?:\.[0-9]+)?)"

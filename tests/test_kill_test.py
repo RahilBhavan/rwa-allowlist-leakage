@@ -5,7 +5,8 @@ import shutil
 from tempfile import TemporaryDirectory
 import unittest
 
-from scripts.holder_audit import load_holders
+from scripts.holder_audit import USYC_BNB_LARGEST, load_holders
+from scripts.review_evidence import MIDAS, MTBILL_POOL_ID, STBL, abi_words
 from scripts.kill_test import (
     Fund, Position, calculate, eligible_no_code, gated_receipt, load_revised_evidence, ousg_model, sensitivity,
 )
@@ -23,6 +24,7 @@ class KillTest(unittest.TestCase):
         self.assertEqual(result["share_lower"], D("0.05"))
         self.assertEqual(result["funds"][0]["share_lower"], D("0.25"))
         self.assertEqual(result["verdict"], "continue")
+        self.assertEqual(result["shortfall_usd_to_cutoff"], D(0))
 
     def test_reserve_custody_moves_between_verified_and_excluded(self):
         positions = [Position("A", "x", "0xabcd", "reserve_custody", D(50), D(50), True)]
@@ -58,6 +60,7 @@ class KillTest(unittest.TestCase):
         self.assertEqual(broad["denominator_ceiling_usd"], D("9179057896.15"))
         self.assertEqual(broad["verified_usd"].quantize(D("0.01")), D("619366062.06"))
         self.assertEqual(strict["verified_usd"].quantize(D("0.01")), D("86669353.88"))
+        self.assertEqual(strict["shortfall_usd_to_cutoff"].quantize(D("0.01")), D("372283540.93"))
         self.assertTrue(D("0.6219") < strict["share_upper"] < D("0.6220"))
         self.assertEqual(strict["unclassified_at_ceiling_usd"],
                          strict["denominator_slack_usd"] + strict["unclassified_at_floor_usd"])
@@ -100,13 +103,51 @@ class KillTest(unittest.TestCase):
         self.assertEqual(model["pinned_evm_sum_native"], D("1136079649.177649"))
         scenario = scenarios["buidl_deployment_ceiling"]
         self.assertEqual(scenario["denominator_ceiling_usd"], D("5941489570.397649"))
+        self.assertEqual(model["bridge_balances_raw"], dict.fromkeys([
+            "buidl/arbitrum", "buidl/avalanche", "buidl/bsc", "buidl/ethereum",
+            "buidl/optimism", "buidl/polygon",
+        ], 0))
+        self.assertEqual(observed["small_deployments_supply_usd"]["benji/base"],
+                         load_holders(EVIDENCE)[1]["benji/base"]["supply_native"] * (D("667960091.75") / observed["benji_shares"]))
+        self.assertEqual(scenario["direct_shortfall_usd_to_cutoff"].quantize(D("0.01")), D("210405124.64"))
         self.assertLess(scenario["direct"]["share_lower"], D("0.05"))
         self.assertGreater(scenario["direct"]["share_upper"], D("0.05"))
 
     def test_guards_reject_corrupt_copied_evidence(self):
         facts = "primary-transcriptions-2026-09-30"
         review = "review-ethereum-2026-09-30"
+        evm = "evm-2026-09-30"
+        holders = "holders-2026-09-30"
+        eth = ("chains", "ethereum")
+        reads = EVIDENCE.joinpath(f"{evm}.json")
+        original_reads = json.loads(reads.read_text())["chains"]["ethereum"]["reads"]
+        oracle = original_reads["usyc_nav"]["result"]
         cases = [
+            (evm, (*eth, "reads", "curve_usdtb", "result"), hex(500_000_000 * 10**18),
+             "USDtb token supply"),
+            (evm, (*eth, "reads", "curve_frxusd_quote", "result"), hex(100_000_000 * 10**18),
+             "frxusd secondary route has no verified inventory or quote"),
+            (evm, (*eth, "reads", "usyc_nav", "result"), oracle[:194] + "0" * 64 + oracle[258:],
+             "invalid USYC oracle round"),
+            (evm, (*eth, "successor", "timestamp"), hex(1790812799), "outside the pin"),
+            (evm, (*eth, "successor", "parentHash"), "0x" + "0" * 64, "outside the pin"),
+            (evm, (*eth, "reads", "frax_buidl_code", "code_type"), "no runtime code",
+             "missing verified contract"),
+            (evm, (*eth, "reads", "usual_treasury_usyc", "result"),
+             hex(int(original_reads["usual_treasury_usyc"]["result"], 16) - 1),
+             "Usual balance differs between pinned captures"),
+            (holders, ("targets", "usyc/bsc", "reads", f"code/{USYC_BNB_LARGEST}", "code_type"),
+             "contract code", "BNB Chain USYC exclusion has no pinned rank or code"),
+            (holders, ("targets", "usyc/bsc", "reads", "supply", "result"),
+             hex(5_000_000_000 * 10**6), "BNB Chain USYC exclusion has no pinned rank or code"),
+            (holders, ("targets", "ustb/ethereum", "reads", f"code/{MIDAS}", "code_type"),
+             "no runtime code", "qualifying vault runtime code missing"),
+            (holders, ("targets", "ousg/ethereum", "reads", f"code/{STBL}", "code_type"),
+             "no runtime code", "qualifying vault runtime code missing"),
+            ("franklin-filing-readback-2026-09-30", ("item_8_share_classes",), 2, "Franklin filing readback"),
+            ("round1-supplement", ("issuer_bridge", "deployments", "buidl/optimism", "balance", "result"),
+             "0x1", "nonzero issuer bridge balance at buidl/optimism"),
+
             ("franklin-filing-readback-2026-09-30", ("item_b4_net_assets_usd",), "1", "Franklin filing readback"),
             (facts, ("date",), "2026-10-01", "mixed snapshot dates"),
             (facts, ("anchorage_ethereum_usdtb_redeemable",), "496571144", "USDtb token supply"),
@@ -136,6 +177,40 @@ class KillTest(unittest.TestCase):
                             calculate(funds, positions, False)
                     finally:
                         path.write_text(original)
+
+    def test_stbl_credit_is_capped_by_usst_supply(self):
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary) / "evidence"
+            shutil.copytree(EVIDENCE, directory)
+            path = directory / "review-ethereum-2026-09-30.json"
+            fixture = json.loads(path.read_text())
+            fixture["reads"]["stbl/ussts_total"]["result"] = hex(250_000 * 10**18)
+            path.write_text(json.dumps(fixture))
+            _, positions, observed = load_revised_evidence(directory)
+        row, = [row for row in positions if row.holder == STBL]
+        model = observed["ousg_denominator"]
+        self.assertEqual(row.usd, D(250_000) / model["high_nav_usd"] * model["direct_exclusion_nav_usd"])
+
+    def test_midas_dust_sensitivity_uses_fee_and_quoted_size(self):
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary) / "evidence"
+            shutil.copytree(EVIDENCE, directory)
+            path = directory / "review-ethereum-2026-09-30.json"
+            fixture = json.loads(path.read_text())
+            slot = fixture["reads"][f"midas_pool/{MTBILL_POOL_ID[2:]}/getSlot0(bytes32)"]
+            quote = fixture["reads"]["midas_pool_eth/quote"]
+            slot_words = abi_words(slot["result"])
+            _, gas = abi_words(quote["result"])
+
+            for fee, output, expected in [(99_999, 1, True), (100_000, 100, True), (99_999, 100, False)]:
+                with self.subTest(fee=fee, output=output):
+                    slot_words[3] = fee
+                    slot["result"] = "0x" + "".join(f"{value:064x}" for value in slot_words)
+                    quote["result"] = f"0x{output * 10**18:064x}{gas:064x}"
+                    path.write_text(json.dumps(fixture))
+                    _, positions, _ = load_revised_evidence(directory)
+                    row, = [row for row in positions if row.holder == MIDAS]
+                    self.assertEqual(row.dust_only, expected)
 
     def test_nonzero_frax_counter_caps_credited_inventory(self):
         with TemporaryDirectory() as temporary:

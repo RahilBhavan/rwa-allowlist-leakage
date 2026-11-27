@@ -33,7 +33,7 @@ USTB → qualified investor / book-entry account → Superstate USD or USDC exit
    ├── Ethereum Horizon aToken → permissioned borrower → open stablecoin lender
    │    [1.41m USTB; collateral receipt cannot be traded by end users]
    ├── Other Ethereum contracts [operators or downstream backing unresolved]
-   ├── Plume Nest nTBILL and nBASIS [vault balances pinned, secondary access unresolved]
+   ├── Plume Nest nTBILL and nBASIS [vault balances pinned, offering restricted, historical secondary access unresolved]
    └── Solana Kamino and book entry [historical holder data incomplete]
 ```
 

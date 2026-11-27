@@ -1,8 +1,10 @@
 # Allow-list leakage: $533 million of BUIDL backed USDtb
 
-![Anchorage reported approximately $533 million of BlackRock’s BUIDL backing USDtb on September 30, 2026.](docs/figures/usdtb-buidl.png)
+How much of five tokenized Treasury funds backed tokens buyers could acquire on public markets?
 
-How much of five tokenized Treasury funds backed tokens that traded on open markets? For the September 30, 2026 snapshot, Anchorage reported about **$533 million of BUIDL backing USDtb**, which had a quoted Curve market, and we traced **$86.67 million** more to three direct contract positions. [USDtb evidence](docs/RESULTS.md#usdtb-bank-custody) · [Direct contracts](docs/RESULTS.md#direct-contract-test)
+On September 30, 2026, direct contracts backed publicly quotable tokens with **$86.67 million** of fund assets, or **$15.03 million** excluding mTBILL’s dust-only route. The direct-contract range of **0.94%–62.20%** leaves the **5%** cutoff unresolved, while including USDtb’s bank reserves gives a conditional lower bound of **6.74%**, above the cutoff. [Direct test and shortfall](docs/RESULTS.md#what-would-move-the-direct-verdict) · [Custody-inclusive backing](docs/RESULTS.md#custody-inclusive-backing)
+
+![Anchorage reported approximately $533 million of BlackRock’s BUIDL backing USDtb on September 30, 2026.](docs/figures/usdtb-buidl.png)
 
 ## Results
 
@@ -16,7 +18,7 @@ How much of five tokenized Treasury funds backed tokens that traded on open mark
 
 ## Run it
 
-Use Python 3.10 or newer with its standard library. The offline calculation and 22 tests require no package install, credentials or network access. Verified on Python 3.10.21 and 3.14.8.
+Use Python 3.10 or newer with its standard library. The offline calculation and tests require no package install, credentials or network access. Verified on Python 3.10.21 and 3.14.8.
 
 ```sh
 python3 -m unittest discover -s tests -v

@@ -15,6 +15,8 @@ DATE = "2026-09-30"
 CUTOFF = 1790812799
 THRESHOLD = D("0.05")
 ZERO = D(0)
+DUST_FEE_PIPS = 100_000  # 10% in parts per million
+DUST_MIN_QUOTED_USD = D(100)
 
 
 @dataclass(frozen=True)
@@ -100,6 +102,7 @@ def calculate(funds, positions, include_reserve_custody):
         "denominator_slack_usd": ceiling - floor,
         "unclassified_at_floor_usd": floor - verified - excluded,
         "cutoff_usd_at_denominator_ceiling": THRESHOLD * ceiling,
+        "shortfall_usd_to_cutoff": max(ZERO, THRESHOLD * ceiling - verified),
         "share_lower": lower, "share_upper": upper, "verdict": verdict,
     }
 
@@ -369,12 +372,15 @@ def load_revised_evidence(directory):
     mtbill = observations["midas_mtbill"]
     if not 0 < midas_usd <= mtbill["ethereum_mtbill_supply"] * mtbill["mtbill_nav"]:
         raise ValueError("mTBILL Ethereum NAV and supply do not support the vault allocation")
+    mtbill["quoted_output_usd"] = mtbill["quote_mtbill"] * mtbill["mtbill_nav"]
+    dust_only = (mtbill["pool_fee_pips"] >= DUST_FEE_PIPS
+                 or mtbill["quoted_output_usd"] < DUST_MIN_QUOTED_USD)
     usst = observations["stbl_usst"]
     stbl_native = min(stbl["native"], usst["net_deposits_ousg"],
                       usst["recorded_net_stable_value_usd"] / model["high_nav_usd"],
                       usst["ethereum_usst"] / model["high_nav_usd"])
     revised.extend([
-        Position("USTB", "ethereum", MIDAS, "wrapper_contract", midas_usd, midas["native"], dust_only=True),
+        Position("USTB", "ethereum", MIDAS, "wrapper_contract", midas_usd, midas["native"], dust_only=dust_only),
         Position("OUSG", "ethereum", STBL, "wrapper_contract", stbl_native * ousg_exclusion_nav, stbl_native),
     ])
     benji_nav = next(row.supply_floor_usd for row in funds if row.ticker == "BENJI") / observations["benji_shares"]
@@ -450,8 +456,9 @@ def buidl_deployment_model(capture, captures, reports, positions):
         bridge = {"block": captures[name]["block"], "reads": {"balance": observation["balance"]}}
         balance_hex = pinned_read(bridge, "balance", "eth_call", {"to": token, "data": calldata})
         bridge_balances[name] = int(balance_hex, 16)
-    # Use a gross sum even when a duplicate is possible. It is a modeled ceiling
-    # only if the included deployments and allowances cover the full pin.
+        if bridge_balances[name] != 0:
+            raise ValueError(f"nonzero issuer bridge balance at {name}; deployment scenario requires review")
+    # A modeled ceiling only if the included deployments and allowances cover the pin.
     return {"pinned_evm_native": pinned, "pinned_evm_sum_native": evm_sum,
             "recent_native": recent, "reported_custody_native": reported,
             "bridge_balances_raw": bridge_balances, "non_evm_allowance_native": allowances,
@@ -494,6 +501,7 @@ def sensitivity(funds, positions, observed):
             "custody_inclusive_lower": broad["share_lower"],
             "denominator_ceiling_usd": direct["denominator_ceiling_usd"],
             "direct_backing_usd": direct["verified_usd"],
+            "direct_shortfall_usd_to_cutoff": direct["shortfall_usd_to_cutoff"],
             "custody_inclusive_backing_usd": broad["verified_usd"],
         }
     return outcomes

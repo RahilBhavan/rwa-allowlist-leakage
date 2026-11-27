@@ -57,9 +57,14 @@ def check():
     when = date.fromisoformat(source["date"])
     number = f"${millions}M"
     written_date = f"{when:%B} {when.day}, {when.year}"
-    draft = (ROOT / "posts/DRAFTS.md").read_text()
+    drafts = (ROOT / "posts/DRAFTS.md").read_text()
+    _, heading, section = drafts.partition("\n## USDtb reserves\n")
+    if not heading:
+        raise ValueError("missing USDtb draft")
+    draft = section.split("\n## ", 1)[0]
+    claims = [line[2:] for line in draft.splitlines() if line.startswith("> ")]
     for value in (number, written_date):
-        if value not in copy or value not in draft:
+        if value not in copy or len(claims) != 1 or value not in claims[0]:
             raise ValueError("the card and draft must carry the transcribed amount and date")
     if receipt["evidence_url"] not in draft or receipt["publisher_url"] not in draft:
         raise ValueError("the draft must link to the study evidence and the primary report")

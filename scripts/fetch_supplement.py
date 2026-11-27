@@ -7,9 +7,14 @@ import json
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from fetch_evm import TRANSFER, balance, read
-from holder_audit import holder_type
-from review_evidence import IMPLEMENTATION_SLOT
+if __package__:
+    from .fetch_evm import TRANSFER, balance, read
+    from .holder_audit import holder_type
+    from .review_evidence import IMPLEMENTATION_SLOT
+else:
+    from fetch_evm import TRANSFER, balance, read
+    from holder_audit import holder_type
+    from review_evidence import IMPLEMENTATION_SLOT
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED = "https://public-feed.securitize.io/asset-info?symbol=BUIDL"

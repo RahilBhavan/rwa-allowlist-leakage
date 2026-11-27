@@ -4,7 +4,10 @@ import json
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from fetch_evm import CUTOFF
+if __package__:
+    from .fetch_evm import CUTOFF
+else:
+    from fetch_evm import CUTOFF
 
 URL = "https://s2.ripple.com:51234/"
 ISSUER = "rHuiXXjHLpMP8ZE9sSQU5aADQVWDwv6h5p"

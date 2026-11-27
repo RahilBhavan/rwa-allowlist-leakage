@@ -9,11 +9,11 @@ Native units, rounded for readability. “Verified” counts addresses with a ce
 | Fund / chain or class | Pin | Native supply | Unaccounted native supply | Verified / positive addresses read | Key classifications and gap |
 | --- | ---: | ---: | ---: | ---: | --- |
 | BUIDL Ethereum original | 26,093,737 | 203,389,187.177549 | 12,502,006.256775 | 3 / 32 | Ranks 1 and 2 are no-code holders with 54.85m and 51.52m. Frax holds 15.83m at verified rank 3. Remaining historical holders are unresolved. |
-| BUIDL-I Ethereum | 26,093,737 | 239,844,535.090100 | 0 | 6 / 6 | Grove ALMProxy is rank 1 with 119.32m. Rank 2 is a 4-of-7 Safe holding 112.91m with unresolved operator and wrapper role. Rank 3 has no runtime code and holds 7.61m. Rank 5 has EIP-7702 delegation code. |
+| BUIDL-I Ethereum | 26,093,737 | 239,844,535.090100 | 0 | 6 / 6 | Grove ALMProxy is rank 1 with 119.32m. Rank 2 is Crypto Relief’s published donation Safe, a 4-of-7 holding 112.91m. Its backing role remains unresolved. Rank 3 has no runtime code and holds 7.61m. Rank 5 has EIP-7702 delegation code. |
 | BUIDL BNB Chain | 125,000,754 | 146,619,491.33 | 35,194,533.68 | 1 / 1 | Anchorage is rank 1 with 111.42m at a no-code address. Other holders remain unresolved. |
 | BUIDL Avalanche | 96,488,899 | 486,533,969.52 | 0 | 6 / 6 | Rank 1 is a no-code holder at 432.87m with a signed redemption-route transfer before the pin. Anchorage is rank 2 at 43.84m. Rank 5 is the sBUIDL token contract with 9,240 BUIDL. All five other positive accounts have no runtime code. |
 | BUIDL Arbitrum | 510,496,863 | 8,577,422.39 | 8,577,422.39 | 0 / 0 | Supply read. Holder index rejected the network. |
-| BUIDL Optimism | 157,607,011 | 26,472,554.59 | 0 | 2 / 2 | Rank 1 held 26,472,446.76 in a code-bearing account. Rank 2 had no runtime code. |
+| BUIDL Optimism | 157,607,011 | 26,472,554.59 | 0 | 2 / 2 | Rank 1 held 26,472,446.76 in a 1-of-1 Safe with no enabled modules. Rank 2 had no runtime code. |
 | BUIDL Polygon | 94,738,439 | 7,540,191.03 | 7,540,191.03 | 0 / 0 | Supply read. Holder index rejected the network. |
 | BUIDL Tempo | 42,021,929 | 17,102,298.05 | 17,102,298.05 | 0 / 0 | Supply read. Holder index rejected the network and the official RPC caps log windows. |
 | USTB Ethereum | 26,093,737 | 50,620,204.672699 | 5,374,817.685102 | 3 / 29 | Rank 1 has no code and holds 13.83m. Verified rank 2 is the Midas mTBILL vault at 6.38m. Rank 3 holds 5.85m with no runtime code and unresolved identity. Frax holds 1.73m and Horizon’s non-transferable USTB collateral receipt contract holds 1.41m. |
@@ -35,7 +35,7 @@ Native units, rounded for readability. “Verified” counts addresses with a ce
 Percentages use each deployment's own `totalSupply()`, or reconciled issuer obligations for XRPL. They describe account locations and are mutually exclusive. Documented fund operations and third-party stablecoin reserve custody take precedence over account type. EOA requires a signed transaction corroboration or EIP-7702 designation. No-code means empty runtime at the pin with insufficient signer or role evidence. Unknown control is an observed balance with unresolved account class, including trust-line accounts. Unobserved is the supply residual. Rounding can affect the row sum. A dash means the share is undefined. Where supply is unavailable, see the remaining deployment gaps. The holdings in different rows may represent the same fund shares. [Class calculation](../scripts/holder_audit.py) · [Avalanche signed transaction](../evidence/buidl-avalanche-signer.json) · [BNB signed sender and burn](../evidence/usyc-bnb-receipt-2026-09-25.json)
 
 | Fund / chain | Issuer / ops | Third-party stablecoin reserve custody | Contract | EOA | No-code | Unknown control | Unobserved |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | benji/arbitrum | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
 | benji/avalanche | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% | 0.000% | 0.000% |
 | benji/base | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 0.000% | 100.000% |
@@ -71,8 +71,8 @@ This is the full positive-balance contract census in the observed EVM candidates
 | buidl/ethereum | uncertified | `0x51c72848c68a965f66fa7a88855f9f7784502a7f` | 20,185.000000 | Current verified source lead names Bot. Historical operator unresolved. | Downstream backing and access unresolved. Kept inside strict ceiling. |
 | buidl/ethereum | uncertified | `0xb1748c79709f4ba2dd82834b8c82d4a505003f27` | 10,000.000000 | Current verified source lead names GnosisSafeProxy / GnosisSafe. Historical operator unresolved. | Downstream backing and access unresolved. Kept inside strict ceiling. |
 | buidl_i/ethereum | 1 | `0x491edfb0b8b608044e227225c715981a30f3a44e` | 119,322,905.350000 | Grove ALMProxy named in Sky governance. | Allocator credit path. Exact public-receipt reserve attribution unresolved. |
-| buidl_i/ethereum | 2 | `0x68a99f89e475a078645f4bac491360afe255dff1` | 112,907,656.670000 | Pinned Safe 4-of-7 via master copy and threshold/owner reads. No enabled module returned. | Operator and backing relationship unresolved. Kept inside strict ceiling. |
-| buidl/optimism | 1 | `0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29` | 26,472,446.760000 | Code at the pin. The [current explorer identifies SafeProxy](https://optimism.blockscout.com/api/v2/addresses/0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29). | Operator, custody function and downstream token unresolved. |
+| buidl_i/ethereum | 2 | `0x68a99f89e475a078645f4bac491360afe255dff1` | 112,907,656.670000 | Pinned Safe 4-of-7 with no enabled modules. [Crypto Relief lists it as its donation wallet](https://cryptorelief.in/donate). | Backing relationship unresolved. Kept inside strict ceiling. |
+| buidl/optimism | 1 | `0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29` | 26,472,446.760000 | Pinned master copy, one owner, threshold one and empty module list. | Operator, custody function and downstream token unresolved. |
 | ustb/plume | 1 | `0xe72fe64840f4ef80e3ec73a1c749491b5c938cb9` | 338,816.706554 | Pinned symbol nTBILL and runtime code. Nest documents vault shares. | Historically open secondary acquisition at the pin unresolved. |
 | ustb/plume | 2 | `0x11113ff3a60c2450f4b22515cb760417259ee94b` | 985.447129 | Pinned symbol nBASIS and runtime code. Nest documents vault shares. | Historically open secondary acquisition at the pin unresolved. |
 | ousg/ethereum | 1 | `0x1dd7950c266fb1be96180a8fdb0591f70200e018` | 336,339.561726 | Flux fOUSG. Pinned underlying, Comptroller markets and controls. | Gated fOUSG excluded. Indirect stablecoin lending mapped separately. |
@@ -147,7 +147,7 @@ python3 scripts/fetch_supplement.py data/live-supplement.json
 
 The eight positive-supply deployments together are worth at most **$203.48m** at the applied fund marks (see `observations.small_deployments_supply_usd`), even with gross counting across chains. Adding all eight to the qualifying direct backing would bring it to $290.15m, below the $458.95m headline cutoff and the $297.07m BUIDL deployment scenario cutoff. Excluding all eight from possible direct backing still leaves both direct upper endpoints above 5%. These extremes isolate the possible effect of these deployments while holding the rest of the model fixed. The pinned Plume symbols identify both vaults. Protocol materials describe their share tokens and routes, but no historical market and permission check qualifies their lots for the lower bound. [Arithmetic](RESULTS.md#buidl-deployment-scenario) · [Nest vaults](https://docs.nest.credit/about/available-vaults) · [Plume integration](https://www.plume.org/blog/plume-brings-institutional-real-world-yield-to-solana-with-launch-of-rwa-nest-vaults)
 
-### Current Solana observations
+### First Solana observations
 
 November 27, 2026 UTC, separate from the September pin. Each successful `getTokenSupply` response reports its finalized slot. A largest token account can be a custody or program account and is not an owner or beneficial-holder count. Recorded keyless attempts that hit rate limits, index exclusions or access denials leave rank unknown. [Requests and responses](../evidence/round1-supplement.json) · [Solana RPC](https://solana.com/docs/rpc/http/gettokenlargestaccounts)
 
@@ -158,3 +158,33 @@ November 27, 2026 UTC, separate from the September pin. Each successful `getToke
 | USYC | 474,405,845 | 122.481545 | Index unavailable at the tested endpoints |
 | OUSG | 474,405,838 | 0 | Zero current supply for the issuer-listed mint. The largest-account requests failed. |
 | BENJI | 474,405,841 | 512,250.879500249 | At slot 474,405,851, one returned account held 512,250.879500249. Owner and September balance are unknown. |
+
+## Round-two holder and control reads
+
+### Current Stellar BENJI and Solana USTB
+
+**November 27, 2026 UTC.** These reads record current chain state independently of the September 30 cutoff. Horizon walked accounts with a trust line for Franklin’s exact FOBXX representation `BENJI:GBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5`. The final short page completed the 13-page traversal across Horizon ledgers 65,693,450–65,693,454. The observed 2,576 accounts included 1,019 positive trust lines totaling **1,325,203,561.9795506 BENJI**. This is a live trust-line sum across several ledgers. Issuer liabilities outside those trust lines and ultimate ownership require separate evidence. [Issuer asset mapping](https://www.franklintempleton.com/.well-known/stellar.toml) · [Horizon accounts API](https://developers.stellar.org/docs/data/apis/horizon/api-reference/list-all-accounts) · [Requests, page boundaries and balances](../evidence/round2-readbacks.json)
+
+| Largest observed Stellar trust lines | BENJI units | Authorized |
+| --- | ---: | --- |
+| 1 | 314,738,922.2426427 | Yes |
+| 2 | 254,239,914.5875924 | Yes |
+| 3 | 208,775,429.2102662 | Yes |
+
+Those three observed accounts held about **58.69%** of the positive trust-line sum. The authorization flag records issuer permission on the trust line. A trust line can represent pooled or omnibus custody. These observations leave September rank and any downstream exposure unresolved.
+
+**Solana USTB.** `getTokenLargestAccounts` failed at the official endpoint (429), PublicNode (403) and dRPC (400), then succeeded at Pocket at finalized slot **474,414,430**. Its three largest token accounts held **110,486.371703**, **45.480468** and **2.000000 USTB**. `getTokenSupply` returned **110,538.814980 USTB** one finalized slot later. The largest account alone was about **99.95%** of that nearby supply. Account-level concentration leaves controller and beneficial ownership unresolved. The September Solana and book-entry splits remain unknown. [Exact calls, errors and responses](../evidence/round2-readbacks.json) · [Solana RPC semantics](https://solana.com/developers/docs/rpc/http/gettokenlargestaccounts) · [Superstate deployment API](https://api.superstate.com/v3/funds/USTB)
+
+### Pinned Safe controls and operator evidence
+
+| September 30 position | Owner threshold and module page | Public attribution and disposition |
+| --- | --- | --- |
+| Ethereum BUIDL-I rank 2 | 4-of-7, zero enabled modules | **Organization and wallet role corroborated.** Crypto Relief’s first-party donation page lists the exact Safe. The sources do not establish any downstream backing or its absence. [Crypto Relief](https://cryptorelief.in/donate) |
+| Optimism BUIDL rank 1 | 1-of-1, zero enabled modules | **Safe control resolved. Operator and downstream token unresolved.** Blockscout named the proxy with no public tags. The Securitize feed and launch disclosure establish the deployment, without attributing this holder. [Blockscout](https://optimism.blockscout.com/api/v2/addresses/0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29) · [Issuer feed](https://public-feed.securitize.io/asset-info?symbol=BUIDL) · [Securitize launch disclosure](https://investors.securitize.io/news/news-details/2025/BlackRock-and-Securitize-Debut-New-BUIDL-Share-Class-on-Solana-Network-03-25-2025/default.aspx) |
+| Ethereum USYC rank 1 | 2-of-4, zero enabled modules | **Safe control resolved. Operator and downstream token unresolved.** The explorer supplied no public tags. Circle’s public Binance arrangement does not attribute this Ethereum wallet. [Blockscout](https://eth.blockscout.com/api/v2/addresses/0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b) · [Circle disclosure](https://investor.circle.com/news/news-details/2025/Circles-USYC-Now-Supported-as-Yield-Bearing-Off-Exchange-Collateral-for-Binances-Institutional-Clients/default.aspx) |
+
+The archive calls include the master copy, threshold, `getOwners()` count and `getModulesPaginated(address,uint256)` count and terminal cursor, plus the pin and its linked successor. The readbacks omit signer account lists. Module counts describe one Safe extension mechanism. They do not establish offchain liabilities or any other contract’s claims on the underlying. [Pinned calls](../evidence/round2-readbacks.json) · [Safe contract source](https://github.com/safe-global/safe-smart-account)
+
+### Plume Nest access
+
+**Pinned onchain:** the nTBILL and nBASIS contracts held 338,816.706554 and 985.447129 USTB, respectively. **Terms:** Nest’s published terms, marked March 20, 2026, distinguish the interface from the protocol and restrict U.S., Singapore and other affected users from the interface. In a pre-pin submission attached to the SEC’s September 22 meeting memo, Plume describes contractual and IP restrictions on U.S. persons for Nest offerings. **Current protocol documentation:** the geographic policy also addresses direct smart-contract interaction, while the current vault directory identifies the two receipts and lists deposit and redemption details for its current markets. **Interpretation:** these sources establish offering restrictions and receipt identity. The September state of a Plume secondary route, including trade liquidity and the applicable transfer controls for each receipt, remains unresolved. Both positions stay outside the direct lower bound. [Pinned Plume balances](../evidence/round1-supplement.json) · [Nest terms](https://docs.nest.credit/security-and-compliance/terms-and-conditions) · [Plume submission](https://www.sec.gov/files/ctf-memo-plume-network-inc-092226.pdf#page=2) · [Geographic policy](https://docs.nest.credit/security-and-compliance/geographic-restrictions) · [Vault directory](https://docs.nest.credit/about/available-vaults)

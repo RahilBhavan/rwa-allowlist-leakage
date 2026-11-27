@@ -4,7 +4,7 @@ Drafts for Rahil’s tokenization audience. The card is an original draft pendin
 
 ## USDtb reserves
 
-> On September 30, 2026, Anchorage reported that $533M of BlackRock’s BUIDL backed USDtb. USDtb had a quoted Curve market, giving DEX buyers exposure to the stablecoin’s reserves.
+> On September 30, 2026, Anchorage reported that $533M of BlackRock’s BUIDL backed USDtb. Curve offered a way to buy USDtb, a stablecoin backed in part by BUIDL.
 
 [USDtb reserve evidence and Curve quote](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usdtb-bank-custody) · [Anchorage’s examined report](https://learn.anchorage.com/09.30.26_USDtb-Stablecoin-Attestation-Report-signed.pdf)
 
@@ -14,19 +14,19 @@ Drafts for Rahil’s tokenization audience. The card is an original draft pendin
 
 ## The mTBILL market
 
-> On September 30, 2026, a Midas vault held USTB for mTBILL redemptions. The only open mTBILL route this study found at that snapshot was a dust-size Uniswap quote with a 79% pool fee.
+> Midas’s USTB vault backed mTBILL, but the only public route we found on September 30, 2026 quoted under $0.07 of mTBILL at a 79% pool fee.
 
 [Midas vault and quote](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#midas-mtbill)
 
 ## Usual’s collateral treasury
 
-> On September 30, 2026, Usual’s treasury held $14.03M of Circle’s USYC as collateral for USD0. The collateral contract was configured to draw USYC from that treasury for redemptions.
+> On September 30, 2026, Usual’s treasury held $14.03M of Circle’s USYC backing USD0, a stablecoin buyers could acquire on Curve.
 
 [Usual’s treasury balance and contract linkage](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#usual-usd0-collateral)
 
 ## Flux lending
 
-> On September 30, 2026, Flux let users lend USDC against a debt book that could include loans secured by OUSG. For a USDC lender, recovery after a borrower default can depend on whether an eligible liquidator can sell the OUSG.
+> Flux’s open USDC market had $8.68M borrowed on September 30, 2026. Only eligible liquidators can seize pledged OUSG, so the gate matters to USDC lenders when a loan backed by OUSG defaults.
 
 [Pinned Flux controls and credit path](https://github.com/RahilBhavan/rwa-allowlist-leakage/blob/main/docs/RESULTS.md#gated-collateral-and-open-lending)
 

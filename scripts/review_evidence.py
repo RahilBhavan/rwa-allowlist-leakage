@@ -99,9 +99,10 @@ def observations(directory, ethereum):
     quoter = "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203"
     if addr(call("midas_pool_eth/quoter_manager", quoter, "0xdc4c90d3")) != POOL_MANAGER:
         raise ValueError("mTBILL quoter uses a different pool manager")
+    quote_input_wei = 10**14
     quote, _ = abi_words(call(
         "midas_pool_eth/quote", quoter,
-        "0xaa9d21cb" + word(32) + pool_key + word(1) + word(10**14) + word(8 * 32) + word(0),
+        "0xaa9d21cb" + word(32) + pool_key + word(1) + word(quote_input_wei) + word(8 * 32) + word(0),
     ))
     manager_inventory = int(call("midas_pool_eth/manager_inventory", *balance(MTBILL, POOL_MANAGER)), 16)
     view = "0x7ffe42c4a5deea5b0fec41c94c136cf115597227"
@@ -119,7 +120,7 @@ def observations(directory, ethereum):
     midas = {
         "proxy_admin_owner": addr(call("midas/proxyAdminOwner", admin, "0x8da5cb5b")),
         "access_control": access, "ustb_redemption": helper, "quote_mtbill": D(quote).scaleb(-18),
-        "quote_input_eth": D("0.0001"), "active_liquidity": liquidity, "pool_fee_pips": slot[3],
+        "quote_input_eth": D(quote_input_wei).scaleb(-18), "active_liquidity": liquidity, "pool_fee_pips": slot[3],
         "ethereum_mtbill_supply": D(int(call("mtbill/totalSupply()", MTBILL, "0x18160ddd"), 16)).scaleb(-18),
         "mtbill_nav": D(int(call("midas/nav", feed, "0x63692905"), 16)).scaleb(-18),
     }

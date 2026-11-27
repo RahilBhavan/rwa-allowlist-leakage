@@ -1,0 +1,569 @@
+{
+  "pinned_safes": {
+    "buidl_i/ethereum": {
+      "block": {
+        "number": "0x18e28a9",
+        "timestamp": "0x6abda27f",
+        "hash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+        "parentHash": "0xe462ded73f3e06f54ba5b557c20ff53b43d5d9b1279e45e68dfdb7496177aeba"
+      },
+      "successor": {
+        "number": "0x18e28aa",
+        "timestamp": "0x6abda28b",
+        "hash": "0x41ebfe304393a8d19fb0b8273a5fa88573cc9a1962a6b8645d139a1d4f860edb",
+        "parentHash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743"
+      },
+      "calls": {
+        "master_copy": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+                "data": "0xa619486e"
+              },
+              "0x18e28a9"
+            ],
+            "result": "0x00000000000000000000000034cfac646f301356faa8b21e94227e3583fe3f5f"
+          }
+        ],
+        "threshold": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+                "data": "0xe75235b8"
+              },
+              "0x18e28a9"
+            ],
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000004"
+          }
+        ],
+        "owners": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+                "data": "0xa0e67e2b"
+              },
+              "0x18e28a9"
+            ],
+            "owner_count": 7
+          }
+        ],
+        "modules": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0x68a99f89e475a078645f4bac491360afe255dff1",
+                "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000064"
+              },
+              "0x18e28a9"
+            ],
+            "module_count": 0,
+            "additional_module_pages": false
+          }
+        ]
+      }
+    },
+    "buidl/optimism": {
+      "block": {
+        "number": "0x964e463",
+        "timestamp": "0x6abda27f",
+        "hash": "0x1e26a4283c3d54f91d04ad1350ed7f0ad30467253e57c4ca0728117c08819ac4",
+        "parentHash": "0xfd6954bb43e7d4c3ac20f2ec6b2af82fe8c80a2fb6a4863f1cd656601453b9f7"
+      },
+      "successor": {
+        "number": "0x964e464",
+        "timestamp": "0x6abda281",
+        "hash": "0xddd3059aed3c7b54dfa3fa2fc42900591b6f255777903dd21bd29608eef5d731",
+        "parentHash": "0x1e26a4283c3d54f91d04ad1350ed7f0ad30467253e57c4ca0728117c08819ac4"
+      },
+      "calls": {
+        "master_copy": [
+          {
+            "url": "https://optimism.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29",
+                "data": "0xa619486e"
+              },
+              "0x964e463"
+            ],
+            "result": "0x00000000000000000000000029fcb43b46531bca003ddc8fcb67ffe91900c762"
+          }
+        ],
+        "threshold": [
+          {
+            "url": "https://optimism.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29",
+                "data": "0xe75235b8"
+              },
+              "0x964e463"
+            ],
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+          }
+        ],
+        "owners": [
+          {
+            "url": "https://optimism.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29",
+                "data": "0xa0e67e2b"
+              },
+              "0x964e463"
+            ],
+            "owner_count": 1
+          }
+        ],
+        "modules": [
+          {
+            "url": "https://optimism.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xd06fc8c16fa5ab9e32f1bb5e3a41bc2212342d29",
+                "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000064"
+              },
+              "0x964e463"
+            ],
+            "module_count": 0,
+            "additional_module_pages": false
+          }
+        ]
+      }
+    },
+    "usyc/ethereum": {
+      "block": {
+        "number": "0x18e28a9",
+        "timestamp": "0x6abda27f",
+        "hash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743",
+        "parentHash": "0xe462ded73f3e06f54ba5b557c20ff53b43d5d9b1279e45e68dfdb7496177aeba"
+      },
+      "successor": {
+        "number": "0x18e28aa",
+        "timestamp": "0x6abda28b",
+        "hash": "0x41ebfe304393a8d19fb0b8273a5fa88573cc9a1962a6b8645d139a1d4f860edb",
+        "parentHash": "0xcd26204e996dceb606ccf0bc6f5bf8ea6747a471df8be73b5855f01624d5d743"
+      },
+      "calls": {
+        "master_copy": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+                "data": "0xa619486e"
+              },
+              "0x18e28a9"
+            ],
+            "result": "0x00000000000000000000000041675c099f32341bf84bfc5382af534df5c7461a"
+          }
+        ],
+        "threshold": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+                "data": "0xe75235b8"
+              },
+              "0x18e28a9"
+            ],
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+          }
+        ],
+        "owners": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+                "data": "0xa0e67e2b"
+              },
+              "0x18e28a9"
+            ],
+            "owner_count": 4
+          }
+        ],
+        "modules": [
+          {
+            "url": "https://eth.drpc.org",
+            "method": "eth_call",
+            "params": [
+              {
+                "to": "0xb1a6ac52a21435c744b5b4129b07e6c44bcd629b",
+                "data": "0xcc2f845200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000064"
+              },
+              "0x18e28a9"
+            ],
+            "module_count": 0,
+            "additional_module_pages": false
+          }
+        ]
+      }
+    }
+  },
+  "solana_ustb": {
+    "largest_attempts": [
+      {
+        "url": "https://api.mainnet-beta.solana.com",
+        "method": "getTokenLargestAccounts",
+        "params": [
+          "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "url": "https://solana-rpc.publicnode.com",
+        "method": "getTokenLargestAccounts",
+        "params": [
+          "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://solana.drpc.org",
+        "method": "getTokenLargestAccounts",
+        "params": [
+          "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "error": "HTTP Error 400: Bad Request"
+      },
+      {
+        "url": "https://solana.api.pocket.network",
+        "method": "getTokenLargestAccounts",
+        "params": [
+          "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+          {
+            "commitment": "finalized"
+          }
+        ],
+        "result": {
+          "context": {
+            "apiVersion": "4.4.1",
+            "slot": 474414430
+          },
+          "value": [
+            {
+              "address": "sjkYzJZQ9AEApLviQxNVWV2ZDBn22b8pXi3414KH5ki",
+              "amount": "110486371703",
+              "decimals": 6,
+              "uiAmount": 110486.371703,
+              "uiAmountString": "110486.371703"
+            },
+            {
+              "address": "4BzarP3UckLwjQSfEZU8MvJ4jCawjAYgTKa8ZN5opZBS",
+              "amount": "45480468",
+              "decimals": 6,
+              "uiAmount": 45.480468,
+              "uiAmountString": "45.480468"
+            },
+            {
+              "address": "43Cudtcny7vwVgsU4srpAoNG6g9EJPcBPqzTTQcJuJdD",
+              "amount": "2000000",
+              "decimals": 6,
+              "uiAmount": 2.0,
+              "uiAmountString": "2"
+            },
+            {
+              "address": "JEFJ1UZA4ywDvg4WtJfErAVT7chVHDx6NJFnrWpAMo2k",
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1.0,
+              "uiAmountString": "1"
+            },
+            {
+              "address": "HK8TKaDH3VrDPKFHpPKMFr3j2ENQBwtgwMvUCkqNdFrm",
+              "amount": "1000000",
+              "decimals": 6,
+              "uiAmount": 1.0,
+              "uiAmountString": "1"
+            },
+            {
+              "address": "GBBdYKdbnfP28VAWE1u2Hw2fPv5kUj5X3d4Jmn9BgyUr",
+              "amount": "900000",
+              "decimals": 6,
+              "uiAmount": 0.9,
+              "uiAmountString": "0.9"
+            },
+            {
+              "address": "J8TRyoPSk4ecuuYYs3drzJc8iS8SYkroqmaUqyUBfpcd",
+              "amount": "894280",
+              "decimals": 6,
+              "uiAmount": 0.89428,
+              "uiAmountString": "0.89428"
+            },
+            {
+              "address": "8zwn9jYS6TVTiXuWZYZWrHh22TzSY6EVGB5qJyNmeYRB",
+              "amount": "887683",
+              "decimals": 6,
+              "uiAmount": 0.887683,
+              "uiAmountString": "0.887683"
+            },
+            {
+              "address": "PN8kqXxQtgBv1cQ6w4hZtDWXxsa6zyvnekt1hjAmSVs",
+              "amount": "150000",
+              "decimals": 6,
+              "uiAmount": 0.15,
+              "uiAmountString": "0.15"
+            },
+            {
+              "address": "E3TQ3rDNcLxph13oK86nrd7N9PVAHThXG9hYfQvpHAHd",
+              "amount": "128846",
+              "decimals": 6,
+              "uiAmount": 0.128846,
+              "uiAmountString": "0.128846"
+            },
+            {
+              "address": "bVcLFTGG8E14itompLxzasF7iArdDFPNd16CYrwmtUe",
+              "amount": "2000",
+              "decimals": 6,
+              "uiAmount": 0.002,
+              "uiAmountString": "0.002"
+            },
+            {
+              "address": "J7vi27MTWNdFaC8QmXgDfk5dGwNedRjQmEwLXgQuN7NW",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "Hun5s7xgt8nN5oDt9cwYiXqj3fnPKFjUnkof6NkX24em",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "HsMbA4SXZqm87nCwdGVPFsJi2huPTSSZ3e9e4Jc2oPLW",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "HLMn8ckj2yG8zQQyPiBtbGaVv5K2KvVLomofzmyDbCzu",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "HKDZ583CVA616sYrTF97GoUY9xxdhmCj7LU6sDi3V4id",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "H9YQWzyJZWVqPnuvZmxqdXJsDmgvZqtWvjDZWmpgaeSH",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "H1JmmepLgfS6r5pSnuTxNs81afF5h1h8r3Ff2vbYfU5i",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "GwoLiRWmzFrnDFndLFQXtSeEMU3gRm1Z4imAWNWnsRVe",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            },
+            {
+              "address": "FzfVbJznh71fBhjewbYVNQQPx8wfnjqs8kEBbDkLPfqy",
+              "amount": "0",
+              "decimals": 6,
+              "uiAmount": 0.0,
+              "uiAmountString": "0"
+            }
+          ]
+        }
+      }
+    ],
+    "supply": {
+      "url": "https://api.mainnet-beta.solana.com",
+      "method": "getTokenSupply",
+      "params": [
+        "CCz3SGVziFeLYk2xfEstkiqJfYkjaSWb2GCABYsVcjo2",
+        {
+          "commitment": "finalized"
+        }
+      ],
+      "result": {
+        "context": {
+          "apiVersion": "4.4.0",
+          "slot": 474414431
+        },
+        "value": {
+          "amount": "110538814980",
+          "decimals": 6,
+          "uiAmount": 110538.81498,
+          "uiAmountString": "110538.81498"
+        }
+      }
+    }
+  },
+  "stellar_benji": {
+    "asset": "BENJI:GBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5",
+    "pages": [
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc",
+        "records": 200,
+        "latest_ledger": "65693450"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GACVIK2N5DY6XCEMDL35K4LMEGCU4IOGYQJIYYG3Z5E62WRPNTX3UTWO",
+        "records": 200,
+        "latest_ledger": "65693450"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GANCGZIOKFV2T7ONQK3JY54LCZP6NQFDGVY3CUCCIDMO3L4SVNAP6JFM",
+        "records": 200,
+        "latest_ledger": "65693451"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GAYNH3HH6FN6Z2QDBARD2K4XA65IFLXHC54QXMHSE47FPPGIIJHSZYMQ",
+        "records": 200,
+        "latest_ledger": "65693451"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GBCMXDS324UPFRIXAEZ6GI4653BW3DC5ITFMUO5XIPVMZJVPF24427YY",
+        "records": 200,
+        "latest_ledger": "65693451"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GBMXLOBIPBKAFZOMIFCCUR7PX77M2Z4Z3I3VZGGQ2IHFMGCXH6PZOAQR",
+        "records": 200,
+        "latest_ledger": "65693452"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GBXWRSJXWQA6KBKQSKZVRCMJOUNUJUVJOKEX5P4PD7CHUXOD6SZ5PFYJ",
+        "records": 200,
+        "latest_ledger": "65693452"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GCBPPKXFQUABVHZRKBJ5OJ4HEQNZ6HC5ZZOSBH7WH2F3MBL34K3KSALX",
+        "records": 200,
+        "latest_ledger": "65693452"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GCK3G5LYWFHCZOQIFABDDBE5OHWIZTLHYLIROMUCNOB33CDAVPQH2SHO",
+        "records": 200,
+        "latest_ledger": "65693453"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GCUCRZGTYE7DEYQ437O7J6UZG4ENPENBGS6HF5K7JAODL66M2YR2PFOD",
+        "records": 200,
+        "latest_ledger": "65693453"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GD4XUXY3HFJEDMWV22KDDLJJZUET5YHXMZQOLVCTF6CKQU6YCYIAY3LJ",
+        "records": 200,
+        "latest_ledger": "65693453"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GDHFJTXQ22XS5B57HCA5DTA7V7ZNBBFBPPJKWOKQROKSOMP7JHCN23M5",
+        "records": 200,
+        "latest_ledger": "65693454"
+      },
+      {
+        "url": "https://horizon.stellar.org/accounts?asset=BENJI%3AGBHNGLLIE3KWGKCHIKMHJ5HVZHYIK7WTBE4QF5PLAKL4CJGSEU7HZIW5&limit=200&order=asc&cursor=GDRG4AMAOH56MFECR56FYAKNSQXAMJXO3NBWPSFJZO5YE25GFWMMQYPV",
+        "records": 176,
+        "latest_ledger": "65693454"
+      }
+    ],
+    "accounts_read": 2576,
+    "enumeration_finished": true,
+    "total_of_observed_trust_lines": "1325203561.9795506",
+    "positive_trust_lines_seen": 1019,
+    "largest_observed": [
+      {
+        "account": "GAHPQ5V26V5FAFMX3HLCBXTJOSO6FAKZQ4YIRTESWIWZNLAMOR563KZ3",
+        "balance": "314738922.2426427",
+        "authorized": true
+      },
+      {
+        "account": "GBEQV6SQSQT2SWPVI4TKWV2WF47VWYLMYD53ANKTYODKX6Q6PR5ZPLMU",
+        "balance": "254239914.5875924",
+        "authorized": true
+      },
+      {
+        "account": "GDXP7KSDSHVMPXBBXMRG7MMFLEYD3QTKQ7YC4YG6P3KLXZ3UCABPSYAA",
+        "balance": "208775429.2102662",
+        "authorized": true
+      },
+      {
+        "account": "GDHK25FXUAEX4RXCHJXK2RDGRKFVWO25FX72MA2XHXX57BUW42ZSJ36I",
+        "balance": "138709427.8144411",
+        "authorized": true
+      },
+      {
+        "account": "GCSVK4ATKDIHZKH3QPKSGRUEDGQJWEM3QY72V3TA5DFDNPMS7NYYJ6TK",
+        "balance": "95640254.4027236",
+        "authorized": true
+      },
+      {
+        "account": "GAQQAZ5MLSWVG6T4XB4SWYCF5QWBIWSWE66LNJY5LA3UV2GARNOPV4I4",
+        "balance": "80686700.9381505",
+        "authorized": true
+      },
+      {
+        "account": "GAYGZHZJ7B4D4SO2RTOLV6K5OLTQJ46RNPORPSW3GR7TFWXK7UPZ4V2H",
+        "balance": "55109604.2062857",
+        "authorized": true
+      },
+      {
+        "account": "GC2JPRDPKAUN4TWFJQVJAX66MHUDVM2CFV46WHV4HEFPQRL4J2IHSBZF",
+        "balance": "43148488.3645443",
+        "authorized": true
+      },
+      {
+        "account": "GDB6N6R2UVW66UFQY2VK4F6SS4IXQVH272UP2ATMMH75Z7WKG7BPAPIN",
+        "balance": "31743823.5971627",
+        "authorized": true
+      },
+      {
+        "account": "GCUFHFEBUERP7NHENUIJI47KIDWOJATECVPFIKGLJGWVVK7USUJPRHEE",
+        "balance": "26266782.9485209",
+        "authorized": true
+      }
+    ]
+  },
+  "pinned_safes_recorded_utc": "2026-11-27T04:22:56.340139+00:00",
+  "started_current_reads_utc": "2026-11-27T04:22:05.569139+00:00",
+  "finished_current_reads_utc": "2026-11-27T04:22:27.876255+00:00"
+}

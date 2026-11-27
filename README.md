@@ -58,8 +58,6 @@ Sources include issuer disclosures and raw measurements from public RPC calls pi
 
 ## License
 
-No license file yet
-
-Any future project license would cover the project's original code only. Third-party filings, data and other source material remain subject to their respective rights and terms.
+The project's original code is licensed under the [MIT License](LICENSE). Third-party filings, data and other source materials retain their own terms.
 
 Part of [Rahil Bhavan's projects](https://github.com/RahilBhavan).
